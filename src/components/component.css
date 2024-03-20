@@ -1,7 +1,50 @@
 body {
-    background-image: url('../public/imgs/Background.png'); /* Update with your image file path */
+    background-image: url('./imgs/Background.png'); /* Update with your image file path */
     background-size: cover;
     background-color: #00152A;
     background-position: center;
     background-repeat: no-repeat;
+    
 }
+
+/* In a file like kelvetica.css */
+@font-face {
+    font-family: 'Helvetica';
+    src: url('../assets/HelveticaNowDisplay-Regular.woff2') format('woff2');
+         /* url('../fonts/kelvetica.woff') format('woff'); */
+    /* Add more src lines if you have other font file formats */
+    /* You may also specify font-weight and font-style if needed */
+  }
+  
+  /* contactForm.css */
+
+/* Background color for the form */
+/* component.css */
+
+/* Background color for the form */
+.custom-bgColor {
+    background-color: #132638;
+    padding: 20px;
+    border-radius: 8px;
+  }
+  
+  /* Input box color */
+  .custom-inputColor {
+    background-color: #20364A;
+    color: white; /* Text color for input boxes */
+  }
+  
+  /* Text area color */
+  .custom-textarea {
+    background-color: #20364A;
+    color: white; /* Text color for text area */
+  }
+  
+  /* Checkbox color */
+  .custom-checkbox {
+    background-color: #203549; /* Checkbox background color */
+    border-color: #20364A; /* Checkbox border color */
+    color: white; /* Text color for checkbox */
+  }
+  
+  
