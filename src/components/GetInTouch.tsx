@@ -3,8 +3,8 @@ import "./component.css";
 
 const Popup: React.FC<{ onClose: () => void }> = ({ onClose }) => {
   return (
-    <div style={{ fontFamily: 'Helvetica, sans-serif' }} className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-gray-800 bg-opacity-50">
-    <div className="bg-gray-800 text-white rounded-lg shadow-lg p-8 flex flex-col items-center">
+    <div  className="fixed top-0   left-0 w-full h-full flex items-center justify-center bg-gray-800 bg-opacity-50">
+    <div className="bg-gray-800 text-white rounded-lg shadow-lg p-8 flex flex-col items-center border border-white">
       <h1 className="text-lg font-semibold mb-4">Thank you for contacting us!</h1>
       <p className="text-sm mb-4">We will get in touch with you soon.</p>
       <button onClick={onClose} className="bg-blue-600 hover:bg-blue-700 text-white  py-2 px-4 rounded-xl">
@@ -29,7 +29,7 @@ const GetInTouch: React.FC = () => {
   };
 
   return (
-    <div style={{ fontFamily: 'Helvetica, sans-serif' }} className="mx-auto p-4 sm:p-8 max-w-screen-lg custom-bgColor rounded-xl">
+    <div className="border-t border-white mx-auto p-4 sm:p-8 max-w-screen-lg custom-bgColor rounded-xl">
       <h1 className="md:text-4xl text-2xl font-bold mb-4 text-white">Get in touch</h1>
       <p className="mb-4 md:text-lg text-sm  sm:mb-8 text-white">Have any questions? We're here to help.</p>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4 ">

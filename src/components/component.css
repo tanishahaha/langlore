@@ -1,9 +1,14 @@
 body {
-    background-image: url('./imgs/Background.png'); /* Update with your image file path */
+    background-image: url('../assets/imgs/Background.png'); /* Update with your image file path */
     background-size: cover;
     background-color: #0A2540;
     background-position: center;
     background-repeat: no-repeat;
+    /* margin: 0; */
+    font-family: 'Helvetica, sans-serif';
+    overflow-x: hidden; /* Add this line to remove horizontal scrollbar */
+    
+
     
 }
 
@@ -59,4 +64,66 @@ body {
     padding: 20px;
     border-radius: 8px;
   }
+  
+  /* @keyframes slideLeftToRight {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+  
+  .logos-container {
+    display: flex;
+    overflow: hidden;
+  }
+  
+  .logo {
+    flex-shrink: 0;
+  }
+
+  @media (max-width: 767px) {
+    .logo {
+      animation: slideLeftToRight 20s linear infinite;
+    }
+  
+    .logos-container {
+      justify-content: flex-start;
+      padding: 0 20px;
+      box-sizing: border-box;
+    }
+  } */
+
+  @keyframes slideLeftToRight {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(100%);
+    }
+  }
+  
+  .logos-container {
+    display: flex;
+    overflow: hidden;
+  }
+  
+  .logo {
+    flex-shrink: 0;
+  }
+  
+  /* Media query for screens smaller than 768px (typical mobile devices) */
+  @media (max-width: 767px) {
+    .logo {
+      animation: slideLeftToRight 10s linear infinite; /* Adjusted duration for smoother movement */
+    }
+  
+    .logos-container {
+      justify-content: flex-start;
+      padding: 0 20px;
+      box-sizing: border-box;
+    }
+  }
+  
   

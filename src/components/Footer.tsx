@@ -3,7 +3,7 @@ import { FaFacebookF, FaInstagram, FaVimeoV, FaLinkedinIn, FaYoutube } from 'rea
 
 const Footer: React.FC = () => {
   return (
-    <div style={{ fontFamily: 'Helvetica, sans-serif' }} className=" text-white py-10 my-10">
+    <div className=" text-white py-10 my-10">
       <div className="container mx-auto px-4">
         <div className="flex flex-wrap md:flex-no-wrap justify-between items-center">
           <div className=" md:w-auto mb-6 md:mb-0 md:mr-6">
