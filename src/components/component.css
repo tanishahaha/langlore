@@ -1,19 +1,22 @@
-/* body {
+body {
     background-image: url('../../public/imgs/Background.png'); 
     background-size: cover;
     background-color: #00152A;
     background-position: center;
     background-repeat: no-repeat;
+    margin: 0;
+    font-family: 'Helvetica, sans-serif';
+    overflow-x: hidden; /* Add this line to remove horizontal scrollbar */
     
-} */
 
-/* In a file like kelvetica.css */
+    
+} 
+
+
 @font-face {
     font-family: 'Helvetica';
-    src: url('../assets/HelveticaNowDisplay-Regular.woff2') format('woff2');
-         /* url('../fonts/kelvetica.woff') format('woff'); */
-    /* Add more src lines if you have other font file formats */
-    /* You may also specify font-weight and font-style if needed */
+    src: url('../../public/HelveticaNowDisplay-Regular.woff2') format('woff2');
+      
   }
   
 
@@ -22,6 +25,8 @@
     padding: 20px;
     border-radius: 8px;
   }
+
+ 
 
   .custom-inputColor {
     background-color: #20364A;
@@ -59,4 +64,38 @@
     padding: 20px;
     border-radius: 8px;
   }
+  
+
+
+  @keyframes slideLeftToRight {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(100%);
+    }
+  }
+  
+  .logos-container {
+    display: flex;
+    overflow: hidden;
+  }
+  
+  .logo {
+    flex-shrink: 0;
+  }
+  
+  /* Media query for screens smaller than 768px (typical mobile devices) */
+  @media (max-width: 767px) {
+    .logo {
+      animation: slideLeftToRight 10s linear infinite; /* Adjusted duration for smoother movement */
+    }
+  
+    .logos-container {
+      justify-content: flex-start;
+      padding: 0 20px;
+      box-sizing: border-box;
+    }
+  }
+  
   

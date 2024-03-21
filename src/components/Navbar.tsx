@@ -3,6 +3,7 @@ import { FaBars, FaTimes } from 'react-icons/fa';
 import logo from '../../public/imgs/langlore.png'
 import { MdClose } from 'react-icons/md';
 
+
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
 
