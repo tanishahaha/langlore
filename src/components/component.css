@@ -1,11 +1,11 @@
-body {
-    background-image: url('./imgs/Background.png'); /* Update with your image file path */
+/* body {
+    background-image: url('../../public/imgs/Background.png'); 
     background-size: cover;
     background-color: #00152A;
     background-position: center;
     background-repeat: no-repeat;
     
-}
+} */
 
 /* In a file like kelvetica.css */
 @font-face {

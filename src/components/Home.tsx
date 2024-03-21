@@ -1,12 +1,18 @@
+import GetInTouch from "./GetInTouch";
+import Hero from "./Hero";
+import CourseCard from "./CourseCard";
 
-import "../components/component.css"
+const Home = () => {
+  return (
+    <div style={{ fontFamily: 'Helvetica, sans-serif' }}  >
+      <Hero/>
+      <div className="mb-8">
+      <CourseCard  />
 
-const Home=()=>{
-  return(
-    <div>
-       <h1 style={{ fontFamily: 'Helvetica, sans-serif' }}>Hello, Kelvetica!</h1>
+      </div>
+      <GetInTouch/>
     </div>
-  )
-}
+  );
+};
 
 export default Home;

@@ -1,21 +1,28 @@
-import Footer from './components/Footer';
-import Home from './components/Home';
-import Navbar from './components/Navbar';
-import GetInTouch from './components/GetInTouch'
-import './index.css';
-import "./components/component.css"
+// App.tsx (modifications)
+import React from "react";
+import RootLayout from "./Layout";
+import RouteManager from "./routes/RouteManager";
 
-function App() {
+const App = () => {
   return (
-    <div className="flex flex-col min-h-screen">
-      <Navbar />
-      <div className="flex-grow">
-        <Home />
-      </div>
-      <GetInTouch/>
-      <Footer />
-    </div>
+    <>
+      {isHomePage() ? ( // Conditional rendering based on URL path
+        <RootLayout>
+          <RouteManager />
+        </RootLayout>
+      ) : (
+        <RouteManager /> // Only render RouteManager for non-home routes
+      )}
+    </>
   );
-}
+};
 
 export default App;
+
+// Helper function to check for home path
+function isHomePage() {
+  return window.location.pathname === "/";
+}
+
+// RouteManager.tsx (no changes)
+// routesData.tsx (no changes)
