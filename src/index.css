@@ -77,8 +77,11 @@ linear-gradient(0deg, #FFFFFF, #FFFFFF);
 
 
 }
+.responsivemenu{
+  z-index: 10000;
+}
 
-@media (max-width:1000px) {
+@media (max-width:1020px) {
   .background-wrapper::before {
     content: ''; /* Add pseudo-element */
     position: absolute;
@@ -94,7 +97,66 @@ linear-gradient(0deg, #FFFFFF, #FFFFFF);
 .background-wrapper::after {
   content: ''; /* Add pseudo-element */
   position: absolute;
-  top: 0;
+  top: -10%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../public/imgs/languagestube.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  animation: animate 20s linear infinite;
+}
+
+}
+
+
+@media (max-width:450px) {
+  .background-wrapper::before {
+    content: ''; /* Add pseudo-element */
+    position: absolute;
+    top: 0; /* Position at the middle */
+    left: 0;
+    width: 100%;
+    height: 0%; /* Cover the bottom half */
+    background: transparent; 
+    /* background: #00152A; */
+    /* filter: blur(80px); */
+    z-index: 100;
+  }
+.background-wrapper::after {
+  content: ''; /* Add pseudo-element */
+  position: absolute;
+  top: -6%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../public/imgs/languagestube.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  animation: animate 20s linear infinite;
+}
+
+}
+
+@media (max-width:1024px) {
+  .background-wrapper::before {
+    content: ''; /* Add pseudo-element */
+    position: absolute;
+    top: 0%; /* Position at the middle */
+    left: 0;
+    width: 100%;
+    height: 0%; /* Cover the bottom half */
+    background: transparent; 
+    /* background: #00152A; */
+    /* filter: blur(80px); */
+    z-index: 100;
+  }
+.background-wrapper::after {
+  content: ''; /* Add pseudo-element */
+  position: absolute;
+  top: 10%;
   left: 0;
   width: 100%;
   height: 100%;

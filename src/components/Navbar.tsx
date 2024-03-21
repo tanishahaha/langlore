@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { FaBars, FaTimes } from 'react-icons/fa';
 import logo from '../../public/imgs/langlore.png'
+import { MdClose } from 'react-icons/md';
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -32,16 +33,26 @@ const Navbar: React.FC = () => {
         </div>
       </div>
       {/* Responsive Menu */}
-      {isOpen && (
-        <div className="lg:hidden bg-gray-800">
-          <a href="#" className="block py-2 px-4 text-white hover:bg-gray-700">Courses</a>
-          <a href="#" className="block py-2 px-4 text-white hover:bg-gray-700">About Us</a>
-          <a href="#" className="block py-2 px-4 text-white hover:bg-gray-700">Blog</a>
-          <button className="buttongradient px-8 py-4 rounded-[16px] hover:shadow-xl text-[1rem] tracking-wide">
-                Signup
-              </button>
-        </div>
-      )}
+      {/* Responsive Menu */}
+{/* Responsive Menu */}
+{isOpen && (
+  <div className="responsivemenu text-[2rem] fixed inset-0 flex items-center justify-center bg-pri z-50 flex-col gap-8 backgroun">
+      <button
+        className="absolute top-4 right-4 text-white hover:text-gray-300 focus:outline-none"
+        onClick={() => setIsOpen(false)}
+      >
+        <MdClose size={30} />
+      </button>
+      <a href="#" className="block py-2 px-4 text-white hover:bg-gray-700">Courses</a>
+      <a href="#" className="block py-2 px-4 text-white hover:bg-gray-700">About Us</a>
+      <a href="#" className="block py-2 px-4 text-white hover:bg-gray-700">Blog</a>
+      <button className="buttongradient px-8 py-4 rounded-[16px] hover:shadow-xl text-[2rem] tracking-wide text-white">
+        Signup
+      </button>
+  </div>
+)}
+
+
     </nav>
   );
 };
