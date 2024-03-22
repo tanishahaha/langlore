@@ -1,5 +1,7 @@
 import React from 'react';
 import Card from './Cards';
+import blog from '../../public/imgs/blog_card_img.png'
+
 
 const BlogCards: React.FC = () => {
     return (
@@ -19,7 +21,7 @@ const BlogCards: React.FC = () => {
                             author="Jane Smith"
                             date="11 Jan 2022"
                             readTime="7 min read"
-                            imageUrl='../../public/imgs/blog_card_img.png'
+                            imageUrl={blog}
 
                             altText="Mobile phone displaying LangLore app with text 'Unlocking Languages | Exploring Cultures'"
                         />
