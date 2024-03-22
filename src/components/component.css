@@ -1,15 +1,5 @@
 body {
-    background-image: url('../../public/imgs/Background.png'); 
-    background-size: cover;
-    background-color: #00152A;
-    background-position: center;
-    background-repeat: no-repeat;
-    margin: 0;
-    font-family: 'Helvetica, sans-serif';
-    overflow-x: hidden; /* Add this line to remove horizontal scrollbar */
-    
-
-    
+    font-family: 'Helvetica, sans-serif';  
 } 
 
 
