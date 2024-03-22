@@ -6,7 +6,7 @@ import Sponser from "./Sponser";
 import BlogCards from "./BlogCards";
 const Home = () => {
   return (
-    <div style={{ fontFamily: 'Helvetica, sans-serif' }}  >
+    <div >
       <Hero/>
       <div className="mb-20">
       <CourseCard  />

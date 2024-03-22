@@ -11,7 +11,17 @@ export default {
         graytxt:"#94A8BD",
         iconcol:"#8EC0F3",
         yell:"#F9C714",
+        bluee:'#0779EB'
       },
+      fontFamily:{
+        custom:['Helvetica',"sans-serif"],
+      },
+      fontSize:{
+        mdheading:"1.8rem",
+        mdbutton:"1rem",
+        mdsubheading:"1rem",
+        mdsubsubheading:"0.9rem"
+      }
       
     },
   },
