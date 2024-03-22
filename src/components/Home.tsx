@@ -21,8 +21,6 @@ const Home = () => {
       <div className="m-10">
       <Sponser/>
       </div>
-    
-    
       <GetInTouch/>
     </div>
   );

@@ -4,6 +4,7 @@ import logo from '../../public/imgs/langlore.png'
 import { MdClose } from 'react-icons/md';
 
 
+
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -27,7 +28,7 @@ const Navbar: React.FC = () => {
           </div>
           <div className="hidden lg:flex items-center gap-[32px] text-[1.5rem]">
             <a href="#" className="text-white hover:text-gray-300">Courses</a>
-            <a href="#" className="text-white hover:text-gray-300">About Us</a>
+            <a href="/about" className="text-white hover:text-gray-300">About Us</a>
             <a href="#" className="text-white hover:text-gray-300">Blog</a>
             <a href="#" className="buttongradient px-6 py-2 rounded-[16px] hover:shadow-inner text-[1.5rem] tracking-wider text-white hover:text-pri">Sign in</a>
           </div>
