@@ -5,6 +5,7 @@ import NewsLetter from "./NewsLetter";
 import Sponser from "./Sponser";
 import BlogCards from "./BlogCards";
 const Home = () => {
+  
   return (
     <div>
       <Hero />

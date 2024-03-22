@@ -8,6 +8,10 @@ import { MdClose } from 'react-icons/md';
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
 
+  const handleClick = () => {
+    window.location.href = "/about"; 
+  }
+
   const toggleNavbar = () => {
     setIsOpen(!isOpen);
   };
@@ -28,7 +32,7 @@ const Navbar: React.FC = () => {
           </div>
           <div className="hidden lg:flex items-center gap-[32px] text-[1.2rem]">
             <a href="#" className="text-white hover:text-gray-300">Courses</a>
-            <a href="/about" className="text-white hover:text-gray-300">About Us</a>
+            <a href="/about" className="text-white hover:text-gray-300" onClick={handleClick}>About Us</a>
             <a href="#" className="text-white hover:text-gray-300">Blog</a>
             <a href="#" className="bg-bluee px-6 py-2 rounded-[16px] hover:shadow-inner text-[1.5rem] tracking-wider text-white hover:text-pri">Sign in</a>
           </div>
@@ -46,7 +50,7 @@ const Navbar: React.FC = () => {
         <MdClose size={30} />
       </button>
       <a href="#" className="block py-2 px-4 text-white hover:bg-gray-700">Courses</a>
-      <a href="#" className="block py-2 px-4 text-white hover:bg-gray-700">About Us</a>
+      <a href="#" className="block py-2 px-4 text-white hover:bg-gray-700" onClick={handleClick}>About Us</a>
       <a href="#" className="block py-2 px-4 text-white hover:bg-gray-700">Blog</a>
       <button className="bg-bluee px-8 py-4 rounded-[16px] hover:shadow-xl text-[2rem] tracking-wide text-white  max-md:text-mdsubsubheading max-md:py-2">
         Signup

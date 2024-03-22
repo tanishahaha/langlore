@@ -1,3 +1,4 @@
+import About_Home from "../components/AboutUsPage/About_Home";
 import Home from "../components/Home";
 import NotFoundScreen from "../components/NotFoundScreen";
 
@@ -16,4 +17,8 @@ export const routes: IRoutesData[] = [
     path: "*",
     component: NotFoundScreen,
   },
+  {
+    path: "/about",
+    component: About_Home,
+  }
 ];
