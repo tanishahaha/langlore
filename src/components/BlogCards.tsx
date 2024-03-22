@@ -34,7 +34,7 @@ const BlogCards: React.FC = () => {
                             author="Jane Smith"
                             date="11 Jan 2022"
                             readTime="7 min read"
-                            imageUrl="../../public/imgs/blog_card_img.png"
+                            imageUrl={blog}
                             altText="Mobile phone displaying LangLore app with text 'Unlocking Languages | Exploring Cultures'"
                         />
                     </div>
@@ -48,7 +48,7 @@ const BlogCards: React.FC = () => {
                         author="Jane Smith"
                         date="11 Jan 2022"
                         readTime="7 min read"
-                        imageUrl="../../public/imgs/blog_card_img.png"
+                        imageUrl={blog}
                         altText="Mobile phone displaying LangLore app with text 'Unlocking Languages | Exploring Cultures'"
                     />
                     </div>
@@ -59,7 +59,7 @@ const BlogCards: React.FC = () => {
                         author="Jane Smith"
                         date="11 Jan 2022"
                         readTime="7 min read"
-                        imageUrl="../../public/imgs/blog_card_img.png"
+                        imageUrl={blog}
                         altText="Mobile phone displaying LangLore app with text 'Unlocking Languages | Exploring Cultures'"
                     />
                 </div>
