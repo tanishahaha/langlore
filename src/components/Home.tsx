@@ -28,14 +28,7 @@ const Home = () => {
       <div className="mt-20">
         <GetInTouch />
       </div>
-<<<<<<< HEAD
-      <div className="m-10">
-      <Sponser/>
-      </div>
-      <GetInTouch/>
-=======
       <div className="h-[20vh] bg-pri blur-md max-sm:h-[10vh]"></div>
->>>>>>> e29aa5317864c2465d750966a40e8bb61e6651fa
     </div>
   );
 };
