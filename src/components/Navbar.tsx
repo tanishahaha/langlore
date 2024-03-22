@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { FaBars, FaTimes } from 'react-icons/fa';
-import logo from '../../public/imgs/langlore.png'
+import logo from '../../public/imgs/langlore.png';
 import { MdClose } from 'react-icons/md';
 
 
@@ -25,7 +25,7 @@ const Navbar: React.FC = () => {
               <FaBars className="text-white text-2xl cursor-pointer" onClick={toggleNavbar} />
             )}
           </div>
-          <div className="hidden lg:flex items-center gap-[32px] text-[1.5rem]">
+          <div className="hidden lg:flex items-center gap-[32px] text-[1.2rem]">
             <a href="#" className="text-white hover:text-gray-300">Courses</a>
             <a href="#" className="text-white hover:text-gray-300">About Us</a>
             <a href="#" className="text-white hover:text-gray-300">Blog</a>

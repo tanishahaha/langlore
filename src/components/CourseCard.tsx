@@ -8,10 +8,10 @@ const CourseCard: React.FC = () => {
     <div className="w-screen flex justify-center items-center">
       <div className="bg-bgcard bg-opacity-35 p-8 rounded-[2rem] shadow-lg max-w-screen-lg  text-white border border-white max-lg:bg-transparent max-lg:border-none">
         <div className="w-full flex flex-col justify-center items-center text-center mb-10">
-          <h2 className="text-white text-[2.5rem] font-semibold mb-1 max-md:text-mdheading">
+          <h2 className="text-white text-lgsubheading font-semibold mb-1 max-md:text-mdheading">
             Discover our Language Courses
           </h2>
-          <p className="text-[#8892B0] text-[1.2rem] max-md:text-mdsubheading">
+          <p className="text-[#8892B0] text-mdsubheading">
             Dive in, and learn an endangered language.
           </p>
         </div>

@@ -20,7 +20,11 @@ export default {
         mdheading:"1.8rem",
         mdbutton:"1rem",
         mdsubheading:"1rem",
-        mdsubsubheading:"0.9rem"
+        mdsubsubheading:"0.9rem",
+        lgheading:"2.2rem",
+        lgsubheading:"2rem",
+        lgbtn:"1.8rem",
+        lgsubsubheading:"1.4rem"
       }
       
     },

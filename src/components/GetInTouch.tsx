@@ -29,17 +29,18 @@ const GetInTouch: React.FC = () => {
   };
 
   return (
-    <div className="border-t border-white mx-auto p-4 sm:p-8 max-w-screen-lg custom-bgColor rounded-xl">
-      <h1 className="md:text-4xl text-2xl font-bold mb-4 text-white">Get in touch</h1>
-      <p className="mb-4 md:text-lg text-sm  sm:mb-8 text-white">Have any questions? We're here to help.</p>
+    <div className='w-full px-10 flex-wrap flex'>
+    <div className="border-t border-white mx-auto p-4 sm:p-8 max-w-screen-md custom-bgColor rounded-xl w-full">
+      <h1 className="md:text-4xl text-mdsubheading font-bold mb-4 text-white">Get in touch</h1>
+      <p className="mb-4 md:text-lg text-mdsubsubheading  sm:mb-8 text-white">Have any questions? We're here to help.</p>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4 ">
-        <input type="text" placeholder="First Name" className="custom-inputColor p-3 rounded-xl text-gray-300" />
-        <input type="text" placeholder="Last Name" className="custom-inputColor p-3 rounded-xl text-gray-300" />
-        <input type="email" placeholder="someone@gmail.com" className="custom-inputColor p-3 rounded-xl text-gray-300" />
-        <input type="tel" placeholder="+91 999-999-9999" className="custom-inputColor p-3 rounded-xl text-gray-300" />
+        <input type="text" placeholder="First Name" className="outline-none border border-gray-600 focus:border-white focus:placeholder-white custom-inputColor p-3 rounded-xl text-gray-300" />
+        <input type="text" placeholder="Last Name" className="outline-none border border-gray-600 focus:border-white focus:placeholder-white custom-inputColor p-3 rounded-xl text-gray-300" />
+        <input type="email" placeholder="someone@gmail.com" className="outline-none border border-gray-600 focus:border-white focus:placeholder-white custom-inputColor p-3 rounded-xl text-gray-300" />
+        <input type="tel" placeholder="+91 999-999-9999" className="outline-none border border-gray-600 focus:border-white focus:placeholder-white custom-inputColor p-3 rounded-xl text-gray-300" />
       </div>
       <div className="mb-4">
-        <select className="custom-inputColor p-3 rounded-xl text-gray-300 w-full">
+        <select className="custom-inputColor border-gray-600 p-3 rounded-xl text-gray-300 w-full outline-none border focus:border-white">
           <option>Select one...</option>
           <option>Select one...</option>
           <option>Select one...</option>
@@ -47,7 +48,7 @@ const GetInTouch: React.FC = () => {
         </select>
       </div>
       <div className="mb-4">
-        <textarea placeholder="Enter your message here." className="custom-textarea p-3 rounded-xl text-gray-300 w-full h-32"></textarea>
+        <textarea placeholder="Enter your message here." className="outline-none border border-gray-600 focus:border-white focus:placeholder-white custom-textarea p-3 rounded-xl text-gray-300 w-full h-32"></textarea>
       </div>
       <div className='md:grid grid-cols-2 '>
         <div className="flex items-center mb-4">
@@ -58,6 +59,8 @@ const GetInTouch: React.FC = () => {
       </div>
 
       {showPopup && <Popup onClose={handleClosePopup} />}
+    </div>
+
     </div>
   );
 }

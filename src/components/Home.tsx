@@ -6,24 +6,29 @@ import Sponser from "./Sponser";
 import BlogCards from "./BlogCards";
 const Home = () => {
   return (
-    <div >
-      <Hero/>
-      <div className="mb-20">
-      <CourseCard  />
+    <div>
+      <Hero />
+      <div className="mt-20">
+        <CourseCard />
+      </div>
+      <div className="h-[20vh] bg-pri blur-md max-sm:h-[10vh]"></div>
+      <div className="mt-20 ">
+        <BlogCards />
+      </div>
+      <div className="h-[20vh] bg-pri blur-md max-sm:h-[10vh]"></div>
 
+      <div className="mt-20">
+        <NewsLetter />
       </div>
-      <div className="m-10">
-      <BlogCards/>
+
+      <div className="mt-20 ">
+        <Sponser />
       </div>
-      <div className="mt-28">
-      <NewsLetter/>
+
+      <div className="mt-20">
+        <GetInTouch />
       </div>
-      <div className="m-10">
-      <Sponser/>
-      </div>
-    
-    
-      <GetInTouch/>
+      <div className="h-[20vh] bg-pri blur-md max-sm:h-[10vh]"></div>
     </div>
   );
 };
