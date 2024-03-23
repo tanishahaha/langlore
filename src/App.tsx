@@ -1,24 +1,47 @@
 // App.tsx (modifications)
 import RootLayout from "./Layout";
-import RouteManager from "./routes/RouteManager";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Home from "./components/Home";
+import About_Home from "./components/AboutUsPage/About_Home";
+import Sign_Home from "./components/Sign_page/Sign_Home";
+import NotFoundScreen from "./components/NotFoundScreen";
+import Blog_Home from "./components/Blog_Page/Blog_Home";
 
 const App = () => {
   return (
     <>
-      {isHomePage() ? ( 
-        <RootLayout>
-          <RouteManager />
-        </RootLayout>
-      ) : (
-        <RouteManager />
-      )}
+      <Router>
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <RootLayout>
+                <Home />
+              </RootLayout>
+            }
+          />
+          <Route
+            path="/about"
+            element={
+              <RootLayout>
+                <About_Home />
+              </RootLayout>
+            }
+          />
+          <Route
+            path="/blog"
+            element={
+              <RootLayout>
+                <Blog_Home />
+              </RootLayout>
+            }
+          />
+          <Route path="/signin" element={<Sign_Home />} />
+          <Route path="*" element={<NotFoundScreen />} />
+        </Routes>
+      </Router>
     </>
   );
 };
 
 export default App;
-
-function isHomePage() {
-  return (window.location.pathname === "/" || window.location.pathname === "/about"|| window.location.pathname === "/blog" || window.location.pathname === "/signin");
-}
-
