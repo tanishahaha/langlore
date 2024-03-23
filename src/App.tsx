@@ -1,17 +1,16 @@
 // App.tsx (modifications)
-
 import RootLayout from "./Layout";
 import RouteManager from "./routes/RouteManager";
 
 const App = () => {
   return (
     <>
-      {isHomePage() ? ( // Conditional rendering based on URL path
+      {isHomePage() ? ( 
         <RootLayout>
           <RouteManager />
         </RootLayout>
       ) : (
-        <RouteManager /> // Only render RouteManager for non-home routes
+        <RouteManager />
       )}
     </>
   );
@@ -19,10 +18,6 @@ const App = () => {
 
 export default App;
 
-// Helper function to check for home path
 function isHomePage() {
-  return window.location.pathname === "/";
+  return (window.location.pathname === "/" || window.location.pathname === "/about");
 }
-
-// RouteManager.tsx (no changes)
-// routesData.tsx (no changes)
