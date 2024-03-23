@@ -19,6 +19,6 @@ const App = () => {
 export default App;
 
 function isHomePage() {
-  return (window.location.pathname === "/" || window.location.pathname === "/about"|| window.location.pathname === "/blog");
+  return (window.location.pathname === "/" || window.location.pathname === "/about"|| window.location.pathname === "/blog" || window.location.pathname === "/signin");
 }
 
