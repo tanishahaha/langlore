@@ -1,7 +1,7 @@
 const About_Hero: React.FC = () => {
   return (
     <div className="px-4 h-[70vh] flex flex-col text-center  justify-center items-center w-full ">
-      <h1 className="md:text-lgsubheading w-full  text-mdheading text-white font-bold tracking-widest ">
+      <h1 className="md:text-4xl w-full  text-mdheading text-white font-bold tracking-widest ">
         Unlocking languages | Exploring Cultures
       </h1>
       <div className="w-full">

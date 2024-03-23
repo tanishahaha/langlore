@@ -82,7 +82,7 @@ const Team: React.FC = () => {
             image="../../public/imgs/Team.png"
           />
         </div>
-      </div>{" "}
+      </div>
     </div>
   );
 };
