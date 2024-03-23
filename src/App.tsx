@@ -1,5 +1,5 @@
 // App.tsx (modifications)
-import React from "react";
+
 import RootLayout from "./Layout";
 import RouteManager from "./routes/RouteManager";
 
