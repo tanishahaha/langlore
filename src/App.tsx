@@ -7,6 +7,7 @@ import Sign_Home from "./components/Sign_page/Sign_Home";
 import NotFoundScreen from "./components/NotFoundScreen";
 import Blog_Home from "./components/Blog_Page/Blog_Home";
 import ForgetPas from "./components/Sign_page/ForgetPas";
+import Signup from "./components/Sign_page/Signup";
 
 const App = () => {
   return (
@@ -45,6 +46,11 @@ const App = () => {
           <Route path="/forget" element={
             <RootLayout>
             <ForgetPas />
+          </RootLayout>
+          } />
+          <Route path="/signup" element={
+            <RootLayout>
+            <Signup />
           </RootLayout>
           } />
           <Route path="*" element={<NotFoundScreen />} />

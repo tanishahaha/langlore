@@ -16,7 +16,7 @@ const RootLayout: React.FC<IRootLayoutProps> = ({ children }) => {
       <main className="min-h-screen text-black">{children}</main>
 
       {
-        window.location.pathname !== '/signin'  && <Footer />
+        window.location.pathname !== '/signin'  && window.location.pathname !== '/signup' && <Footer />
       }
       </div>
     </>

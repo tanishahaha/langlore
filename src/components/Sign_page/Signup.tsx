@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 // import { Link } from 'react-router-dom';
 
-const Sign_Hero: React.FC = () => {
+const Signup: React.FC = () => {
     return (
         <div className="h-[70vh] flex items-center justify-center  border-white p-4">
             <div className="custom-bgColor p-8 rounded-2xl shadow-2xl border-t max-w-sm w-full">
@@ -40,21 +40,13 @@ const Sign_Hero: React.FC = () => {
                         className="bg-bluee hover:bg-bluee text-white  py-2 px-4 rounded-2xl focus:outline-none focus:shadow-outline w-full"
                         type="button"
                     >
-                        Sign in
+                        Create Account
                     </button>
                 </div>
-                <div className="mt-4">
-                    <Link
-                        className="bg-transparent hover:bg-blue-500 text-blue-200  hover:text-white py-2 px-4 border border-bluee hover:border-transparent rounded-xl w-full"
-                        type="button"
-                        to="/signup"
-                    >
-                        Don't have an account? Sign up
-                    </Link>
-                </div>
+               
             </div>
         </div>
     );
 }
 
-export default Sign_Hero;
+export default Signup;

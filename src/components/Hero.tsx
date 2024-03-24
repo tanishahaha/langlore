@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import sym from "/imgs/langlogo.png";
 
 const Hero = () => {
@@ -23,9 +24,9 @@ const Hero = () => {
               <button className="bg-bluee px-6 py-2 rounded-[16px] hover:shadow-inner text-lgbtn max-md:text-mdbutton tracking-wider text-white hover:text-pri  max-md:px-4 max-[375px]:text-[0.8rem]">
                 Learn More
               </button>
-              <button className="border border-bluee px-6 py-2 rounded-[16px] hover:shadow-inner text-lgbtn max-md:text-mdbutton text-[#27A1FC] hover:text-white hover:border-white max-md:px-4 max-[375px]:text-[0.8rem]">
+              <Link to="/signup" className="border border-bluee px-6 py-2 rounded-[16px] hover:shadow-inner text-lgbtn max-md:text-mdbutton text-[#27A1FC] hover:text-white hover:border-white max-md:px-4 max-[375px]:text-[0.8rem]">
                 Sign Up
-              </button>
+              </Link>
             </div>
           </div>
         </div>
