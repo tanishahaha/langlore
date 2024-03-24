@@ -36,7 +36,11 @@ const App = () => {
               </RootLayout>
             }
           />
-          <Route path="/signin" element={<Sign_Home />} />
+          <Route path="/signin" element={
+            <RootLayout>
+            <Sign_Home />
+          </RootLayout>
+          } />
           <Route path="*" element={<NotFoundScreen />} />
         </Routes>
       </Router>

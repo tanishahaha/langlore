@@ -10,13 +10,13 @@ const RootLayout: React.FC<IRootLayoutProps> = ({ children }) => {
     <>
       <div className="w-screen flex flex-col flex-wrap text-white backgroun">
       {
-        window.location.pathname !== '/login' && window.location.pathname !== '/signup' && <Navbar />
+         <Navbar />
       } 
         
       <main className="min-h-screen text-black">{children}</main>
 
       {
-        window.location.pathname !== '/login' && window.location.pathname !== '/signup' && <Footer />
+        window.location.pathname !== '/signin'  && <Footer />
       }
       </div>
     </>
