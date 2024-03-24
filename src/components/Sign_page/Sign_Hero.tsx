@@ -28,7 +28,7 @@ const Sign_Hero: React.FC = () => {
                       {/* <Link to="/forgot-password" className="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-400">
                         Forgot password?
                     </Link> */}
-                     <a href="#" className="inline-block align-baseline  text-sm text-blue-500 hover:text-blue-400">
+                     <a href="#" className="inline-block align-baseline  text-sm text-bluee hover:text-blue-400">
                         Forgot password?
                     </a>
 
@@ -36,7 +36,7 @@ const Sign_Hero: React.FC = () => {
                 </div>
                 <div className="flex items-center justify-between">
                     <button
-                        className="bg-blue-600 hover:bg-blue-700 text-white  py-2 px-4 rounded-2xl focus:outline-none focus:shadow-outline w-full"
+                        className="bg-bluee hover:bg-bluee text-white  py-2 px-4 rounded-2xl focus:outline-none focus:shadow-outline w-full"
                         type="button"
                     >
                         Sign in
@@ -44,7 +44,7 @@ const Sign_Hero: React.FC = () => {
                 </div>
                 <div className="mt-4">
                     <button
-                        className="bg-transparent hover:bg-blue-500 text-blue-200  hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded-xl w-full"
+                        className="bg-transparent hover:bg-blue-500 text-blue-200  hover:text-white py-2 px-4 border border-bluee hover:border-transparent rounded-xl w-full"
                         type="button"
                     >
                         Don't have an account? Sign up
