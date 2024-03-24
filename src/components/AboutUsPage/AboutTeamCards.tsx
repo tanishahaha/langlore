@@ -1,6 +1,6 @@
 import React from "react";
 import TeamMember from "./AboutCards";
-import team from "../../public/imgs/Team.png";
+import team from "../../../public/imgs/Team.png";
 
 const Team: React.FC = () => {
   return (
