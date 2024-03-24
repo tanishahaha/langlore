@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 // import { Link } from 'react-router-dom';
 
 const Sign_Hero: React.FC = () => {
@@ -28,9 +29,9 @@ const Sign_Hero: React.FC = () => {
                       {/* <Link to="/forgot-password" className="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-400">
                         Forgot password?
                     </Link> */}
-                     <a href="#" className="inline-block align-baseline  text-sm text-bluee hover:text-blue-400">
+                     <Link to="/forget" className="inline-block align-baseline  text-sm text-bluee hover:text-blue-400" >
                         Forgot password?
-                    </a>
+                    </Link>
 
 
                 </div>
