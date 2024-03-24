@@ -1,5 +1,6 @@
 import React from "react";
 import TeamMember from "./AboutCards";
+import team from '../../../public/imgs/Team.png';
 
 const Team: React.FC = () => {
   return (
@@ -24,7 +25,7 @@ const Team: React.FC = () => {
             linkedin="#"
             twitter="#"
             website="#"
-            image="../../../public/imgs/Team.png"
+            image={team}
           />
         </div>
         <div className="lg:w-1/3 md:w-full  mb-8">
