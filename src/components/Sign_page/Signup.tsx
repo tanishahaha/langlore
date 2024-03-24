@@ -29,9 +29,6 @@ const Signup: React.FC = () => {
                       {/* <Link to="/forgot-password" className="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-400">
                         Forgot password?
                     </Link> */}
-                     <Link to="/forget" className="inline-block align-baseline  text-sm text-bluee hover:text-blue-400" >
-                        Forgot password?
-                    </Link>
 
 
                 </div>
