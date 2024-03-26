@@ -1,14 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import "./component.css";
 
 const Popup: React.FC<{ onClose: () => void }> = ({ onClose }) => {
   return (
-    <div  className="fixed top-0   left-0 w-full h-full flex items-center justify-center bg-gray-800 bg-opacity-50">
-    <div className="bg-gray-800 text-white rounded-lg shadow-lg p-8 flex flex-col items-center border border-white">
-      <h1 className="text-lg font-semibold mb-4">Thank you for contacting us!</h1>
-      <p className="text-sm mb-4">We will get in touch with you soon.</p>
-      <button onClick={onClose} className="bg-blue-600 hover:bg-blue-700 text-white  py-2 px-4 rounded-xl">
-        Back to home
+    <div className="popup-container">
+      <div className="popup-content bg-gray-800 text-white rounded-lg shadow-lg p-8 items-center border border-whit">
+        <h1 className="text-lg font-semibold mb-4">Thank you for contacting us!</h1>
+        <p className="text-sm mb-4">We will get in touch with you soon.</p>
+        <button onClick={onClose} className="bg-blue-600 hover:bg-blue-700 text-white  py-2 px-4 rounded-xl">
+          Back to home
         </button>
       </div>
     </div>
@@ -19,14 +19,20 @@ const GetInTouch: React.FC = () => {
   const [showPopup, setShowPopup] = useState(false);
 
   const handleSubmit = () => {
-    // Logic for form submission can go here
-    // For now, we'll just show the pop-up
     setShowPopup(true);
   };
 
   const handleClosePopup = () => {
     setShowPopup(false);
   };
+
+  useEffect(() => {
+    if (showPopup) {
+      document.body.style.overflow = 'hidden'; // Disable scrolling
+    } else {
+      document.body.style.overflow = ''; // Enable scrolling
+    }
+  }, [showPopup]);
 
   return (
     <div className='w-full px-10 flex-wrap flex'>
@@ -60,7 +66,6 @@ const GetInTouch: React.FC = () => {
 
       {showPopup && <Popup onClose={handleClosePopup} />}
     </div>
-
     </div>
   );
 }
