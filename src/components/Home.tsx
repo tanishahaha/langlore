@@ -4,6 +4,7 @@ import CourseCard from "./CourseCard";
 import NewsLetter from "./NewsLetter";
 import Sponser from "./Sponser";
 import BlogCards from "./BlogCards";
+import Courses from "./Courses";
 const Home = () => {
   
   return (
@@ -11,6 +12,7 @@ const Home = () => {
       <Hero />
       <div className="mt-20">
         <CourseCard />
+        {/* <Courses/> */}
       </div>
       <div className="h-[20vh] bg-pri blur-md max-sm:h-[10vh]"></div>
       <div className="mt-20 ">
