@@ -4,6 +4,7 @@ import CourseCard from "./CourseCard";
 import NewsLetter from "./NewsLetter";
 import Sponser from "./Sponser";
 import BlogCards from "./BlogCards";
+import BackGround from "./BackGround";
 const Home = () => {
   
   return (
@@ -30,6 +31,7 @@ const Home = () => {
         <GetInTouch />
       </div>
       <div className="h-[20vh] bg-pri blur-md max-sm:h-[10vh]"></div>
+{/* <BackGround/> */}
     </div>
   );
 };
