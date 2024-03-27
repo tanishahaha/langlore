@@ -8,9 +8,9 @@ import "./component.css";
 
 const Sponser: React.FC = () => {
   return (
-    <div className="w-full flex flex-wrap justify-center">
+    <div className="w-full flex flex-wrap justify-center my-10">
       <div className="flex flex-col items-center justify-center w-full">
-        <div className="text-white font-medium mb-8 text-lgsubheading max-md:text-mdsubheading">
+        <div className="text-gray-400 font-medium mb-8 text-xl max-md:text-mdsubheading">
           Recognised for our work by
         </div>
         <div className="custom-bgColor tech-slideshow py-6 px-3 rounded-xl max-md:rounded-none flex items-center space-x-8 justify-center logos-container  max-w-screen-lg w-full">

@@ -5,7 +5,7 @@ const About_Hero: React.FC = () => {
         Unlocking languages | Exploring Cultures
       </h1>
       <div className="w-full">
-        <h1 className="md:text-lgsubheading  text-mdsubheading  text-gray-400  ">
+        <h1 className="md:text-xl mt-2  text-mdsubheading  text-gray-400  ">
           Giving endangered languages and their culture a voice, one lesson at a
           time
         </h1>

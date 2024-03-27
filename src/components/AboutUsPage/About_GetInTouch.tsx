@@ -10,7 +10,7 @@ const About_GetInTouch: React.FC = () => {
          </h1>
        </div>
        <button // Use button instead of Link
-         className="bg-bluee text-semibold mt-8 px-6 py-2 rounded-full max-md:text-mdbutton text-lgbtn text-white hover:text-pri"
+         className="border-bluee border-2 text-semibold mt-8 px-6 py-2 rounded-2xl max-md:text-mdbutton text-xl text-blue-500 "
        >
          Contact Us
        </button>

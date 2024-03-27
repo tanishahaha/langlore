@@ -18,7 +18,9 @@ const Navbar: React.FC = () => {
       <div className="">
         <div className="flex justify-between items-center max-md:bg-bgcard max-md:bg-opacity-15 max-md:px-8 max-md:py-2 max-md:rounded-lg max-md:border max-md:border-graytxt max-md:shadow-lg">
           <div className="flex items-center">
-            <img src={logo} alt="Logo" className="h-[2rem] w-auto mr-2 max-md:h-[1rem] max-[375px]:h-[0.8rem]" />
+          <Link to="/" className="cursor-pointer">
+              <img src={logo} alt="Logo" className="h-[2rem] w-auto mr-2 max-md:h-[1rem] max-[375px]:h-[0.8rem]" />
+            </Link>
           </div>
           <div className="lg:hidden">
             {isOpen ? (

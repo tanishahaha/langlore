@@ -5,7 +5,7 @@ const About_Course: React.FC = () => {
         Reviving Endangered Languages Through Education and Technology
       </h1>
       <div className="w-full md:w-1/2">
-        <h1 className="md:text-lgsubsubheading  mdsubheading  text-gray-400  ">
+        <h1 className="md:text-xl  mdsubheading  text-gray-400  ">
           At LangLore, we are on a mission to preserve endangered languages by
           providing e-learning courses on our platform. Our goal is to revive
           these languages and ensure their cultural heritage lives on for future
