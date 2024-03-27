@@ -4,7 +4,11 @@ import CourseCard from "./CourseCard";
 import NewsLetter from "./NewsLetter";
 import Sponser from "./Sponser";
 import BlogCards from "./BlogCards";
+<<<<<<< HEAD
 import Courses from "./Courses";
+=======
+import BackGround from "./BackGround";
+>>>>>>> 015f75f55f99c874f9f838ea253a8678c0054b25
 const Home = () => {
   
   return (
@@ -32,6 +36,7 @@ const Home = () => {
         <GetInTouch />
       </div>
       <div className="h-[20vh] bg-pri blur-md max-sm:h-[10vh]"></div>
+{/* <BackGround/> */}
     </div>
   );
 };
