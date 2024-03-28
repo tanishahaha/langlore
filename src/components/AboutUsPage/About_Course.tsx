@@ -13,7 +13,7 @@ const About_Course: React.FC = () => {
         </h1>
       </div>
       <button // Use button instead of Link
-        className="bg-bluee text-semibold mt-8 px-6 py-2 rounded-full  max-md:text-mdbutton text-lgbtn  text-white hover:text-pri"
+        className="custom-button mt-6 "
       >
         Explore All Courses
       </button>

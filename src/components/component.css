@@ -8,7 +8,40 @@ body {
     src: url('../../public/HelveticaNowDisplay-Regular.woff2') format('woff2');
       
   }
+  .custom-button {
+    background-color: #0779EB; /* Blue background color */
+    font-size: 1.2rem; 
+    color: white; 
+    padding: 8px 20px; 
+    border: none; 
+    border-radius: 10px; 
+    cursor: pointer; 
+    letter-spacing: 0.05em;
+    margin: 2px; 
+  }
   
+  .custom-button:hover {
+    color: #000000; /* Text color on hover */
+  }
+  
+  @media (max-width: 768px) {
+    /* Adjust font size and padding for specific elements */
+    .custom-button {
+      font-size: 1rem; /* Font size */
+      padding-left: 1rem; /* Padding */
+      padding-right: 1rem; /* Padding */
+    }
+  }
+  
+  @media (max-width: 375px) {
+    /* Adjust font size for specific elements */
+    .custom-button {
+      font-size: .8rem; /* Font size */
+    }
+  }
+  
+
+/* bg-bluee px-6 py-2 rounded-[16px] hover:shadow-inner text-[1.5rem] tracking-wider text-white hover:text-pri */
 
 .custom-bgColor {
     background-color: #132638;
@@ -16,7 +49,7 @@ body {
     border-radius: 8px;
   }
 
- 
+
 
   .custom-inputColor {
     background-color: #20364A;
@@ -56,15 +89,32 @@ body {
     text-align: center;
   }
   
+
+  /* bg blinking */
+  
+  @keyframes blink-animation {
+    0% { opacity: 1; }
+    50% { opacity: 0.5; }
+    100% { opacity: 1; }
+  }
+  
+  .blink {
+    animation: blink-animation 1s ease-in-out infinite;
+  }
+  
+  .image-container {
+    display: inline-block;
+  }
+  
   
 
 
   @keyframes slideLeftToRight {
     0% {
-      transform: translateX(0);
+      transform: translateX(100%);
     }
     100% {
-      transform: translateX(100%);
+      transform: translateX(0%);
     }
   }
   
@@ -75,12 +125,13 @@ body {
   
   .logo {
     flex-shrink: 0;
+    animation: slideLeftToRight 10s linear infinite; 
   }
   
-  /* Media query for screens smaller than 768px (typical mobile devices) */
-  @media (max-width: 767px) {
+
+  /* @media (max-width: 767px) {
     .logo {
-      animation: slideLeftToRight 10s linear infinite; /* Adjusted duration for smoother movement */
+      animation: slideLeftToRight 10s linear infinite; 
     }
   
     .logos-container {
@@ -88,6 +139,8 @@ body {
       padding: 0 20px;
       box-sizing: border-box;
     }
-  }
+  } */
   
+  
+   
   

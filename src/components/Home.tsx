@@ -4,7 +4,7 @@ import CourseCard from "./CourseCard";
 import NewsLetter from "./NewsLetter";
 import Sponser from "./Sponser";
 import BlogCards from "./BlogCards";
-import BackGround from "./BackGround";
+// import BackGround from "./BackGround";
 const Home = () => {
   
   return (

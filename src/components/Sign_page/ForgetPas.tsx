@@ -1,5 +1,6 @@
 // ForgetPas.tsx
 import React from 'react';
+import '../component.css'
 
 const ForgetPas: React.FC = () => {
     return (
@@ -20,8 +21,8 @@ const ForgetPas: React.FC = () => {
 
                 <div className="flex items-center justify-between">
                     <button
-                        className="bg-bluee hover:bg-blue-700 text-white py-2 px-4 rounded-2xl focus:outline-none focus:shadow-outline w-full"
-                        type="submit"
+                        className="custom-button w-full text-[1rem]"
+                       
                     >
                         Reset Password
                     </button>

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import '../component.css'
 // import { Link } from 'react-router-dom';
 
 const Sign_Hero: React.FC = () => {
@@ -36,9 +37,8 @@ const Sign_Hero: React.FC = () => {
 
                 </div>
                 <div className="flex items-center justify-between">
-                    <button
-                        className="bg-bluee hover:bg-bluee text-white  py-2 px-4 rounded-2xl focus:outline-none focus:shadow-outline w-full"
-                        type="button"
+                    <button className="custom-button w-full text-[1rem]"
+              
                     >
                         Sign in
                     </button>

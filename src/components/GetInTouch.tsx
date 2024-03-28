@@ -61,7 +61,7 @@ const GetInTouch: React.FC = () => {
           <input type="checkbox" id="agree" className="custom-checkbox" />
           <label htmlFor="agree" className="ml-2 text-gray-300">I agree to the terms</label>
         </div>
-        <button onClick={handleSubmit} className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-5 rounded-2xl w-full">Submit</button>
+        <button onClick={handleSubmit} className="custom-button w-full">Submit</button>
       </div>
 
       {showPopup && <Popup onClose={handleClosePopup} />}

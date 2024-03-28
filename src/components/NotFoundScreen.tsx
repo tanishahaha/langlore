@@ -14,7 +14,7 @@ const NotFoundScreen: React.FC = () => {
         <h1 className="text-[128px] tracking-widest max-md:text-[80px]">404</h1>
         <h1 className="text-[32px] tracking-wider max-md:text-mdheading">Oops! It looks like you’re lost.</h1>
 
-        <Link to="/" className="buttongradient mt-8 px-8 py-4 rounded-[16px] hover:shadow-inner text-[1.5rem] tracking-widest text-white hover:text-pri max-md:text-mdbutton"
+        <Link to="/" className="custom-button mt-6 "
         >
           Take me home
         </Link>

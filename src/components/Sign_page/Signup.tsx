@@ -32,8 +32,8 @@ const Signup: React.FC = () => {
                 </div>
                 <div className="flex items-center justify-between">
                     <button
-                        className="bg-bluee hover:bg-bluee text-white  py-2 px-4 rounded-2xl focus:outline-none focus:shadow-outline w-full"
-                        type="button"
+                        className="custom-button w-full text-[1rem]"
+                        
                     >
                         Create Account
                     </button>
