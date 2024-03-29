@@ -8,6 +8,7 @@ import NotFoundScreen from "./components/NotFoundScreen";
 import Blog_Home from "./components/Blog_Page/Blog_Home";
 import ForgetPas from "./components/Sign_page/ForgetPas";
 import Signup from "./components/Sign_page/Signup";
+import Courses from "./components/Courses";
 
 const App = () => {
   return (
@@ -51,6 +52,11 @@ const App = () => {
           <Route path="/signup" element={
             <RootLayout>
             <Signup />
+          </RootLayout>
+          } />
+          <Route path="/courses" element={
+            <RootLayout>
+              <Courses />
           </RootLayout>
           } />
           <Route path="*" element={<NotFoundScreen />} />

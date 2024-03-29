@@ -4,7 +4,7 @@ import '../component.css'
 
 const ForgetPas: React.FC = () => {
     return (
-        <div className="h-screen flex items-center justify-center">
+        <div className="h-[70vh] flex items-center justify-center">
             <form className="custom-bgColor p-8 rounded-2xl shadow-2xl border-t max-w-sm w-full">
 
                 <div className="mb-4">

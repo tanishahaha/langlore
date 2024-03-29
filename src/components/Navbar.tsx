@@ -30,7 +30,7 @@ const Navbar: React.FC = () => {
             )}
           </div>
           <div className="hidden lg:flex items-center gap-[32px] text-[1.2rem]">
-            <Link to="/dj" className="text-white hover:text-gray-300">Courses</Link>
+            <Link to="/courses" className="text-white hover:text-gray-300">Courses</Link>
             <Link to="/about" className="text-white hover:text-gray-300" >About Us</Link>
             <Link to="/blog" className="text-white hover:text-gray-300" >Blog</Link>
             <Link to="/signin" className="custom-button ">Sign in</Link>
@@ -48,7 +48,7 @@ const Navbar: React.FC = () => {
       >
         <MdClose size={30} />
       </button>
-      <Link to="/jh" className="block py-2 px-4 text-white hover:bg-gray-700" onClick={toggleNavbar}>Courses</Link>
+      <Link to="/courses" className="block py-2 px-4 text-white hover:bg-gray-700" onClick={toggleNavbar}>Courses</Link>
       <Link to="/about" className="block py-2 px-4 text-white hover:bg-gray-700" onClick={toggleNavbar}>About Us</Link>
       <Link to="/blog" className="block py-2 px-4 text-white hover:bg-gray-700" onClick={toggleNavbar}>Blog</Link>
       <Link to='/signin' className="custom-button " onClick={toggleNavbar}>

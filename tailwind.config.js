@@ -11,7 +11,8 @@ export default {
         graytxt:"#94A8BD",
         iconcol:"#8EC0F3",
         yell:"#F9C714",
-        bluee:'#0779EB'
+        bluee:'#0779EB',
+        lightblue:'#9CCEFF'
       },
       fontFamily:{
         custom:['Helvetica',"sans-serif"],
