@@ -1,4 +1,4 @@
-import React from 'react';
+// import React from 'react';
 // import './App.css';
 import halfCircleImage from '../../public/imgs/languagestube.png'; // Import your half-circle image here
 
