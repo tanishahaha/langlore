@@ -4,9 +4,8 @@ import CourseCard from "./CourseCard";
 import NewsLetter from "./NewsLetter";
 import Sponser from "./Sponser";
 import BlogCards from "./BlogCards";
-import Courses from "./Courses";
 import BackGround from "./BackGround";
-import Test from "./test";
+import Courses from "./Courses";
 const Home = () => {
   
   return (

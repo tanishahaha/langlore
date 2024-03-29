@@ -56,7 +56,7 @@ const CourseCard: React.FC = () => {
                   </span>
                 </span>
                 <div className="flex gap-2 items-center my-4 max-lg:flex-col max-lg:justify-center ">
-                  <button className="bg-bluee text-white px-8 py-3 rounded-full text-[1.1rem] hover:shadow-2xl max-md:text-mdsubheading">
+                  <button className="custom-button ">
                     Join the course
                   </button>
                   <span className="text-yell text-[1.1rem]  max-md:text-mdsubsubheading">

@@ -22,10 +22,10 @@ const Hero = () => {
               Preserving endangered languages
             </h1>
             <div className="flex w-full gap-8 flex-wrap items-center justify-center">
-              <button className="bg-bluee px-6 py-2 rounded-[16px] hover:shadow-inner text-lgbtn max-md:text-mdbutton tracking-wider text-white hover:text-pri  max-md:px-4 max-[375px]:text-[0.8rem]">
+              <button className="custom-button">
                 Learn More
               </button>
-              <Link to="/signup" className="border border-bluee px-6 py-2 rounded-[16px] hover:shadow-inner text-lgbtn max-md:text-mdbutton text-[#27A1FC] hover:text-white hover:border-white max-md:px-4 max-[375px]:text-[0.8rem]">
+              <Link to="/signup" className="custom-border-button">
                 Sign Up
               </Link>
             </div>
@@ -49,10 +49,10 @@ const Hero = () => {
               Preserving endangered languages
             </h1>
             <div className="flex w-full gap-2 flex-wrap items-center justify-center">
-              <button className="bg-bluee px-4 py-1 rounded-[16px] hover:shadow-inner text-mdbutton tracking-wider text-white hover:text-pri ">
+              <button className="custom-button">
                 Learn More
               </button>
-              <Link to="/signup" className="border border-bluee px-4 py-1 rounded-[16px] hover:shadow-inner text-mdbutton  text-[#27A1FC] hover:text-white hover:border-white ">
+              <Link to="/signup" className="custom-border-button">
                 Sign Up
               </Link>
             </div>

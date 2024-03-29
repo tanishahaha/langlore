@@ -3,54 +3,49 @@ import SF1 from '../../public/imgs/subframe1.png';
 import SF2 from '../../public/imgs/subframe2.png';
 import SF3 from '../../public/imgs/subframe3.png';
 
-interface SubFrameProps {
-  src: string;
-  alt: string;
-}
+const images = [SF1, SF2, SF3, SF1, SF2, SF3, SF1, SF2, SF3, SF1, SF2, SF3, SF1, SF2, SF3, SF1, SF2, SF3, SF1, SF2];
 
-const SubFrame: React.FC<SubFrameProps> = ({ src, alt }) => {
+// Function to shuffle an array
+const shuffleArray = (array: any[]) => {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+  return array;
+};
+
+// Shuffle the images array
+const shuffledImages = shuffleArray([...images]);
+
+// Function to generate random boolean values
+const getRandomBoolean = () => Math.random() < 0.07; // Set a 4% probability of returning true
+
+const VerticalStrip: React.FC<{ images: string[] }> = ({ images }) => {
   return (
-    <div className="bg-[#00152A] p-1 shadow-lg">
-      <img src={src} alt={alt} className="max-w-full max-h-full" />
+    <div className="flex flex-col items-center justify-center mx-2">
+      {images.map((image, index) => (
+        <div key={index} className="image-container">
+          <img
+            src={image}
+            alt={`Image ${index}`}
+            className={`h-3 w-auto my-4 opacity-50 mb-2 ${getRandomBoolean() ? 'blink' : ''}`} // Conditionally apply blinking animation
+          />
+        </div>
+      ))}
     </div>
   );
 };
 
-interface MainFrameProps {
-  children: React.ReactNode;
-  backgroundColor: string;
-}
-
-const MainFrame: React.FC<MainFrameProps> = ({ children, backgroundColor }) => {
+const Background: React.FC = () => {
   return (
-    <div className={`bg-${backgroundColor} p-4 h-screen overflow-y-auto`}>
-      {children}
-    </div>
-  );
-};
-
-const BackGround: React.FC = () => {
-  return (
-    <MainFrame backgroundColor="">
-      <div className='w-[2px]'>
-        <SubFrame src={SF1} alt="Image 1" />
+    <div className="bg-[#001528]  h-screen flex justify-center items-center">
+      <div className="py-4 px-2 gap-12 flex">
+        {[...Array(18)].map((_, index) => (
+          <VerticalStrip key={index} images={shuffledImages} />
+        ))}
       </div>
-      <SubFrame src={SF2} alt="Image 2" />
-      <SubFrame src={SF3} alt="Image 3" />
-      <SubFrame src={SF1} alt="Image 1" />
-      <SubFrame src={SF2} alt="Image 2" />
-      <SubFrame src={SF3} alt="Image 3" />
-      <SubFrame src={SF1} alt="Image 1" />
-      <SubFrame src={SF2} alt="Image 2" />
-      <SubFrame src={SF3} alt="Image 3" />
-      <SubFrame src={SF1} alt="Image 1" />
-      <SubFrame src={SF2} alt="Image 2" />
-      <SubFrame src={SF3} alt="Image 3" />
-      <SubFrame src={SF1} alt="Image 1" />
-      <SubFrame src={SF2} alt="Image 2" />
-      <SubFrame src={SF3} alt="Image 3" />
-    </MainFrame>
+    </div>
   );
 };
 
-export default BackGround;
+export default Background;
