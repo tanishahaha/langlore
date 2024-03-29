@@ -4,16 +4,15 @@ import CourseCard from "./CourseCard";
 import NewsLetter from "./NewsLetter";
 import Sponser from "./Sponser";
 import BlogCards from "./BlogCards";
-<<<<<<< HEAD
 import Courses from "./Courses";
-=======
 import BackGround from "./BackGround";
->>>>>>> 015f75f55f99c874f9f838ea253a8678c0054b25
+import Test from "./test";
 const Home = () => {
   
   return (
     <div>
       <Hero />
+      {/* <Test/> */}
       <div className="mt-20">
         <CourseCard />
         {/* <Courses/> */}

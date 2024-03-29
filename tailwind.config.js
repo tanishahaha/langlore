@@ -17,13 +17,13 @@ export default {
         custom:['Helvetica',"sans-serif"],
       },
       fontSize:{
-        mdheading:"1.8rem",
+        mdheading:"1.5rem",
         mdbutton:"1rem",
         mdsubheading:"1rem",
         mdsubsubheading:"0.9rem",
-        lgheading:"2.2rem",
-        lgsubheading:"2rem",
-        lgbtn:"1.8rem",
+        lgheading:"1.8rem",
+        lgsubheading:"1.5rem",
+        lgbtn:"1.2rem",
         lgsubsubheading:"1.4rem"
       }
       
