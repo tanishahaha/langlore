@@ -19,7 +19,7 @@ const Hero = () => {
               />
             </div>
             <h1 className="text-lgheading font-bold mb-5 tracking-wider max-xl:text-[2rem] max-lg:text-mdheading max-[375px]:text-[1.2rem]">
-              Preserving endangered languages
+              Preserving endangere languages
             </h1>
             <div className="flex w-full gap-8 flex-wrap items-center justify-center">
               <button className="custom-button">
