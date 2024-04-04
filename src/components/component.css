@@ -9,7 +9,7 @@ body {
       
   }
   .custom-button {
-    background-color: #0779EB; /* Blue background color */
+    background-color: #0779EB; 
     font-size: 1.2rem; 
     color: white; 
     padding: 8px 20px; 
@@ -21,7 +21,7 @@ body {
   }
 
   .custom-border-button {
-    background-color: transparent; /* Blue background color */
+    background-color: transparent; 
     font-size: 1.2rem; 
     color: #0779EB; 
     padding: 8px 20px; 
@@ -33,34 +33,34 @@ body {
   }
   .custom-border-button:hover{
     color: white;
-    /* border: 1px solid white; */
+    
   }
   
   .custom-button:hover {
-    color: #000000; /* Text color on hover */
+    color: #000000; /
   }
   
   @media (max-width: 768px) {
-    /* Adjust font size and padding for specific elements */
+
     .custom-button {
-      font-size: 1rem; /* Font size */
-      padding-left: 1rem; /* Padding */
-      padding-right: 1rem; /* Padding */
+      font-size: 1rem; 
+      padding-left: 1rem; 
+      padding-right: 1rem; 
     }
     .custom-border-button {
-      font-size: 1rem; /* Font size */
-      padding-left: 1rem; /* Padding */
-      padding-right: 1rem; /* Padding */
+      font-size: 1rem; 
+      padding-left: 1rem; 
+      padding-right: 1rem; 
     }
   }
   
   @media (max-width: 375px) {
-    /* Adjust font size for specific elements */
+
     .custom-button {
-      font-size: .8rem; /* Font size */
+      font-size: .8rem; 
     }
     .custom-border-button {
-      font-size: .8rem; /* Font size */
+      font-size: .8rem; 
     }
   }
   
@@ -77,19 +77,19 @@ body {
 
   .custom-inputColor {
     background-color: #20364A;
-    color: white; /* Text color for input boxes */
+    color: white; 
   }
-  /* For desktop view */
+
 .hide-on-mobile {
   background-color: #20364A;
   color: white;
   border-radius: 12px;
 }
 
-/* For mobile view */
+
 @media only screen and (max-width: 768px) {
   .hide-on-mobile {
-    display: none !important; /* Hide the element in mobile view */
+    display: none !important;
   }
 }
 
@@ -99,17 +99,17 @@ body {
   }
 }
 
-  /* Text area color */
+
   .custom-textarea {
     background-color: #20364A;
-    color: white; /* Text color for text area */
+    color: white; 
   }
   
-  /* Checkbox color */
+  
   .custom-checkbox {
-    background-color: #203549; /* Checkbox background color */
-    border-color: #20364A; /* Checkbox border color */
-    color: white; /* Text color for checkbox */
+    background-color: #203549; 
+    border-color: #20364A; 
+    color: white; 
   }
   
   .popup-container {
