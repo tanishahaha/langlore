@@ -1,6 +1,6 @@
-// App.tsx (modifications)
-import RootLayout from "./Layout";
+import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import RootLayout from "./Layout";
 import Home from "./components/Home";
 import About_Home from "./components/AboutUsPage/About_Home";
 import Sign_Home from "./components/Sign_page/Sign_Home";
@@ -11,58 +11,73 @@ import Signup from "./components/Sign_page/Signup";
 import Courses from "./components/Courses";
 
 const App = () => {
+  // Scroll to the top of the page on route transitions
+  React.useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
-    <>
-      <Router>
-        <Routes>
-          <Route
-            path="/"
-            element={
-              <RootLayout>
-                <Home />
-              </RootLayout>
-            }
-          />
-          <Route
-            path="/about"
-            element={
-              <RootLayout>
-                <About_Home />
-              </RootLayout>
-            }
-          />
-          <Route
-            path="/blog"
-            element={
-              <RootLayout>
-                <Blog_Home />
-              </RootLayout>
-            }
-          />
-          <Route path="/signin" element={
+    <Router>
+      <Routes>
+        <Route
+          path="/"
+          element={
             <RootLayout>
-            <Sign_Home />
-          </RootLayout>
-          } />
-          <Route path="/forget" element={
+              <Home />
+            </RootLayout>
+          }
+        />
+        <Route
+          path="/about"
+          element={
             <RootLayout>
-            <ForgetPas />
-          </RootLayout>
-          } />
-          <Route path="/signup" element={
+              <About_Home />
+            </RootLayout>
+          }
+        />
+        <Route
+          path="/blog"
+          element={
             <RootLayout>
-            <Signup />
-          </RootLayout>
-          } />
-          <Route path="/courses" element={
+              <Blog_Home />
+            </RootLayout>
+          }
+        />
+        <Route
+          path="/signin"
+          element={
+            <RootLayout>
+              <Sign_Home />
+            </RootLayout>
+          }
+        />
+        <Route
+          path="/forget"
+          element={
+            <RootLayout>
+              <ForgetPas />
+            </RootLayout>
+          }
+        />
+        <Route
+          path="/signup"
+          element={
+            <RootLayout>
+              <Signup />
+            </RootLayout>
+          }
+        />
+        <Route
+          path="/courses"
+          element={
             <RootLayout>
               <Courses />
-          </RootLayout>
-          } />
-          <Route path="*" element={<NotFoundScreen />} />
-        </Routes>
-      </Router>
-    </>
+            </RootLayout>
+          }
+        />
+        <Route path="*" element={<NotFoundScreen />} />
+      </Routes>
+    </Router>
   );
 };
 

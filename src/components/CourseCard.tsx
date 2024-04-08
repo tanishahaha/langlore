@@ -90,7 +90,7 @@ const CourseCard: React.FC = () => {
               ) : (
                 showInput && (
                   <div className="flex flex-col">
-                    <h2 className="font-semibold text-lg my-2 text-graytxt">
+                    <h2 className="font-semibold md:text-lg text-sm my-2 text-center md:text-start text-graytxt">
                       Get notified about our upcoming courses
                     </h2>
                     <div className="hide-on-desktop">
