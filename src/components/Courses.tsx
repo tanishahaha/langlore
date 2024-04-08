@@ -5,8 +5,8 @@ import { GoDash } from "react-icons/go";
 
 const Courses = () => {
   return (
-    <div className="w-screen flex flex-col gap-4 justify-center items-center mt-10 max-sm:mt-5">
-      <div className="w-full flex flex-col gap-8 justify-center items-center max-w-screen-md bg-bgcard bg-opacity-35 p-8 pb-12 shadow-lg   text-white border-t border-white max-md:bg-transparent max-lg:border-none rounded-[2rem]">
+    <div className="w-screen flex flex-col gap-4 justify-center items-center mt-10 max-sm:mt-5" data-aos="fade-up">
+      <div className="w-full flex flex-col gap-8 justify-center items-center max-w-screen-lg bg-bgcard bg-opacity-35 p-8 pb-12 shadow-lg   text-white border-t border-white max-md:bg-transparent max-lg:border-none rounded-[2rem]">
         <div className="rounded-[1rem] w-[95%] h-[55vh] max-lg:max-w-screen-sm max-lg:h-[25vh] max-md:flex max-md:flex-col max-md:text-center">
           <h1 className="text-mdheading font-semibold mb-2">
             Learn Tulu: A Beginner's Course

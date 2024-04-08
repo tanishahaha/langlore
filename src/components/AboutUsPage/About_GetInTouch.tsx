@@ -1,6 +1,6 @@
 const About_GetInTouch: React.FC = () => {
    return (
-     <div className="px-4 h-[50vh]  flex flex-col text-center  justify-center items-center   ">
+     <div className="px-4 h-[50vh]  flex flex-col text-center  justify-center items-center   " data-aos="fade-up">
        <h1 className="md:text-lgheading text-mdheading md:w-1/2   text-white font-semibold  ">
          Get in touch
        </h1>

@@ -9,10 +9,8 @@ const Home = () => {
   return (
     <div>
       <Hero />
-      {/* <Test/> */}
       <div className="mt-20">
         <CourseCard />
-        {/* <Courses/> */}
       </div>
       <div className="h-[20vh] bg-pri blur-md max-sm:h-[10vh]"></div>
       <div className="mt-20 ">
@@ -32,7 +30,6 @@ const Home = () => {
         <GetInTouch />
       </div>
       <div className="h-[20vh] bg-pri blur-md max-sm:h-[10vh]"></div>
-{/* <BackGround/> */}
     </div>
   );
 };

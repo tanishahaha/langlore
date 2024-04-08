@@ -3,6 +3,7 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
+
 html {
   -ms-overflow-style: none;
   scrollbar-width: none;

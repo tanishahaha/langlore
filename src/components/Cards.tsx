@@ -10,11 +10,14 @@ interface CardProps {
     readTime: string;
     imageUrl: string;
     altText: string;
+    index: number; // Add index prop to identify the position of the card
 }
 
-const Card: React.FC<CardProps> = ({ title, subtitle, category, author, date, readTime, imageUrl, altText }) => {
+const Card: React.FC<CardProps> = ({ title, subtitle, category, author, date, readTime, imageUrl, altText, index }) => {
+    const animationDirection = index % 2 === 0 ? 'fade-left' : 'fade-right'; // Alternate animation direction based on index
+
     return (
-        <div className="custom-inputColor rounded-3xl border-t border-t-white  h-fit bg-gradient-to-t from-gray-800 to-transparent overflow-hidden shadow-lg m-3 px-8 py-10 max-w-md max-md:py-8 max-md:px-6 tracking-wider">
+        <div className={`custom-inputColor rounded-3xl border-t border-t-white h-fit bg-gradient-to-t from-gray-800 to-transparent overflow-hidden shadow-lg m-3 px-8 py-10 max-w-md max-md:py-8 max-md:px-6 tracking-wider`} data-aos={animationDirection}>
             <img className="w-full rounded-xl" src={imageUrl} alt={altText} />
             <div className="pt-6">
                 <div className="bg-gray-600 rounded-xl px-5 py-2 inline-block text-gray-300 text-mdsubsubheading">

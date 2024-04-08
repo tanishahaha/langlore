@@ -8,7 +8,7 @@ import "./component.css";
 
 const Sponser: React.FC = () => {
   return (
-    <div className="w-full flex flex-wrap justify-center my-10">
+    <div className="w-full flex flex-wrap justify-center my-10" data-aos="fade-left">
       <div className="flex flex-col items-center justify-center w-full">
         <div className="text-gray-400 font-medium mb-8 text-xl max-md:text-mdsubheading">
           Recognised for our work by

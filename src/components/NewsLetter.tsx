@@ -9,16 +9,16 @@ import "./component.css";
 
 const NewsLetter: React.FC = () => {
   return (
-    <div className="w-screen  flex justify-center items-center px-10 flex-wrap">
+    <div className="w-screen  flex justify-center items-center px-10 flex-wrap" data-aos="fade-up">
       <div className="custom-bgColor flex md:max-w-screen-xl w-full items-center text-white justify-center rounded-2xl flex-col md:flex-row  md:justify-between  border-t border-white shadow-lg flex-wrap">
         <div className="md:flex flex-col space-y-2 -ml-5 hidden ">
-          <div className="custom-inputColor hover:bg-gray-800 rounded-r-full border-gray-400 border-t w-full">
+          <div className="custom-inputColor  rounded-r-full border-gray-400 border-t w-full">
             <div className=" text-white font-semibold py-3 pl-8 pr-12  flex items-center space-x-2">
               <span>Tips & Tricks</span>
               <FaLightbulb />
             </div>
           </div>
-          <div className="custom-inputColor hover:bg-gray-800 border-gray-400 border-t rounded-r-full w-2/3">
+          <div className="custom-inputColor  border-gray-400 border-t rounded-r-full w-2/3">
             <div className=" text-white font-semibold py-3 pl-8 pr-8  flex items-center space-x-2">
               <span>News</span>
               <FaInfoCircle />
@@ -61,14 +61,14 @@ const NewsLetter: React.FC = () => {
         </div>
 
         <div className=" flex-col space-y-2 hidden md:flex -mr-5 ">
-          <div className="custom-inputColor hover:bg-gray-800 rounded-l-full border-gray-400 border-t  -ml-12 ">
+          <div className="custom-inputColor  rounded-l-full border-gray-400 border-t  -ml-12 ">
             <div className=" text-white font-semibold py-3 pl-12 pr-12  flex items-center space-x-2 ">
               <FaCalendarAlt />
               <span>Upcoming events</span>
             </div>
           </div>
 
-          <div className=" custom-inputColor hover:bg-gray-800 rounded-l-full border-gray-400 border-t  ">
+          <div className=" custom-inputColor  rounded-l-full border-gray-400 border-t  ">
             <div className="text-white font-semibold py-3 pl-12 pr-8 flex items-center space-x-2">
               <FaQuestionCircle />
               <span>What's new</span>

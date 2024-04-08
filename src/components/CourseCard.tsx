@@ -6,7 +6,7 @@ import { LuList } from "react-icons/lu";
 const CourseCard: React.FC = () => {
   return (
     <div className="w-screen flex justify-center items-center">
-      <div className="bg-bgcard bg-opacity-35 p-8 rounded-[2rem] shadow-lg max-w-screen-lg  text-white border border-white max-lg:bg-transparent max-lg:border-none">
+      <div className="bg-bgcard bg-opacity-35 p-8 rounded-[2rem] shadow-lg max-w-screen-lg  text-white border border-white max-lg:bg-transparent max-lg:border-none" data-aos="fade-up">
         <div className="w-full flex flex-col justify-center items-center text-center mb-10">
           <h2 className="text-white text-lgsubheading font-semibold mb-1 max-md:text-mdheading">
             Discover our Language Courses
