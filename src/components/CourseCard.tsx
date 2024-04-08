@@ -6,7 +6,7 @@ import "./component.css";
 
 const CourseCard: React.FC = () => {
   const [showInput, setShowInput] = useState(false);
-  const [isSoldOut, setIsSoldOut] = useState(false);
+  const [isSoldOut] = useState(false);
 
   const handleJoinCourse = () => {
     if (!isSoldOut) {
