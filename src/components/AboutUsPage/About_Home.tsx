@@ -1,4 +1,4 @@
-import AboutHero from "./About_Hero";
+
 import AboutCourse from "./About_Course";
 import AboutTeamCards from "./AboutTeamCards";
 import Sponser from "../Sponser";
@@ -7,12 +7,8 @@ import Roadmap from "./Roadmap";
 
 const About_Home = () => {
   return (
-    <div
-      style={{ fontFamily: "Helvetica, sans-serif" }}
-      className="w-full tracking-wider flex flex-wrap flex-col"
-    >
-      <AboutHero />
-      <div className="h-[20vh] bg-pri blur-md max-sm:h-[10vh]"></div>
+    <div>
+  
 
       <div className=" mb-20">
         <AboutCourse />

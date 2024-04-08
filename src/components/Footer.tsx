@@ -1,10 +1,9 @@
 import React from "react";
 import {
-  FaFacebookF,
+ 
   FaInstagram,
-  FaVimeoV,
-  FaLinkedinIn,
-  FaYoutube,
+  
+  FaEnvelope,
 } from "react-icons/fa";
 import logo from "../../public/imgs/langlore.png";
 
@@ -26,20 +25,13 @@ const Footer: React.FC = () => {
             </a>
           </div>
           <div className="flex mt-2 mb-6 space-x-6 text-white">
-            <a href="#" className=" hover:text-white">
-              <FaFacebookF size={24}/>
-            </a>
+           
             <a href="#" className=" hover:text-white">
               <FaInstagram size={24}/>
             </a>
-            <a href="#" className=" hover:text-white">
-              <FaVimeoV size={24}/>
-            </a>
-            <a href="#" className=" hover:text-white">
-              <FaLinkedinIn size={24}/>
-            </a>
-            <a href="#" className=" hover:text-white">
-              <FaYoutube size={24}/>
+           
+            <a href="mailto: admin@langlore.in"  target='blank' className=" hover:text-white">
+              <FaEnvelope size={24}/>
             </a>
         </div>
         {/* <div className=" w-full  md:w-auto ">
