@@ -35,7 +35,7 @@ const GetInTouch: React.FC = () => {
   }, [showPopup]);
 
   return (
-    <div className='w-full px-10 flex-wrap flex'>
+    <div className='w-full px-10 flex-wrap flex' data-aos="fade-right">
     <div className="border-t border-white mx-auto p-4 sm:p-8 max-w-screen-md custom-bgColor rounded-xl w-full">
       <h1 className="md:text-4xl text-mdsubheading font-bold mb-4 text-white">Get in touch</h1>
       <p className="mb-4 md:text-lg text-mdsubsubheading  sm:mb-8 text-white">Have any questions? We're here to help.</p>

@@ -3,7 +3,7 @@ import sym from "/imgs/langlogo.png";
 
 const Hero = () => {
   return (
-    <div className="flex flex-col items-center justify-center h-[78vh] w-screen mt-8  max-lg:h-[50vh] max-sm:h-[55vh]">
+    <div className="flex flex-col items-center justify-center h-[78vh] w-screen mt-8  max-lg:h-[50vh] max-sm:h-[55vh]" data-aos="fade-up">
       <div className="max-sm:hidden herobg-wrapper w-full h-[100vh] flex items-center justify-center p-8 relative max-xl:p-0">
         <div className="background-wrapper absolute top-0 left-0  w-full h-full max-md:top-[-15%] max-sm:top-[-38%]">
           {/* Background Image */}
@@ -18,7 +18,11 @@ const Hero = () => {
                 className="h-[90px] w-[60.5px] max-md:w-[40px] max-md:h-auto"
               />
             </div>
-            <h1 className="text-lgheading font-bold mb-5 tracking-wider max-xl:text-[2rem] max-lg:text-mdheading max-[375px]:text-[1.2rem]">
+            <div data-aos=""
+    data-aos-offset="120"
+    data-aos-duration="1000">
+
+            <h1 className="text-lgheading font-bold mb-5 tracking-wider max-xl:text-[2rem] max-lg:text-mdheading max-[375px]:text-[1.2rem]" >
               Preserving endangered languages
             </h1>
             <div className="flex w-full gap-8 flex-wrap items-center justify-center">
@@ -28,6 +32,7 @@ const Hero = () => {
               <Link to="/signup" className="custom-border-button">
                 Sign Up
               </Link>
+            </div>
             </div>
           </div>
         </div>

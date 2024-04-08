@@ -10,7 +10,7 @@ import Madhuja from '../../../public/imgs/Madhuja_Joshi.jpg'
 
 const Team: React.FC = () => {
   return (
-    <div className="flex flex-col flex-wrap w-full">
+    <div className="flex flex-col flex-wrap w-full" data-aos="fade-up">
       <div className="text-center py-12 ">
         <p className="md:text-lgsubsubheading mb-3 text-gray-200 text-mdsubsubheading">
           Preservation

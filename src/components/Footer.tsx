@@ -18,12 +18,12 @@ const Footer: React.FC = () => {
               className="h-[2rem] w-auto mr-2 max-md:h-[1.5rem]"
             />
           </div>
-          <div className="flex flex-col md:items-center mt-4 md:text-mdheading">
+          {/* <div className="flex flex-col md:items-center mt-4 md:text-mdheading">
             <p className="mr-2">Contact:</p>
             <a href="mailto:info@langlore.in" className="text-bluee">
               info@langlore.in
             </a>
-          </div>
+          </div> */}
           <div className="flex mt-2 mb-6 space-x-6 text-white">
            
             <a href="https://www.instagram.com/langlore.in?igsh=MTFrM2htaXd4ajk5NA==" target="blank" className=" hover:text-white">

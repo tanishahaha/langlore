@@ -21,6 +21,7 @@ const Blog_Hero: React.FC = () => {
                             date="11 Jan 2022"
                             readTime="7 min read"
                             imageUrl={blog}
+                            index={1}
                             altText="Mobile phone displaying LangLore app with text 'Unlocking Languages | Exploring Cultures'"
                         />
                     </div>
@@ -33,6 +34,8 @@ const Blog_Hero: React.FC = () => {
                             date="11 Jan 2022"
                             readTime="7 min read"
                             imageUrl={blog}
+                            index={2}
+
                             altText="Mobile phone displaying LangLore app with text 'Unlocking Languages | Exploring Cultures'"
                         />
                     </div>
@@ -45,6 +48,8 @@ const Blog_Hero: React.FC = () => {
                             date="11 Jan 2022"
                             readTime="7 min read"
                             imageUrl={blog}
+                            index={3}
+
                             altText="Mobile phone displaying LangLore app with text 'Unlocking Languages | Exploring Cultures'"
                         />
                     </div>
@@ -59,6 +64,8 @@ const Blog_Hero: React.FC = () => {
                             date="11 Jan 2022"
                             readTime="7 min read"
                             imageUrl={blog}
+                            index={4}
+
                             altText="Mobile phone displaying LangLore app with text 'Unlocking Languages | Exploring Cultures'"
                         />
                     </div>
@@ -71,6 +78,8 @@ const Blog_Hero: React.FC = () => {
                             date="11 Jan 2022"
                             readTime="7 min read"
                             imageUrl={blog}
+                            index={5}
+
                             altText="Mobile phone displaying LangLore app with text 'Unlocking Languages | Exploring Cultures'"
                         />
                     </div>
@@ -83,6 +92,8 @@ const Blog_Hero: React.FC = () => {
                             date="11 Jan 2022"
                             readTime="7 min read"
                             imageUrl={blog}
+                            index={6}
+
                             altText="Mobile phone displaying LangLore app with text 'Unlocking Languages | Exploring Cultures'"
                         />
                     </div>
