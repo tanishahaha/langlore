@@ -68,7 +68,10 @@ const BlogCards: React.FC = () => {
                     />
                 </div>
             </div>
-           
+            <button className="custom-button mt-3 md:text-[18px] text-[13px] ">
+              
+              View All
+            </button>
         </div>
     );
 }

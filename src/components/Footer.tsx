@@ -1,10 +1,9 @@
 import React from "react";
 import {
-  FaFacebookF,
+ 
   FaInstagram,
-  FaVimeoV,
-  FaLinkedinIn,
-  FaYoutube,
+  
+  FaEnvelope,
 } from "react-icons/fa";
 import logo from "../../public/imgs/langlore.png";
 
@@ -19,27 +18,20 @@ const Footer: React.FC = () => {
               className="h-[2rem] w-auto mr-2 max-md:h-[1.5rem]"
             />
           </div>
-          <div className="flex flex-col md:items-center mt-4 md:text-mdheading">
+          {/* <div className="flex flex-col md:items-center mt-4 md:text-mdheading">
             <p className="mr-2">Contact:</p>
             <a href="mailto:info@langlore.in" className="text-bluee">
               info@langlore.in
             </a>
-          </div>
+          </div> */}
           <div className="flex mt-2 mb-6 space-x-6 text-white">
-            <a href="#" className=" hover:text-white">
-              <FaFacebookF size={24}/>
-            </a>
+           
             <a href="#" className=" hover:text-white">
               <FaInstagram size={24}/>
             </a>
-            <a href="#" className=" hover:text-white">
-              <FaVimeoV size={24}/>
-            </a>
-            <a href="#" className=" hover:text-white">
-              <FaLinkedinIn size={24}/>
-            </a>
-            <a href="#" className=" hover:text-white">
-              <FaYoutube size={24}/>
+           
+            <a href="mailto: admin@langlore.in"  target='blank' className=" hover:text-white">
+              <FaEnvelope size={24}/>
             </a>
         </div>
         {/* <div className=" w-full  md:w-auto ">

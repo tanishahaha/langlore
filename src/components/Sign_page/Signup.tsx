@@ -1,8 +1,10 @@
 import React from 'react';
+import Footer from '../Footer'
 
 const Signup: React.FC = () => {
     return (
-        <div className="h-[70vh] flex items-center justify-center  border-white p-4">
+        <>
+        <div className="h-[90vh] flex items-center justify-center  border-white p-4">
             <div className="custom-bgColor p-8 rounded-2xl shadow-2xl border-t max-w-sm w-full">
                 <div className="mb-4">
                     <label className="block text-white text-sm font-bold mb-2" htmlFor="email">
@@ -41,6 +43,8 @@ const Signup: React.FC = () => {
                
             </div>
         </div>
+        <Footer/>
+        </>
     );
 }
 
