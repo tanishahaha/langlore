@@ -10,11 +10,6 @@ const Sign_Home = () => {
     >
       <Sign_Hero />
 
-      
-   
-
-      <Footer/>
-
     </div>
     
   );
