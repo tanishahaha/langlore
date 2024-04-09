@@ -1,5 +1,4 @@
 import React from 'react';
-import Footer from '../Footer'
 
 const Signup: React.FC = () => {
     return (
@@ -43,7 +42,6 @@ const Signup: React.FC = () => {
                
             </div>
         </div>
-        <Footer/>
         </>
     );
 }

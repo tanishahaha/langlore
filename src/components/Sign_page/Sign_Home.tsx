@@ -1,5 +1,4 @@
 import Sign_Hero from "./Sign_Hero";
-import Footer from "../Footer"
 
 
 const Sign_Home = () => {
@@ -9,11 +8,6 @@ const Sign_Home = () => {
       className="w-full tracking-wider flex flex-wrap flex-col"
     >
       <Sign_Hero />
-
-      
-   
-
-      <Footer/>
 
     </div>
     

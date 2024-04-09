@@ -36,7 +36,7 @@ const CourseCard: React.FC = () => {
               className="w-full h-full"
             />
           </div>
-          <div className="flex flex-1 flex-col flex-wrap justify-between">
+          <div className="flex flex-1 flex-col flex-wrap justify-between text-start">
             <div className=" w-full h-full">
               <span className="text-greenn text-sm px-5 py-2 bg-greentrans rounded-md">
                 Beginner

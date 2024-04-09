@@ -43,9 +43,9 @@ const Sign_Hero: React.FC = () => {
                         Sign in
                     </button>
                 </div>
-                <div className="mt-4">
+                <div className="mt-4 flex w-full">
                     <Link
-                        className="bg-transparent hover:bg-blue-500 text-blue-200  hover:text-white py-2 px-4 border border-bluee hover:border-transparent rounded-xl w-full"
+                        className="bg-transparent hover:bg-blue-500 text-blue-200  hover:text-white py-2 px-4 border border-bluee hover:border-transparent rounded-xl w-full text-center"
                         type="button"
                         to="/signup"
                     >
