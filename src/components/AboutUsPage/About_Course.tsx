@@ -1,7 +1,7 @@
 const About_Course: React.FC = () => {
   return (
-    <div className=" h-[90vh] flex flex-col text-center  justify-center items-center w-full  px-4  " data-aos="fade-up">
-      <h1 className="md:text-4xl md:w-2/4 mb-5  text-lg text-white font-semibold  ">
+    <div className=" h-[50vh] flex flex-col text-center  justify-center items-center w-full  px-4  " data-aos="fade-up">
+      <h1 className="md:text-lgheading w-full  text-mdheading text-white font-semibold  ">
         Reviving Endangered Languages Through Education and Technology
       </h1>
       <div className="w-full md:w-2/4">

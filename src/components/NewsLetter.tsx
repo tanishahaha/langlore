@@ -10,7 +10,7 @@ import "./component.css";
 const NewsLetter: React.FC = () => {
   return (
     <div className="w-screen  flex justify-center items-center px-10  flex-wrap" data-aos="fade-up">
-      <div className="custom-bgColor flex md:max-w-screen-xl w-full items-center text-white justify-center rounded-2xl flex-col md:flex-row  md:justify-between  border-t border-white shadow-lg flex-wrap">
+      <div className="custom-bgColor flex md:max-w-screen-xl w-full items-centermax-md:h-auto text-white justify-center rounded-2xl flex-col md:flex-row  md:justify-between  border-t border-white shadow-lg flex-wrap">
         <div className="md:flex flex-col space-y-3 -ml-5  icon ">
           <button className="custom-inputColor rounded-r-full border-gray-400 border-t w-full">
           
@@ -39,7 +39,7 @@ const NewsLetter: React.FC = () => {
             <input
               type="email"
               placeholder="Enter your email..."
-              className="custom-inputColor rounded-l-xl rounded-r-xl border-l  border-gray-300  border-r-white placeholder:text-white py-2  px-6 outline-none max-md:w-full md:text-[14px]"
+              className="custom-inputColor rounded-l-xl rounded-r-xl border-l  border-gray-300  border-r-white placeholder:text-white py-2  px-6 outline-none w-full md:text-[14px]"
             />
             <button className="custom-button md:text-[13px] md:rounded-x-xl w-full  mt-3 ">
               Subscribe
