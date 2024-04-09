@@ -26,8 +26,8 @@ const Roadmap: React.FC = () => {
    
 
     return (
-        <div className="text-white">
-            <div className="container mx-auto px-4 py-8 md:py-20 relative">
+        <div className=" text-white">
+           <div className="container mx-auto px-4 py-8 md:py-20 relative" data-aos="fade-up">
                 <div className="h-[40vh] bg-pri blur-md max-sm:h-[20vh] absolute top-0 left-0 right-0 z-0"></div>
                 <div className="flex flex-col md:flex-row justify-between relative z-10">
                     <div className="flex flex-col w-full md:w-1/2 mb-8 md:mb-0 md:pr-4">

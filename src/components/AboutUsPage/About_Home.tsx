@@ -1,4 +1,3 @@
-
 import AboutCourse from "./About_Course";
 import AboutTeamCards from "./AboutTeamCards";
 import Sponser from "../Sponser";
@@ -7,22 +6,13 @@ import Roadmap from "./Roadmap";
 
 const About_Home = () => {
   return (
-    <div>
-  
-
-      <div className=" mb-20">
-        <AboutCourse />
-      </div>
+    <div className="tracking-wider">
+      <AboutCourse />
 
       <AboutTeamCards />
-      {/* <div className="h-[20vh] bg-pri blur-md max-sm:h-[10vh] mb-2"></div> */}
-      <div className="m-5">
-        <Sponser />
-      </div>
+      <Sponser />
       <Roadmap />
       <About_GetInTouch />
-      {/* <div className="h-[20vh] bg-pri blur-md max-sm:h-[10vh] mb-10"></div> */}
-
     </div>
   );
 };
