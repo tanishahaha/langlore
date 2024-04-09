@@ -79,7 +79,7 @@ body {
     background-color: #20364A;
     color: white; 
   }
-
+/* newsletter */
 .hide-on-mobile {
   background-color: #20364A;
   color: white;
@@ -87,18 +87,46 @@ body {
 }
 
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 959px) {
   .hide-on-mobile {
-    display: none !important;
-  }
-}
-
-@media only screen and (min-width: 768px) {
-  .hide-on-desktop {
     display: none;
   }
 }
 
+@media only screen and (min-width: 959px) {
+  .hide-on-desktop {
+    display: none !important;
+  }
+}
+
+@media only screen and (max-width: 1069px) {
+  .icon {
+    display: none !important;
+  }
+}
+
+@media only screen and (max-width: 1069px) {
+  .flex-col {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+
+
+@media only screen and (min-width: 768px) and (max-width: 1069px) {
+  .flex-col {
+    justify-content: center;
+  }
+
+  .flex-col > * {
+    margin: 0 auto;
+  }
+}
+
+
+/* newsletter end */
 
   .custom-textarea {
     background-color: #20364A;
@@ -222,6 +250,7 @@ body {
     }
   }
 
+  
   
 
   
