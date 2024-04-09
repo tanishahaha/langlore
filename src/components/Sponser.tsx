@@ -33,7 +33,9 @@ const Sponser: React.FC = () => {
           Recognised for our work by
         </div>
 
-        <div className="custom-bgColor px-0 py-6  rounded-xl max-md:rounded-none  max-w-screen-lg overflow-hidden max-lg:w-screen">
+        <div className="w-screen px-10 max-md:px-0 flex flex-wrap justify-center items-center">
+
+        <div className="custom-bgColor px-0 py-6  rounded-xl max-md:rounded-none md:max-w-screen-xl w-full overflow-hidden max-lg:w-screen">
           <Slider {...settings} className="w-screen">
             <div className="flex items-center justify-center text-center h-12 p-1">
               <img
@@ -59,6 +61,7 @@ const Sponser: React.FC = () => {
               <img src={logo5} alt="Ka-naada logo" className="h-full " />
             </div>
           </Slider>
+        </div>
         </div>
       </div>
     </div>

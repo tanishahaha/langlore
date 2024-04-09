@@ -1,10 +1,18 @@
-import React from 'react';
-import { FaCheck, FaUsers, FaExpand, FaRocket, FaHandPaper, FaSpaceShuttle } from 'react-icons/fa';
+import React from "react";
+import {
+  FaCheck,
+  FaUsers,
+  FaExpand,
+  FaRocket,
+  FaHandPaper,
+  FaSpaceShuttle,
+} from "react-icons/fa";
+import Cardsanimation from "./Cardsanimation";
 
 const Roadmap: React.FC = () => {
-    return (
-        <div className=" text-white">
-           <div className="container mx-auto px-4 py-8 md:py-20 relative" data-aos="fade-up">
+  return (
+    <div className=" text-white w-full px-10 flex flex-wrap  justify-between max-md:flex-col max-lg:w-full max-lg:px-4 mb-[5rem]" data-aos="fade-up">
+      {/* <div className="container mx-auto px-4 py-8 md:py-20 relative" data-aos="fade-up">
                 <div className="h-[40vh] bg-pri blur-md max-sm:h-[20vh] absolute top-0 left-0 right-0 z-0"></div>
                 <div className="flex flex-col md:flex-row justify-between relative z-10">
                     <div className="flex flex-col w-full md:w-1/2 mb-8 md:mb-0 md:pr-4">
@@ -72,9 +80,22 @@ const Roadmap: React.FC = () => {
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    );
+            </div> */}
+
+      <div className=" w-[30%] mb-32 mt-40 max-md:my-0 max-md:w-full max-md:flex max-md:text-center  max-md:justify-center">
+      <div className="flex flex-col w-full max-md:text-center max-md:flex max-md:justify-center mb-8 md:mb-0 md:pr-4 sticky top-[30%] ">
+                        <h1 className="text-lg md:text-xl mb-4">Reviving</h1>
+                        <h2 className="text-3xl md:text-5xl font-bold mb-6">The Roadmap</h2>
+                        <div className=" flex w-full text-center items-center justify-center md:justify-start">
+
+                        <button className="custom-button">Explore the course</button>
+                        </div>
+                    </div>
+      </div>
+
+      <Cardsanimation/>
+    </div>
+  );
 };
 
 export default Roadmap;

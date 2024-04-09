@@ -16,6 +16,19 @@ body {
   font-family: Helvetica, sans-serif;
 }
 
+:root{
+  --cards:6;
+  --cardheight:50vh;
+  --cardtoppadding:1.5rem;
+  --cardmargin:4vh;
+}
+@media screen and (min-width:950px) and (max-width: 1500px) { /* Target smaller devices (adjust breakpoint as needed) */
+  :root {
+    --cardheight: 35vh; /* Override default card height for smaller devices */
+  }
+}
+
+
 ::-webkit-scrollbar {
   display: none; /* Safari and Chrome */
 }
@@ -115,68 +128,6 @@ body {
     top: -30%;
   }
 }
-
-/* @media (max-width:850px) {
-  
-.background-wrapper::after {
-  top: -30%;
- 
-}
-
-}
-
-@media (max-width:600px) {
-  
-  .background-wrapper::after {
-    top: -40%;
-   
-  }
-  
-  }
-
-  @media (max-width:450px) {
-  
-    .background-wrapper::after {
-      top: -65%;
-     
-    }
-    
-    } */
-
-/* 
-@media (max-width:500px) {
-  .background-wrapper::before {
-    top: 0; 
-    left: 0;
-    width: 100%;
-    height: 0%; 
-    background: transparent; 
-  }
-.background-wrapper::after {
-  top: 0%;
-  left: 0;
-  width: 100%;
-  height: 110%;
-}
-
-}
-
-@media (max-width:768px) {
-  .background-wrapper::before {
-    top: 0; 
-    left: 0;
-    width: 100%;
-    height: 0%; 
-    background: transparent; 
-  }
-.background-wrapper::after {
-  top: 0%;
-  left: 0;
-  width: 100%;
-  height: 110%;
-}
-
-} */
 
 @keyframes animate {
   from {
