@@ -1,12 +1,5 @@
 import React from "react";
-import {
-  FaCheck,
-  FaUsers,
-  FaExpand,
-  FaRocket,
-  FaHandPaper,
-  FaSpaceShuttle,
-} from "react-icons/fa";
+
 import Cardsanimation from "./Cardsanimation";
 
 const Roadmap: React.FC = () => {
