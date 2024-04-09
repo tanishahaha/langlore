@@ -150,39 +150,21 @@ body {
   }
   
   
-
-
-  @keyframes slideLeftToRight {
-    0% {
-      transform: translateX(100%);
-    }
-    100% {
-      transform: translateX(0%);
-    }
-  }
-  
-  .logos-container {
+  .sponsor-logos {
     display: flex;
-    overflow: hidden;
+    flex-wrap: wrap;
+    justify-content: center;
+    box-sizing: border-box;
   }
   
-  .logo {
-    flex-shrink: 0;
-    animation: slideLeftToRight 10s linear infinite; 
+  @media (max-width: 768px) {
+    .sponsor-logos div.flex.overflow-hidden.space-x-16 {
+      gap: 8px; /* Adjust spacing between logos for smaller screens */
+    }
   }
+
   
 
-  /* @media (max-width: 767px) {
-    .logo {
-      animation: slideLeftToRight 10s linear infinite; 
-    }
-  
-    .logos-container {
-      justify-content: flex-start;
-      padding: 0 20px;
-      box-sizing: border-box;
-    }
-  } */
   
   
    

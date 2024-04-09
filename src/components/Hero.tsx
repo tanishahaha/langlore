@@ -3,7 +3,7 @@ import sym from "/imgs/langlogo.png";
 
 const Hero = () => {
   return (
-    <div className="flex flex-col items-center justify-center h-[78vh] w-screen mt-8  max-lg:h-[50vh] max-sm:h-[55vh]" data-aos="fade-up">
+    <div className="flex flex-col flex-wrap items-center justify-center h-[78vh] w-full mt-8  max-lg:h-[50vh] max-sm:h-[55vh]" data-aos="fade-up">
       <div className="max-sm:hidden herobg-wrapper w-full h-[100vh] flex items-center justify-center p-8 relative max-xl:p-0">
         <div className="background-wrapper absolute top-0 left-0  w-full h-full max-md:top-[-15%] max-sm:top-[-38%]">
           {/* Background Image */}

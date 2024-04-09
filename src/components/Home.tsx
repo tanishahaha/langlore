@@ -8,7 +8,7 @@ import BlogCards from "./BlogCards";
 const Home = () => {
   
   return (
-    <div>
+    <div className="box-border w-full">
       <Hero />
       <div className="mt-20">
         <CourseCard />

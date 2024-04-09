@@ -12,9 +12,7 @@ const Team: React.FC = () => {
   return (
     <div className="flex flex-col flex-wrap w-full" data-aos="fade-up">
       <div className="text-center py-12 ">
-        <p className="md:text-lgsubsubheading mb-3 text-gray-200 text-mdsubsubheading">
-          Preservation
-        </p>
+       
         <h1 className="md:text-lgheading text-mdheading font-bold text-white mb-4">
           Meet Our Team
         </h1>

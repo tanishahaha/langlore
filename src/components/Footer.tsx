@@ -26,7 +26,7 @@ const Footer: React.FC = () => {
           </div> */}
           <div className="flex mt-2 mb-6 space-x-6 text-white">
            
-            <a href="#" className=" hover:text-white">
+            <a href="https://www.instagram.com/langlore.in?igsh=MTFrM2htaXd4ajk5NA==" target="blank" className=" hover:text-white">
               <FaInstagram size={24}/>
             </a>
            
