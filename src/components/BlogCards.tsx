@@ -1,6 +1,11 @@
+// BlogCards.tsx
+
 import React from "react";
 import Card from "./Cards";
-import blog from "../../public/imgs/blog_card_img.png";
+import post1 from "../../public/imgs/post1.jpg";
+import post2 from "../../public/imgs/post2.jpg";
+import post3 from "../../public/imgs/post3.jpg";
+import post4 from "../../public/imgs/post4.jpg";
 import { Link } from "react-router-dom";
 
 const BlogCards: React.FC = () => {
@@ -22,55 +27,59 @@ const BlogCards: React.FC = () => {
         <div className="md:grid md:grid-cols-2 ">
           <div className="mt-[-3rem]">
             <Card
-              title="The Beauty of Language Diversity"
-              subtitle="Exploring the richness of linguistic diversity around the world"
+              title="Why do Mangaloreans love Pabba's?"
+              subtitle="What began as a humble venture in 1975 evolved into a beloved institution"
               category="Language"
-              author="Jane Smith"
-              date="11 Jan 2022"
+              author="Mohammed Rayaan"
+              date="31 March 2024"
               readTime="7 min read"
-              imageUrl={blog}
+              imageUrl={post1}
               index={1}
-              altText="Mobile phone displaying LangLore app with text 'Unlocking Languages | Exploring Cultures'"
+              altText="Why do Mangaloreans love Pabba's?"
+              linkUrl="https://langlore.substack.com/p/why-do-mangaloreans-love-pabbas?utm_source=profile&utm_medium=reader2"
             />
           </div>
           <div className="">
             <Card
-              title="The Beauty of Language Diversity"
-              subtitle="Exploring the richness of linguistic diversity around the world"
+              title="What we saw in our first 'Bhoota Kola'"
+              subtitle="Bhoota Kola is proof of the tenacity of Mangalore's cultural legacy"
               category="Language"
-              author="Jane Smith"
-              date="11 Jan 2022"
+              author="Zahanat Khan"
+              date="24 March 2024"
               readTime="7 min read"
-              imageUrl={blog}
+              imageUrl={post2}
               index={2}
-              altText="Mobile phone displaying LangLore app with text 'Unlocking Languages | Exploring Cultures'"
+              altText="What we saw in our first 'Bhoota Kola'"
+              linkUrl="https://langlore.substack.com/p/what-we-saw-in-our-first-bhoota-kola?utm_source=profile&utm_medium=reader2" 
             />
           </div>
         </div>
         <div className="md:grid md:grid-cols-2 ">
           <div className="md:mt-[-3rem]">
             <Card
-              title="The Beauty of Language Diversity"
-              subtitle="Exploring the richness of linguistic diversity around the world"
+              title="How non-English language cinema is altering the Oscars landscape"
+              subtitle="Film history scholar says its recent rise in recognition is attributed to industry demographic shifts"
               category="Language"
-              author="Jane Smith"
-              date="11 Jan 2022"
+              author="Unknown"
+              date="17 March 2024"
               readTime="7 min read"
-              imageUrl={blog}
+              imageUrl={post3}
               index={3}
-              altText="Mobile phone displaying LangLore app with text 'Unlocking Languages | Exploring Cultures'"
+              altText="How non-English language cinema is altering the Oscars landscape"
+              linkUrl="https://langlore.substack.com/p/post-6" 
             />
           </div>
           <Card
-            title="The Beauty of Language Diversity"
-            subtitle="Exploring the richness of linguistic diversity around the world"
+            title="Digital Preservation: Can Tech Save Indigenous Languages?"
+            subtitle="Taking Indigenous languages online: can they be seen, heard and saved?"
             category="Language"
-            author="Jane Smith"
-            date="11 Jan 2022"
+            author="Unknown"
+            date="25 Feb 2024"
             readTime="7 min read"
-            imageUrl={blog}
+            imageUrl={post4}
             index={4}
-            altText="Mobile phone displaying LangLore app with text 'Unlocking Languages | Exploring Cultures'"
+            altText="Digital Preservation: Can Tech Save Indigenous Languages?"
+            linkUrl="https://langlore.substack.com/p/post-3?utm_source=profile&utm_medium=reader2" 
           />
         </div>
       </div>

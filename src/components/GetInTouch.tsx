@@ -47,10 +47,13 @@ const GetInTouch: React.FC = () => {
       </div>
       <div className="mb-4">
         <select className="custom-inputColor border-gray-600 p-3 rounded-xl text-gray-300 w-full outline-none border focus:border-white">
-          <option>Select one...</option>
-          <option>Select one...</option>
-          <option>Select one...</option>
-          <option>Select one...</option>
+        <option>Choose any</option>
+          <option>Are you a business? Partner with us!</option>
+          <option>Collaborate with us as an individual</option>
+          <option>Report an issue</option>
+          <option>Request for help</option>
+          <option>Suggest feedback</option>
+          <option>Suggest a new course</option>
         </select>
       </div>
       <div className="mb-4">
