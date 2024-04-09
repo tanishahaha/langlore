@@ -35,7 +35,7 @@ const Sponser: React.FC = () => {
 
         <div className="w-screen px-10 max-md:px-0 flex flex-wrap justify-center items-center">
 
-        <div className="custom-bgColor px-0 py-6  rounded-xl max-md:rounded-none md:max-w-screen-xl w-full overflow-hidden max-lg:w-screen">
+        <div className="custom-bgColor px-0 py-6  rounded-xl max-md:rounded-none md:max-w-full md:mx-6 w-full overflow-hidden max-lg:w-screen">
           <Slider {...settings} className="w-screen">
             <div className="flex items-center justify-center text-center h-12 p-1">
               <img

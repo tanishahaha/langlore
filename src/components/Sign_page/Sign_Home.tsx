@@ -1,5 +1,4 @@
 import Sign_Hero from "./Sign_Hero";
-import Footer from "../Footer"
 
 
 const Sign_Home = () => {
