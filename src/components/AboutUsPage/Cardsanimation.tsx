@@ -39,7 +39,7 @@ const Cardsanimation: React.FC = () => {
     <div className="container w-1/2 max-md:w-full">
       <ul id="cards">
         {cardsData.map((card, index) => (
-          <li className="card" id={`card${index + 1}`} key={index}>
+          <li className="cardC" id={`card${index + 1}`} key={index}>
             <div className="card-body items-center py-8">
               <div className="flex space-x-4 justify-start text-left">
                 <div className="icon-bg py-3 rounded-full">

@@ -60,7 +60,7 @@ const Roadmap: React.FC = () => {
                 </div>
             </div> */}
 
-    <div className="lg:w-[90%] w-full flex justify-between">
+    <div className="lg:w-[90%] w-full flex justify-between max-md:flex-col">
 
       <div className=" w-[30%] mb-32 mt-40 max-md:my-0 max-md:w-full max-md:flex max-md:text-center  max-md:justify-center">
         <div className="flex flex-col w-full max-md:text-center max-md:flex max-md:justify-center mb-8 md:mb-0 md:pr-4 sticky top-[30%] ">
