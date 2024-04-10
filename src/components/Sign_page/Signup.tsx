@@ -40,11 +40,17 @@ const Signup: React.FC = () => {
 
         // Open new tab/window with Gmail URL
         // TODO: redirect the user to a mail client"
-        window.open(
-          "https://mail.google.com/",
-          "_blank",
-          "width=800,height=600"
-        );
+        if (email.includes("@gmail.com")) {
+          window.open("https://mail.google.com/", "_blank");
+        }
+        // Check if the email provider is Outlook
+        else if (
+          email.includes("@outlook.com") ||
+          email.includes("@hotmail.com") ||
+          email.includes("@live.com")
+        ) {
+          window.open("https://outlook.live.com/", "_blank");
+        }
 
         // Sign out the user
         // auth.signOut();

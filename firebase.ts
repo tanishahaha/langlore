@@ -1,6 +1,6 @@
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
-import { getAuth } from "firebase/auth";
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { addDoc, collection, getFirestore } from "firebase/firestore";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -31,6 +31,30 @@ export const addNewsletterEmail = async (email: string): Promise<void> => {
     console.log("Newsletter email added:", email);
   } catch (error) {
     console.error("Error adding newsletter email:", error);
+  }
+};
+
+// Function to handle user login
+export const loginUser = async (email: string, password: string) => {
+  try {
+    // Sign in user with email and password
+    const userCredential = await signInWithEmailAndPassword(
+      auth,
+      email,
+      password
+    );
+
+    // Get user data
+    const user = userCredential.user;
+
+    // Store user data in local storage
+    localStorage.setItem("user", JSON.stringify(user));
+
+    // console.log("User logged in:", user.email);
+    alert(`Logged in successfully as ${user.email}`);
+  } catch (error) {
+    // console.error("Error logging in:", (error as Error).message);
+    alert(`Error logging in: ${(error as Error).message}`);
   }
 };
 

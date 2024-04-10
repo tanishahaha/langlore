@@ -18,7 +18,17 @@ const ForgetPas: React.FC = () => {
       await sendPasswordResetEmail(auth, email);
 
       // Redirect user to their inbox
-      window.open("https://mail.google.com/", "_blank");
+      if (email.includes("@gmail.com")) {
+        window.open("https://mail.google.com/", "_blank");
+      }
+      // Check if the email provider is Outlook
+      else if (
+        email.includes("@outlook.com") ||
+        email.includes("@hotmail.com") ||
+        email.includes("@live.com")
+      ) {
+        window.open("https://outlook.live.com/", "_blank");
+      }
 
       alert("Password reset email sent. Please check your inbox.");
     } catch (error) {

@@ -1,9 +1,28 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "../component.css";
+import { loginUser } from "../../../firebase";
+import { useEffect } from "react";
 // import { Link } from 'react-router-dom';
 
 const Sign_Hero: React.FC = () => {
+  const [email, setEmail] = React.useState("");
+  const [password, setPassword] = React.useState("");
+
+  useEffect(() => {
+    const sessionData = localStorage.getItem("user");
+    if (sessionData) {
+      // Redirect to home page
+      window.location.href = "/home"; // Replace '/home' with the actual route of your home page
+    }
+  }, []);
+  const handlSubmit = async (
+    e: React.MouseEvent<HTMLButtonElement, MouseEvent>
+  ) => {
+    e.preventDefault();
+    await loginUser(email, password);
+  };
+
   return (
     <div className="h-[90vh] flex items-center justify-center  border-white p-4">
       <div className="custom-bgColor p-8 rounded-2xl shadow-2xl border-t max-w-sm w-full">
@@ -19,6 +38,8 @@ const Sign_Hero: React.FC = () => {
             id="email"
             type="email"
             placeholder="Johndoe@somewhere.com"
+            onChange={(e) => setEmail(e.target.value)}
+            value={email}
           />
         </div>
         <div className="mb-6">
@@ -34,6 +55,8 @@ const Sign_Hero: React.FC = () => {
             id="password"
             type="password"
             placeholder="********"
+            onChange={(e) => setPassword(e.target.value)}
+            value={password}
           />
           {/* <Link to="/forgot-password" className="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-400">
                         Forgot password?
@@ -46,7 +69,12 @@ const Sign_Hero: React.FC = () => {
           </Link>
         </div>
         <div className="flex items-center justify-between">
-          <button className="custom-button w-full text-[1rem]">Sign in</button>
+          <button
+            className="custom-button w-full text-[1rem]"
+            onClick={(e) => handlSubmit(e)}
+          >
+            Sign in
+          </button>
         </div>
         <div className="mt-4 flex w-full">
           <Link

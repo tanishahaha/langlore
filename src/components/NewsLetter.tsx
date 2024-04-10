@@ -21,8 +21,8 @@ const NewsLetter: React.FC = () => {
 
   //TODO: Add the email to the "newsletterEmails" collection
   const handleSubmit = async (e: React.FormEvent<HTMLButtonElement>) => {
-    e.preventDefault();
     console.log("clicked");
+    e.preventDefault();
     // if (validateEmail(email)) {
     //   await addNewsletterEmail(email);
     // } else {
