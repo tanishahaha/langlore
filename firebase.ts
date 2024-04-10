@@ -1,5 +1,5 @@
 import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
+// import { getAnalytics } from "firebase/analytics";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { addDoc, collection, getFirestore } from "firebase/firestore";
 // TODO: Add SDKs for Firebase products that you want to use
@@ -59,4 +59,4 @@ export const loginUser = async (email: string, password: string) => {
 };
 
 export default app;
-const analytics = getAnalytics(app);
+// const analytics = getAnalytics(app);
