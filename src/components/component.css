@@ -276,7 +276,7 @@ body {
   #card6{
     --index:6;
   }
-  .card{
+  .cardC{
     position: sticky;
     top: 0;
     padding-top: calc(var(--index)*var(--cardtoppadding));
