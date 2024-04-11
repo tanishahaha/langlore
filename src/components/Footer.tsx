@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import {
  
   FaInstagram,
@@ -9,12 +9,19 @@ import {
 import logo from "../../public/imgs/langlore.png";
 
 const Footer: React.FC = () => {
+  const navigate=useNavigate();
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth' // Smooth scrolling animation
+    });
+  };
   return (
     <div className="w-full text-white flex flex-wrap items-center justify-center mt-20 ">
       <div className="w-full flex flex-wrap items-center justify-center text-center flex-col gap-4">
           <div className="flex items-center">
           
-            <img src={logo} alt="Logo" className="h-[1.8rem] w-auto mr-2 max-md:h-[1rem] max-[375px]:h-[0.8rem]" onClick={()=>window.location.href = "/" }/>
+            <img src={logo} alt="Logo" className="h-[1.8rem] w-auto mr-2 max-md:h-[1rem] max-[375px]:h-[0.8rem] cursor-pointer" onClick={()=>{navigate('/'); scrollToTop();} }/>
             
           </div>
 
