@@ -34,6 +34,13 @@ export const addNewsletterEmail = async (email: string): Promise<void> => {
   }
 };
 
+const isEmailVerified = () => {
+  const user = auth.currentUser;
+  if (user) {
+    return user.emailVerified;
+  }
+  return false;
+};
 // Function to handle user login
 export const loginUser = async (email: string, password: string) => {
   try {
@@ -48,15 +55,34 @@ export const loginUser = async (email: string, password: string) => {
     const user = userCredential.user;
 
     // Store user data in local storage
-    localStorage.setItem("user", JSON.stringify(user));
+    // if user is not valid
+    if (isEmailVerified()) {
+      localStorage.setItem("user", JSON.stringify(user));
+      alert(`Logged in successfully as ${user.email}`);
+    }
 
     // console.log("User logged in:", user.email);
-    alert(`Logged in successfully as ${user.email}`);
   } catch (error) {
     // console.error("Error logging in:", (error as Error).message);
     alert(`Error logging in: ${(error as Error).message}`);
   }
 };
 
+export const actionCodeSettings = {
+  // URL you want to redirect back to. The domain (www.example.com) for this
+  // URL must be in the authorized domains list in the Firebase Console.
+  url: "https://langlore.vercel.app/",
+  // This must be true.
+  handleCodeInApp: true,
+  iOS: {
+    bundleId: "com.example.ios",
+  },
+  android: {
+    packageName: "com.example.android",
+    installApp: true,
+    minimumVersion: "12",
+  },
+  dynamicLinkDomain: "example.page.link",
+};
 export default app;
 // const analytics = getAnalytics(app);
