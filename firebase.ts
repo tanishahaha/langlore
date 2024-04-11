@@ -102,12 +102,12 @@ export const getUserEmailFromLocalStorage = () => {
 //   },
 // };
 
-onAuthStateChanged(auth, (user) => {
-  console.log("Auth state changed:", user);
-  if (user && user.emailVerified) {
-    window.location.href = "https://langlore.vercel.app/";
-  }
-});
+// onAuthStateChanged(auth, (user) => {
+//   console.log("Auth state changed:", user);
+//   if (user && user.emailVerified) {
+//     window.location.href = "https://langlore.vercel.app/";
+//   }
+// });
 
 export default app;
 

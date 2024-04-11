@@ -1,7 +1,7 @@
 import { FaClock } from "react-icons/fa";
 import { LuList } from "react-icons/lu";
 import tulu from "../../public/imgs/tulu.png";
-import { FaTimes } from 'react-icons/fa';
+import { FaTimes } from "react-icons/fa";
 import "./component.css";
 import { getUserEmailFromLocalStorage } from "../../firebase";
 import { useEffect, useState } from "react";
@@ -14,15 +14,9 @@ const CourseOverview = () => {
   const [isSoldOut] = useState(false);
   const [showPopup, setShowPopup] = useState(false);
 
-
-  
-
-    
-
   const handleJoinCourse = () => {
     if (userEmail) {
       setShowPopup(true);
-      
     } else {
       window.location.href = "/signin";
     }
@@ -164,13 +158,15 @@ const CourseOverview = () => {
             </div>
           </div>
         </div>
-
       </div>
       {showPopup && (
         <div className="popup-container">
           <div className="popup bg-gray-800 w-[40%] text-white rounded-lg shadow-lg p-8 items-center border border-white">
             <div className="flex justify-end">
-              <button onClick={() => setShowPopup(false)} className="focus:outline-none">
+              <button
+                onClick={() => setShowPopup(false)}
+                className="focus:outline-none"
+              >
                 <FaTimes />
               </button>
             </div>
@@ -179,7 +175,9 @@ const CourseOverview = () => {
             </h1>
             <div className="text-white md:text-[18px] text-sm mt-4">
               <div className="mb-4 flex flex-col text-left ">
-                <label htmlFor="email" className="block mb-2">Enter email id:</label>
+                <label htmlFor="email" className="block mb-2">
+                  Enter email id:
+                </label>
                 <input
                   type="email"
                   id="email"
@@ -188,7 +186,9 @@ const CourseOverview = () => {
                 />
               </div>
               <div className="mb-4 flex flex-col text-left">
-                <label htmlFor="upi" className="block mb-2">Enter upi id:</label>
+                <label htmlFor="upi" className="block mb-2">
+                  Enter upi id:
+                </label>
                 <input
                   type="text"
                   id="upi"
@@ -197,7 +197,9 @@ const CourseOverview = () => {
                 />
               </div>
             </div>
-            <p className="text-sm mb-4 text-white">We'll get in touch with you soon.</p>
+            <p className="text-sm mb-4 text-white">
+              We'll get in touch with you soon.
+            </p>
             <button
               onClick={() => setShowPopup(false)}
               className="bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-xl"
@@ -206,7 +208,6 @@ const CourseOverview = () => {
             </button>
           </div>
         </div>
-        
       )}
     </div>
   );
