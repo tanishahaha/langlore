@@ -12,10 +12,11 @@ const Sign_Hero: React.FC = () => {
   useEffect(() => {
     const sessionData = localStorage.getItem("user");
     if (sessionData) {
-      // Redirect to home page after 
+      // Redirect to home page after
       window.location.href = "/"; // Replace '/home' with the actual route of your home page
     }
   }, []);
+
   const handlSubmit = async (
     e: React.MouseEvent<HTMLButtonElement, MouseEvent>
   ) => {

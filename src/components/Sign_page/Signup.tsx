@@ -1,9 +1,9 @@
 import {
   createUserWithEmailAndPassword,
-  sendEmailVerification,
+  sendSignInLinkToEmail,
 } from "firebase/auth";
 import React from "react";
-import { auth } from "../../../firebase";
+import { actionCodeSettings, auth } from "../../../firebase";
 // import { Auth } from "firebase/auth";
 
 const Signup: React.FC = () => {
@@ -70,7 +70,7 @@ const Signup: React.FC = () => {
   const handleSubmit = async (
     e: React.MouseEvent<HTMLButtonElement, MouseEvent>
   ) => {
-    console.log("clicked");
+    // console.log("clicked");
     e.preventDefault();
     try {
       // TODO: for frontend, while making createUser also make sure to add the user to the database while hitting the endpoint
@@ -82,7 +82,9 @@ const Signup: React.FC = () => {
 
       if (userCred.user) {
         // Send email verification
-        await sendEmailVerification(userCred.user);
+        // await sendEmailVerification(userCred.user);
+        // SOLVED: now we get redirected again to the login page
+        await sendSignInLinkToEmail(auth, email, actionCodeSettings);
 
         // Open new tab/window with email provider URL
         const emailProvider = getEmailProvider(email);
