@@ -4,7 +4,7 @@ import "./component.css";
 const Popup: React.FC<{ onClose: () => void }> = ({ onClose }) => {
   return (
     <div className="popup-container">
-      <div className="popup-content bg-gray-800 text-white rounded-lg shadow-lg p-8 items-center border border-whit">
+      <div className="popup-content bg-gray-800 text-white rounded-lg shadow-lg p-8 items-center border border-white">
         <h1 className="text-lg font-semibold mb-4">
           Thank you for contacting us!
         </h1>
