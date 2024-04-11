@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import Popup from "./Popup";
-import PaymentButton from "./PaymentButton(phaltu)";
+import PaymentButton from "./PaymentButton";
 
 const Payment_popup = () => {
-    const [showPopup, setShowPopup] = useState(false);
+    const [showPopup, setShowPopup] = React.useState(false);
 
     const handleSubmit = () => {
         setShowPopup(true);
@@ -13,7 +13,7 @@ const Payment_popup = () => {
         setShowPopup(false);
     };
 
-    useEffect(() => {
+    React.useEffect(() => {
         if (showPopup) {
             document.body.style.overflow = "hidden"; // Disable scrolling
         } else {
