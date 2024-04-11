@@ -33,7 +33,7 @@ const Popup: React.FC<{ onClose: () => void }> = ({ onClose }) => {
                     onClick={onClose}
                     className="bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-xl"
                 >
-                    Back to home
+                    Submit
                 </button>
             </div>
         </div>
