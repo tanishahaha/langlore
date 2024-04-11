@@ -8,6 +8,35 @@ import { useEffect, useState } from "react";
 // import Payment_popup from "./Payment_popup";
 
 const CourseOverview = () => {
+  const [email, setEmail] = useState("");
+  const [upi, setUpi] = useState("");
+  const [emailError, setEmailError] = useState("");
+  const [upiError, setUpiError] = useState("");
+
+  const validateEmail = (email: string): boolean => {
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      return emailRegex.test(email);
+  };
+
+  const validateUpi = (upi: string): boolean => {
+      const upiRegex = /^.+@.*$/;
+      return upiRegex.test(upi);
+  };
+
+  const handleSubmit = () => {
+      if (!validateEmail(email)) {
+          setEmailError("Please enter a valid email address");
+          return;
+      }
+      if (!validateUpi(upi)) {
+          setUpiError("Please enter a valid UPI address");
+          return;
+      }
+      // If both email and upi are valid, proceed with submission
+      // Your submission logic here...
+     setShowPopup(false)
+  };
+
   const [userEmail, setUserEmail] = useState<string | null>(null);
   const [showInput] = useState(false);
   const [seatsAvailable, setSeatsAvailable] = useState<number | null>(null);
@@ -179,29 +208,41 @@ const CourseOverview = () => {
                   Enter email id:
                 </label>
                 <input
-                  type="email"
-                  id="email"
-                  placeholder="someone@gmail.com"
-                  className="outline-none border md:text-lg text:sm border-gray-600 focus:border-white focus:placeholder-white custom-inputColor p-3 rounded-xl text-gray-300 w-full"
-                />
-              </div>
+                            type="email"
+                            id="email"
+                            placeholder="someone@gmail.com"
+                            className={`outline-none border md:text-lg text:sm border-gray-600 focus:border-white focus:placeholder-white custom-inputColor p-3 rounded-xl text-gray-300 w-full ${emailError ? 'border-red-500' : ''}`}
+                            value={email}
+                            onChange={(e) => {
+                                setEmail(e.target.value);
+                                setEmailError("");
+                            }}
+                        />
+                        {emailError && <p className="text-red-500 text-xs mt-1">{emailError}</p>}
+                    </div>
               <div className="mb-4 flex flex-col text-left">
                 <label htmlFor="upi" className="block mb-2">
                   Enter upi id:
                 </label>
                 <input
-                  type="text"
-                  id="upi"
-                  placeholder="username@okhdfcbank"
-                  className="outline-none border border-gray-600 focus:border-white focus:placeholder-white placeholder-text-[18px] custom-inputColor p-3 rounded-xl text-gray-300 w-full"
-                />
-              </div>
+                            type="text"
+                            id="upi"
+                            placeholder="username@okhdfcbank"
+                            className={`outline-none border border-gray-600 focus:border-white focus:placeholder-white placeholder-text-[18px] custom-inputColor p-3 rounded-xl text-gray-300 w-full ${upiError ? 'border-red-500' : ''}`}
+                            value={upi}
+                            onChange={(e) => {
+                                setUpi(e.target.value);
+                                setUpiError("");
+                            }}
+                        />
+                        {upiError && <p className="text-red-500 text-xs mt-1">{upiError}</p>}
+                    </div>
             </div>
             <p className="text-sm mb-4 text-white">
               We'll get in touch with you soon.
             </p>
             <button
-              onClick={() => setShowPopup(false)}
+              onClick={handleSubmit}
               className="bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-xl"
             >
               Submit

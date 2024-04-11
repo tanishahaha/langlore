@@ -4,6 +4,7 @@ import CourseCard from "./CourseCard";
 import NewsLetter from "./NewsLetter";
 import Sponser from "./Sponser";
 import BlogCards from "./BlogCards";
+import PaymentButton from "./Payment_popup";
 // import BackGround from "./BackGround";
 const Home = () => {
   
@@ -29,6 +30,9 @@ const Home = () => {
 
       <div className="mt-20">
         <GetInTouch />
+      </div>
+      <div className="mt-20">
+        <PaymentButton />
       </div>
 
       <div className="h-[20vh] bg-pri blur-md max-sm:h-[10vh]"></div>
