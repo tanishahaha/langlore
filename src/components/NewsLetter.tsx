@@ -6,15 +6,15 @@ import {
   FaQuestionCircle,
 } from "react-icons/fa";
 import "./component.css";
-import { addNewsletterEmail } from "../../firebase";
+// import { addNewsletterEmail } from "../../firebase";
 
 const NewsLetter: React.FC = () => {
   const [email, setEmail] = React.useState("");
 
-  const validateEmail = (email: string): boolean => {
-    const regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-    return regex.test(email);
-  };
+  // const validateEmail = (email: string): boolean => {
+  //   const regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+  //   return regex.test(email);
+  // };
 
   // Example usage
   // const email = "example@example.com";

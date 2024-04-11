@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from 'react-router-dom';
 import {
  
   FaInstagram,
@@ -12,12 +13,13 @@ const Footer: React.FC = () => {
     <div className="w-full text-white flex flex-wrap items-center justify-center mt-20 ">
       <div className="w-full flex flex-wrap items-center justify-center text-center flex-col gap-4">
           <div className="flex items-center">
-            <img
-              src={logo}
-              alt="Logo"
-              className="h-[2rem] w-auto mr-2 max-md:h-[1.5rem]"
-            />
+          <Link to="/" className="cursor-pointer">
+              <img src={logo} alt="Logo" className="h-[1.8rem] w-auto mr-2 max-md:h-[1rem] max-[375px]:h-[0.8rem]" />
+            </Link>
           </div>
+
+         
+
           {/* <div className="flex flex-col md:items-center mt-4 md:text-mdheading">
             <p className="mr-2">Contact:</p>
             <a href="mailto:info@langlore.in" className="text-bluee">

@@ -276,7 +276,7 @@ body {
   #card6{
     --index:6;
   }
-  .card{
+  .cardC{
     position: sticky;
     top: 0;
     padding-top: calc(var(--index)*var(--cardtoppadding));
@@ -301,6 +301,9 @@ body {
     font-size: 1rem;
     color: rgb(209 213 219 / 1);
   }
+
+
+
 
   /* bg blinking */
   
