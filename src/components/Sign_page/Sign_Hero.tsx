@@ -14,7 +14,7 @@ const Sign_Hero: React.FC = () => {
     const sessionData = localStorage.getItem("user");
     if (sessionData) {
       // Redirect to home page after
-      window.location.href = "/"; // Replace '/home' with the actual route of your home page
+      history('/')
     }
   }, []);
 

@@ -5,6 +5,7 @@ import { FaTimes } from "react-icons/fa";
 import "./component.css";
 import { getUserEmailFromLocalStorage } from "../../firebase";
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 // import Payment_popup from "./Payment_popup";
 
 const CourseOverview = () => {
@@ -13,12 +14,20 @@ const CourseOverview = () => {
   const [seatsAvailable, setSeatsAvailable] = useState<number | null>(null);
   const [isSoldOut] = useState(false);
   const [showPopup, setShowPopup] = useState(false);
+  const navigate=useNavigate();
 
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth' // Smooth scrolling animation
+    });
+  };
   const handleJoinCourse = () => {
     if (userEmail) {
       setShowPopup(true);
     } else {
-      window.location.href = "/signin";
+      navigate("/signin");
+      scrollToTop();
     }
 
     // if (!isSoldOut) {
