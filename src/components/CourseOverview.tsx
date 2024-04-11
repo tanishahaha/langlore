@@ -127,7 +127,7 @@ const CourseOverview = () => {
                         Join the course
                       </button>
                       <span className="text-yell text-[1.1rem] max-md:text-mdsubsubheading">
-                        {seatsAvailable}/300 Seats Taken
+                        {/* {seatsAvailable}/300 Seats Taken */}
                       </span>
                     </div>
                   </div>

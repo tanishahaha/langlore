@@ -90,8 +90,15 @@ const Navbar: React.FC = () => {
                 />
 
                 {isDropdownOpen && (
-                  <div className="absolute right-0 mt-2 w-fit h-fit bg-white border rounded-lg shadow-lg flex flex-col p-1">
+                  <div className="absolute right-0 mt-2 w-fit h-fit bg-white border rounded-lg shadow-lg flex flex-col p-1 z-10">
                     <p className="px-4 py-2 text-gray-800">{userEmail}</p>
+                    <button
+                      className="w-full text-center px-4 text-white bg-[#0779EB] rounded-lg py-2 cursor-pointer mb-2"
+                      onClick={() => (window.location.href = "/forget")}
+                    >
+                      Change Password
+                    </button>
+
                     <button
                       className="w-full text-center px-4 text-white bg-[#0779EB] rounded-lg py-1 cursor-pointer"
                       onClick={handleLogout}
