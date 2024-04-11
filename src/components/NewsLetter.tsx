@@ -11,20 +11,20 @@ import "./component.css";
 const NewsLetter: React.FC = () => {
   const [email, setEmail] = React.useState("");
 
-  // const validateEmail = (email: string): boolean => {
-  //   const regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-  //   return regex.test(email);
-  // };
+  const validateEmail = (email: string): boolean => {
+    const regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    return regex.test(email);
+  };
 
   // Example usage
   // const email = "example@example.com";
 
-  //TODO: Add the email to the "newsletterEmails" collection
   const handleSubmit = async (e: React.FormEvent<HTMLButtonElement>) => {
     // console.log("clicked");
     e.preventDefault();
     if (validateEmail(email)) {
-      await addNewsletterEmail(email);
+      // await addNewsletterEmail(email);
+      // TODO: make api request to add email to newsletter
     } else {
       console.log("Invalid email address");
     }
