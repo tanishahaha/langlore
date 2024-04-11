@@ -14,7 +14,9 @@ const Sign_Hero: React.FC = () => {
     const sessionData = localStorage.getItem("user");
     if (sessionData) {
       // Redirect to home page after
+      // history(0)
       history('/')
+      
     }
   }, []);
 
@@ -25,6 +27,7 @@ const Sign_Hero: React.FC = () => {
     await loginUser(email, password);
     if(email!=""){
       history(-1);
+      history(0);
     }
   };
 
