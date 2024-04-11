@@ -3,7 +3,7 @@ import React from "react";
 import "../component.css";
 
 import { sendPasswordResetEmail } from "firebase/auth";
-import { auth } from "../../../firebase";
+import { actionCodeSettings, auth } from "../../../firebase";
 
 const ForgetPas: React.FC = () => {
   const [email, setEmail] = React.useState("");
@@ -13,10 +13,12 @@ const ForgetPas: React.FC = () => {
   ) => {
     e.preventDefault();
     try {
-      // TODO: for frontend, while making createUser also make sure to add the user to the database while hitting the endpoint 
+      // TODO: for frontend, while making createUser also make sure to add the user to the database while hitting the endpoint
 
       // Send password reset email
-      await sendPasswordResetEmail(auth, email);
+      // SOLVED: now we get redirected again to the login page
+      await sendPasswordResetEmail(auth, email, actionCodeSettings);
+      // await sendSignInFasswordResetEmail(auth, email);
 
       // Redirect user to their inbox
       if (email.includes("@gmail.com")) {
