@@ -12,14 +12,12 @@ const CourseOverview = () => {
   const [showInput, setShowInput] = useState(false);
   const [seatsAvailable, setSeatsAvailable] = useState<number | null>(null);
   const [isSoldOut] = useState(false);
-  
 
   const handleJoinCourse = () => {
-
-    if(userEmail){
+    if (userEmail) {
       alert("payment");
-    }else{
-      window.location.href="/signin";
+    } else {
+      window.location.href = "/signin";
     }
 
     // if (!isSoldOut) {
@@ -40,18 +38,19 @@ const CourseOverview = () => {
 
   const fetchSeatsAvailable = async () => {
     try {
-      const response = await fetch(`https://localhost:3000/courses/R8xrCvcy9LXy7XU0heSL/seatsAvailable`);
+      const response = await fetch(
+        `http://localhost:3000/courses/R8xrCvcy9LXy7XU0heSL/seatsAvailable`
+      );
       const data = await response.json();
-      setSeatsAvailable(data.seatsAvailable);
+      console.log(data);
+      setSeatsAvailable(data);
     } catch (error) {
       console.error("Error fetching seats available:", error);
     }
   };
 
   return (
-    
     <div>
-      
       <div
         className="w-screen flex flex-col gap-4 justify-center items-center mt-10 max-sm:mt-5"
         data-aos="fade-up"
@@ -114,7 +113,6 @@ const CourseOverview = () => {
                       </span>
                     </span>
                     <div className="flex gap-2 items-center my-4 max-lg:flex-col max-lg:justify-center">
-                      
                       <button
                         className="custom-button"
                         onClick={handleJoinCourse}
