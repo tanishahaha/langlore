@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "../component.css";
 import { loginUser } from "../../../firebase";
 import { useEffect } from "react";
@@ -8,6 +8,7 @@ import { useEffect } from "react";
 const Sign_Hero: React.FC = () => {
   const [email, setEmail] = React.useState("");
   const [password, setPassword] = React.useState("");
+  const history=useNavigate();
 
   useEffect(() => {
     const sessionData = localStorage.getItem("user");
@@ -22,7 +23,7 @@ const Sign_Hero: React.FC = () => {
     e.preventDefault();
     await loginUser(email, password);
     if(email!=""){
-      window.location.href="/";
+      history(-1);
     }
   };
 
