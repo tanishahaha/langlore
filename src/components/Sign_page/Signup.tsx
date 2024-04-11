@@ -3,7 +3,7 @@ import {
   sendEmailVerification,
 } from "firebase/auth";
 import React from "react";
-import firebase, { auth } from "../../../firebase";
+import { auth } from "../../../firebase";
 // import { Auth } from "firebase/auth";
 
 const Signup: React.FC = () => {
@@ -22,12 +22,58 @@ const Signup: React.FC = () => {
   //       .catch(alert);
   //   };
 
+  //const handleSubmit = async (
+  // e: React.MouseEvent<HTMLButtonElement, MouseEvent>
+  //) => {
+  //console.log("clicked");
+  //e.preventDefault();
+  //try {
+  // const userCred = await createUserWithEmailAndPassword(
+  //  auth,
+  //  email,
+  //  password
+  // );
+
+  // if (userCred.user) {
+  // Send email verification
+  // await sendEmailVerification(userCred.user);
+
+  // Open new tab/window with Gmail URL
+
+  // if (email.includes("@gmail.com")) {
+  //  window.open("https://mail.google.com/", "_blank");
+  // }
+  // Check if the email provider is Outlook
+  // else if (
+  //  email.includes("@outlook.com") ||
+  //  email.includes("@hotmail.com") ||
+  //   email.includes("@live.com")
+  //) {
+  //window.open("https://outlook.live.com/", "_blank");
+  //}
+
+  // Sign out the user
+  // auth.signOut();
+
+  // Alert user
+  // alert("Email verification link sent. Please check your inbox.");
+  //}
+  //} catch (error) {
+  //if ((error as any).code === "auth/email-already-in-use") {
+  //alert("User already exists. Please sign in or reset your password.");
+  //} else {
+  //console.error("Error signing up:", error);
+  //}
+  //}
+  //};
+
   const handleSubmit = async (
     e: React.MouseEvent<HTMLButtonElement, MouseEvent>
   ) => {
     console.log("clicked");
     e.preventDefault();
     try {
+      // TODO: for frontend, while making createUser also make sure to add the user to the database while hitting the endpoint
       const userCred = await createUserWithEmailAndPassword(
         auth,
         email,
@@ -38,23 +84,11 @@ const Signup: React.FC = () => {
         // Send email verification
         await sendEmailVerification(userCred.user);
 
-        // Open new tab/window with Gmail URL
-        // TODO: redirect the user to a mail client"
-        if (email.includes("@gmail.com")) {
-          window.open("https://mail.google.com/", "_blank");
+        // Open new tab/window with email provider URL
+        const emailProvider = getEmailProvider(email);
+        if (emailProvider) {
+          window.open(emailProvider.url, "_blank");
         }
-        // Check if the email provider is Outlook
-        else if (
-          email.includes("@outlook.com") ||
-          email.includes("@hotmail.com") ||
-          email.includes("@live.com")
-        ) {
-          window.open("https://outlook.live.com/", "_blank");
-        }
-
-        // Sign out the user
-        // auth.signOut();
-
         // Alert user
         alert("Email verification link sent. Please check your inbox.");
       }
@@ -65,6 +99,21 @@ const Signup: React.FC = () => {
         console.error("Error signing up:", error);
       }
     }
+  };
+
+  // Function to get email provider URL
+  const getEmailProvider = (email: string) => {
+    const providers = [
+      { domain: "gmail.com", url: "https://mail.google.com/" },
+      { domain: "yahoo.com", url: "https://mail.yahoo.com/" },
+      { domain: "hotmail.com", url: "https://outlook.live.com/" },
+      { domain: "outlook.com", url: "https://outlook.live.com/" },
+      { domain: "live.com", url: "https://outlook.live.com/" },
+      // Add more email providers as needed
+    ];
+
+    const domain = email.split("@")[1];
+    return providers.find((provider) => domain.includes(provider.domain));
   };
   return (
     <>

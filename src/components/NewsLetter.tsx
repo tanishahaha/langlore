@@ -21,15 +21,15 @@ const NewsLetter: React.FC = () => {
 
   //TODO: Add the email to the "newsletterEmails" collection
   const handleSubmit = async (e: React.FormEvent<HTMLButtonElement>) => {
-    console.log("clicked");
+    // console.log("clicked");
     e.preventDefault();
-    // if (validateEmail(email)) {
-    //   await addNewsletterEmail(email);
-    // } else {
-    //   console.log("Invalid email address");
-    // }
-    // // Add the email to the "newsletterEmails" collection
-    // console.log("Email added to newsletter:", email);
+    if (validateEmail(email)) {
+      await addNewsletterEmail(email);
+    } else {
+      console.log("Invalid email address");
+    }
+    // Add the email to the "newsletterEmails" collection
+    console.log("Email added to newsletter:", email);
   };
   return (
     <div

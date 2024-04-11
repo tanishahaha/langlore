@@ -13,7 +13,8 @@ const ForgetPas: React.FC = () => {
   ) => {
     e.preventDefault();
     try {
-      // TODO: redirect the user to mail
+      // TODO: for frontend, while making createUser also make sure to add the user to the database while hitting the endpoint 
+
       // Send password reset email
       await sendPasswordResetEmail(auth, email);
 

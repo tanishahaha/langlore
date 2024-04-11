@@ -10,6 +10,7 @@ const CourseCard: React.FC = () => {
 
   const handleJoinCourse = () => {
     if (!isSoldOut) {
+      
       setShowInput(true);
     } else {
       setShowInput(false); // Hide input if sold out

@@ -21,6 +21,7 @@ const Popup: React.FC<{ onClose: () => void }> = ({ onClose }) => {
 };
 
 const GetInTouch: React.FC = () => {
+  // TODO: add all the useState functionality and hit the api endpoint
   const [showPopup, setShowPopup] = useState(false);
 
   const handleSubmit = () => {
