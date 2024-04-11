@@ -77,21 +77,24 @@ export const getUserEmailFromLocalStorage = () => {
   return null; // Return null if user data is not found in localStorage
 };
 
-export const actionCodeSettings = {
-  // URL you want to redirect back to. The domain (www.example.com) for this
-  // URL must be in the authorized domains list in the Firebase Console.
-  url: "https://langlore.vercel.app/",
-  // This must be true.
-  handleCodeInApp: true,
-  iOS: {
-    bundleId: "com.example.ios",
-  },
-  android: {
-    packageName: "com.example.android",
-    installApp: true,
-    minimumVersion: "12",
-  },
-  dynamicLinkDomain: "example.page.link",
-};
-export default app;
+// export const actionCodeSettings = {
+//   // URL to redirect the user after completing the action
+//   url: "https://langlore.vercel.app/",
+
+//   // Handle code within the app
+//   handleCodeInApp: true,
+
+//   // iOS settings (assuming App Links)
+//   iOS: {
+//     bundleId: "com.example.ios",
+//   },
+
+//   // Android settings (assuming App Links)
+//   android: {
+//     packageName: "com.yourcompany.yourapp",
+//     installApp: true,
+//     minimumVersion: "12",
+//   },
+// };
+// export default app;
 // const analytics = getAnalytics(app);

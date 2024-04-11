@@ -1,5 +1,6 @@
 import {
   createUserWithEmailAndPassword,
+  sendEmailVerification,
   sendSignInLinkToEmail,
 } from "firebase/auth";
 import React from "react";
@@ -82,9 +83,9 @@ const Signup: React.FC = () => {
 
       if (userCred.user) {
         // Send email verification
-        // await sendEmailVerification(userCred.user);
+        await sendEmailVerification(userCred.user);
         // SOLVED: now we get redirected again to the login page
-        await sendSignInLinkToEmail(auth, email, actionCodeSettings);
+        // await sendSignInLinkToEmail(auth, email, actionCodeSettings);
 
         // Open new tab/window with email provider URL
         const emailProvider = getEmailProvider(email);
