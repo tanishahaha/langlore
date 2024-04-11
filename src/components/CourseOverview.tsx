@@ -5,12 +5,14 @@ import tulu from "../../public/imgs/tulu.png";
 import "./component.css";
 import { getUserEmailFromLocalStorage } from "../../firebase";
 import { useEffect, useState } from "react";
+// import Payment_popup from "./Payment_popup";
 
 const CourseOverview = () => {
   const [userEmail, setUserEmail] = useState<string | null>(null);
   const [showInput, setShowInput] = useState(false);
   const [seatsAvailable, setSeatsAvailable] = useState<number | null>(null);
   const [isSoldOut] = useState(false);
+  
 
   const handleJoinCourse = () => {
 
@@ -33,11 +35,12 @@ const CourseOverview = () => {
       setUserEmail(email);
     }
     fetchSeatsAvailable();
+    console.log(seatsAvailable);
   }, []);
 
   const fetchSeatsAvailable = async () => {
     try {
-      const response = await fetch(`/courses/:courseId/seatsAvailable`);
+      const response = await fetch(`https://localhost:3000/courses/R8xrCvcy9LXy7XU0heSL/seatsAvailable`);
       const data = await response.json();
       setSeatsAvailable(data.seatsAvailable);
     } catch (error) {
@@ -46,7 +49,9 @@ const CourseOverview = () => {
   };
 
   return (
+    
     <div>
+      
       <div
         className="w-screen flex flex-col gap-4 justify-center items-center mt-10 max-sm:mt-5"
         data-aos="fade-up"

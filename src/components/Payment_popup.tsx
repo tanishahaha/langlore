@@ -5,9 +5,9 @@ const Popup: React.FC<{ onClose: () => void }> = ({ onClose }) => {
     return (
         <div className="popup-container px-10">
             <div className="popup-content bg-gray-800  rounded-lg shadow-lg p-8 items-center border border-white ">
-                <h1 className="text-lg font-semibold mb-4 text-white">
+                {/* <h1 className="text-lg font-semibold mb-4 text-white">
                     Thank you for contacting us!
-                </h1>
+                </h1> */}
                 <form action="" className="text-white text-[18px] ">
                     <div className="mb-4">
                         <label htmlFor="email" className="block mb-1">Enter email id:</label>

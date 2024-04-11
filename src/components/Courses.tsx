@@ -6,7 +6,7 @@ import { GoDash } from "react-icons/go";
 import ReactPlayer from "react-player";
 import './component.css';
 import { getUserEmailFromLocalStorage } from "../../firebase";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
 const Courses = () => {
   const [showDropdown, setShowDropdown] = useState<boolean[]>([false, false, false, false]); // State for dropdown visibility of each module
@@ -14,7 +14,7 @@ const Courses = () => {
   const [videoWatched, setVideoWatched] = useState<boolean[]>([false, false, false, false]); // State to track if video is watched completely
   const [completionPercentage, setCompletionPercentage] = useState<number>(0); // State to track course completion percentage
   const playerRef = useRef<ReactPlayer | null>(null);
-  const [userEmail, setUserEmail] = useState<string | null>(null);
+  // const [userEmail, setUserEmail] = useState<string | null>(null);
 
 
   const toggleDropdown = (index: number): void => {
@@ -55,12 +55,12 @@ const Courses = () => {
     setCompletionPercentage(newCompletionPercentage);
   };
 
-  useEffect(() => {
-    const email = getUserEmailFromLocalStorage();
-    if (email) {
-      setUserEmail(email);
-    }
-  }, []);
+  // useEffect(() => {
+  //   const email = getUserEmailFromLocalStorage();
+  //   if (email) {
+  //     setUserEmail(email);
+  //   }
+  // }, []);
 
   return (
     <div>
