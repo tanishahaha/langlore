@@ -3,9 +3,9 @@ import { initializeApp } from "firebase/app";
 import {
   getAuth,
   signInWithEmailAndPassword,
-  onAuthStateChanged,
+  // onAuthStateChanged,
 } from "firebase/auth";
-import firebase from "firebase/compat/app";
+// import firebase from "firebase/compat/app";
 import { addDoc, collection, getFirestore } from "firebase/firestore";
 
 // https://firebase.google.com/docs/web/setup#available-libraries
