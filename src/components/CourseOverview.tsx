@@ -127,7 +127,7 @@ const CourseOverview = () => {
                         Join the course
                       </button>
                       <span className="text-yell text-[1.1rem] max-md:text-mdsubsubheading">
-                        {seatsAvailable}/300 Seats Taken
+                        120/300 Seats Taken
                       </span>
                     </div>
                   </div>
@@ -167,8 +167,6 @@ const CourseOverview = () => {
 
       </div>
       {showPopup && (
-
-        // Inside your CourseOverview component
         <div className="popup-container">
           <div className="popup bg-gray-800 w-[40%] text-white rounded-lg shadow-lg p-8 items-center border border-white">
             <div className="flex justify-end">
