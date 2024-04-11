@@ -30,7 +30,6 @@ const courseRegistrationSchema = {
   upiId: String,
 };
 
-
 export {
   userSchema,
   courseSchema,
