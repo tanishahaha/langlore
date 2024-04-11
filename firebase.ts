@@ -68,6 +68,15 @@ export const loginUser = async (email: string, password: string) => {
   }
 };
 
+export const getUserEmailFromLocalStorage = () => {
+  const userDataString = localStorage.getItem("user");
+  if (userDataString) {
+    const userData = JSON.parse(userDataString);
+    return userData.email; // Return the email property from user data
+  }
+  return null; // Return null if user data is not found in localStorage
+};
+
 export const actionCodeSettings = {
   // URL you want to redirect back to. The domain (www.example.com) for this
   // URL must be in the authorized domains list in the Firebase Console.

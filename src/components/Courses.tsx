@@ -1,10 +1,12 @@
 import { FaClipboardList, FaChevronDown } from "react-icons/fa";
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import tulu from "../../public/imgs/tulu.png";
 import { BiCheck, BiFileBlank } from "react-icons/bi";
 import { GoDash } from "react-icons/go";
 import ReactPlayer from "react-player";
 import './component.css';
+import { getUserEmailFromLocalStorage } from "../../firebase";
+import { Link } from "react-router-dom";
 
 const Courses = () => {
   const [showDropdown, setShowDropdown] = useState<boolean[]>([false, false, false, false]); // State for dropdown visibility of each module
@@ -12,6 +14,8 @@ const Courses = () => {
   const [videoWatched, setVideoWatched] = useState<boolean[]>([false, false, false, false]); // State to track if video is watched completely
   const [completionPercentage, setCompletionPercentage] = useState<number>(0); // State to track course completion percentage
   const playerRef = useRef<ReactPlayer | null>(null);
+  const [userEmail, setUserEmail] = useState<string | null>(null);
+
 
   const toggleDropdown = (index: number): void => {
     const newShowDropdown: boolean[] = [...showDropdown];
@@ -51,7 +55,18 @@ const Courses = () => {
     setCompletionPercentage(newCompletionPercentage);
   };
 
+  useEffect(() => {
+    const email = getUserEmailFromLocalStorage();
+    if (email) {
+      setUserEmail(email);
+    }
+  }, []);
+
   return (
+    <div>
+      {
+        userEmail?(
+
     <div className="w-screen flex flex-col gap-4 justify-center items-center mt-10 max-sm:mt-5" data-aos="fade-up">
       <div className="w-full flex flex-col gap-8 justify-center items-center max-w-screen-lg bg-bgcard bg-opacity-35 p-8 pb-12 shadow-lg text-white border-t border-white max-md:bg-transparent max-lg:border-none rounded-[2rem]">
         <div className="rounded-[1rem] w-[95%] h-[55vh] max-lg:max-w-screen-sm max-lg:h-[25vh] max-md:flex max-md:flex-col max-md:text-center">
@@ -141,6 +156,19 @@ const Courses = () => {
           ))}
         </div>
       </div>
+    </div>
+        ):(
+          <div className="w-screen h-[80vh] font-bold flex flex-col text-center justify-center items-center capitalize tracking-widest text-white">
+
+        <h1 className="text-[32px] tracking-wider max-md:text-mdheading">You need to sign in first to access the courses </h1>
+
+        <Link to="/signin" className="custom-button mt-6 "
+        >
+          Take me home
+        </Link>
+      </div>
+        )
+      }
     </div>
   );
 };
