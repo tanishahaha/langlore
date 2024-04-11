@@ -3,7 +3,7 @@ import React from "react";
 import "../component.css";
 
 import { sendPasswordResetEmail } from "firebase/auth";
-import { actionCodeSettings, auth } from "../../../firebase";
+import { auth } from "../../../firebase";
 
 const ForgetPas: React.FC = () => {
   const [email, setEmail] = React.useState("");
@@ -17,7 +17,7 @@ const ForgetPas: React.FC = () => {
 
       // Send password reset email
       // SOLVED: now we get redirected again to the login page
-      await sendPasswordResetEmail(auth, email, actionCodeSettings);
+      await sendPasswordResetEmail(auth, email);
       // await sendSignInFasswordResetEmail(auth, email);
 
       // Redirect user to their inbox

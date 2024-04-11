@@ -1,10 +1,10 @@
 import {
   createUserWithEmailAndPassword,
   sendEmailVerification,
-  sendSignInLinkToEmail,
+  // sendSignInLinkToEmail,
 } from "firebase/auth";
 import React from "react";
-import { actionCodeSettings, auth } from "../../../firebase";
+import { auth } from "../../../firebase";
 // import { Auth } from "firebase/auth";
 
 const Signup: React.FC = () => {

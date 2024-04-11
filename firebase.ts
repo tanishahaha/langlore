@@ -1,6 +1,11 @@
 import { initializeApp } from "firebase/app";
 // import { getAnalytics } from "firebase/analytics";
-import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import {
+  getAuth,
+  signInWithEmailAndPassword,
+  onAuthStateChanged,
+} from "firebase/auth";
+import firebase from "firebase/compat/app";
 import { addDoc, collection, getFirestore } from "firebase/firestore";
 
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -19,7 +24,7 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-export const auth = getAuth();
+export const auth = getAuth(app);
 
 const db = getFirestore(app);
 
@@ -96,5 +101,16 @@ export const getUserEmailFromLocalStorage = () => {
 //     minimumVersion: "12",
 //   },
 // };
-// export default app;
+
+onAuthStateChanged(auth, (user) => {
+  console.log("Auth state changed:", user);
+  if (user && user.emailVerified) {
+    window.location.href = "https://langlore.vercel.app/";
+  }
+});
+
+export default app;
+
+// Function to redirect after email verification
+
 // const analytics = getAnalytics(app);
