@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 import logo from "../../public/imgs/langlore.png";
 import { MdClose } from "react-icons/md";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { getUserEmailFromLocalStorage } from "../../firebase";
 import { BiUser } from "react-icons/bi";
 
@@ -34,6 +34,14 @@ const Navbar: React.FC = () => {
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
   };
+  const navigate=useNavigate();
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth' // Smooth scrolling animation
+    });
+  };
 
   return (
     <nav className="w-screen py-8 px-28 max-md:px-8 ">
@@ -64,19 +72,19 @@ const Navbar: React.FC = () => {
           <div className="hidden lg:flex items-center gap-[32px] text-[1.2rem]">
             <p
               className="text-white hover:text-gray-300 cursor-pointer"
-              onClick={() => (window.location.href = "/courses")}
+              onClick={()=>{navigate('/courses');scrollToTop();}}
             >
               Courses
             </p>
             <p
               className="text-white hover:text-gray-300 cursor-pointer"
-              onClick={() => (window.location.href = "/about")}
+              onClick={() => {navigate('/about');scrollToTop();}}
             >
               About Us
             </p>
             <p
               className="text-white hover:text-gray-300 cursor-pointer"
-              onClick={() => (window.location.href = "/blog")}
+              onClick={() => {navigate('/blog');scrollToTop();}}
             >
               Blog
             </p>
@@ -94,7 +102,7 @@ const Navbar: React.FC = () => {
                     <p className="px-4 py-2 text-gray-800">{userEmail}</p>
                     <button
                       className="w-full text-center px-4 text-white bg-[#0779EB] rounded-lg py-2 cursor-pointer mb-2"
-                      onClick={() => (window.location.href = "/forget")}
+                      onClick={() => {navigate('/forget');scrollToTop();}}
                     >
                       Change Password
                     </button>
@@ -111,7 +119,7 @@ const Navbar: React.FC = () => {
             ) : (
               <p
                 className="custom-button cursor-pointer"
-                onClick={() => (window.location.href = "/signin")}
+                onClick={() => {navigate('/signin');scrollToTop();}}
               >
                 Sign in
               </p>
