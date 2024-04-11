@@ -13,7 +13,7 @@ const Sign_Hero: React.FC = () => {
     const sessionData = localStorage.getItem("user");
     if (sessionData) {
       // Redirect to home page
-      window.location.href = "/home"; // Replace '/home' with the actual route of your home page
+      window.location.href = "/"; // Replace '/home' with the actual route of your home page
     }
   }, []);
   const handlSubmit = async (
