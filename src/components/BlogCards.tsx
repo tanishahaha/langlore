@@ -6,9 +6,9 @@ import post1 from "../../public/imgs/post1.jpg";
 import post2 from "../../public/imgs/post2.jpg";
 import post3 from "../../public/imgs/post3.jpg";
 import post4 from "../../public/imgs/post4.jpg";
-import { Link } from "react-router-dom";
 
 const BlogCards: React.FC = () => {
+  
   return (
     <div
       className="min-h-screen w-full flex flex-col items-center justify-center flex-wrap px-6"
@@ -83,11 +83,9 @@ const BlogCards: React.FC = () => {
           />
         </div>
       </div>
-      <Link to="/blog">
-        <button className="custom-button mt-3 md:text-[18px] text-[13px]" data-aos="fade-up">
+        <button className="custom-button mt-3 md:text-[18px] text-[13px]" data-aos="fade-up" onClick={()=>{window.location.href="/blog"}}>
           View All
         </button>
-      </Link>
     </div>
   );
 };

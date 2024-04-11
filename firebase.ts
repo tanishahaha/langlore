@@ -58,5 +58,14 @@ export const loginUser = async (email: string, password: string) => {
   }
 };
 
+export const getUserEmailFromLocalStorage = () => {
+  const userDataString = localStorage.getItem("user");
+  if (userDataString) {
+    const userData = JSON.parse(userDataString);
+    return userData.email; // Return the email property from user data
+  }
+  return null; // Return null if user data is not found in localStorage
+};
+
 export default app;
 // const analytics = getAnalytics(app);

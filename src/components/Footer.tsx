@@ -13,9 +13,9 @@ const Footer: React.FC = () => {
     <div className="w-full text-white flex flex-wrap items-center justify-center mt-20 ">
       <div className="w-full flex flex-wrap items-center justify-center text-center flex-col gap-4">
           <div className="flex items-center">
-          <Link to="/" className="cursor-pointer">
-              <img src={logo} alt="Logo" className="h-[1.8rem] w-auto mr-2 max-md:h-[1rem] max-[375px]:h-[0.8rem]" />
-            </Link>
+          
+            <img src={logo} alt="Logo" className="h-[1.8rem] w-auto mr-2 max-md:h-[1rem] max-[375px]:h-[0.8rem]" onClick={()=>window.location.href = "/" }/>
+            
           </div>
 
          
