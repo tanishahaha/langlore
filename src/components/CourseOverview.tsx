@@ -9,7 +9,7 @@ import { useEffect, useState } from "react";
 
 const CourseOverview = () => {
   const [userEmail, setUserEmail] = useState<string | null>(null);
-  const [showInput, setShowInput] = useState(false);
+  const [showInput] = useState(false);
   const [seatsAvailable, setSeatsAvailable] = useState<number | null>(null);
   const [isSoldOut] = useState(false);
   const [showPopup, setShowPopup] = useState(false);
