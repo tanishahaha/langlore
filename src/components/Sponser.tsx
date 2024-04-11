@@ -2,7 +2,6 @@ import React from "react";
 import logo1 from "../../public/imgs/logo1.png";
 import logo2 from "../../public/imgs/logo2.png";
 import logo3 from "../../public/imgs/logo3.png";
-import logo4 from "../../public/imgs/logo4.png";
 import logo5 from "../../public/imgs/logo5.png";
 import "./component.css";
 import "slick-carousel/slick/slick.css";
@@ -13,7 +12,7 @@ const Sponser: React.FC = () => {
   var settings = {
     dots: false,
     infinite: true,
-    slidesToShow: window.innerWidth <= 768 ? 2 : 5,
+    slidesToShow: window.innerWidth <= 768 ? 2 : 4,
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 0,
@@ -50,13 +49,7 @@ const Sponser: React.FC = () => {
             <div className="flex items-center justify-center text-center">
               <img src={logo3} alt="ELA logo" className=" h-12 p-1 ml-8 " />
             </div>
-            <div className=" flex items-center justify-center text-center">
-              <img
-                src={logo4}
-                alt="Mangalore University logo"
-                className="h-12 p-1 "
-              />
-            </div>
+            
             <div className="flex items-center justify-center text-center h-12 p-1">
               <img src={logo5} alt="Ka-naada logo" className="h-full " />
             </div>
