@@ -3,9 +3,9 @@ import { initializeApp } from "firebase/app";
 import {
   getAuth,
   signInWithEmailAndPassword,
-  onAuthStateChanged,
+  // onAuthStateChanged,
 } from "firebase/auth";
-import firebase from "firebase/compat/app";
+// import firebase from "firebase/compat/app";
 import { addDoc, collection, getFirestore } from "firebase/firestore";
 
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -82,8 +82,48 @@ export const getUserEmailFromLocalStorage = () => {
   return null; // Return null if user data is not found in localStorage
 };
 
+// TODO: Get user data from the firestore database and traverse the collection and see "users"
+// collection and get the user data and check whether the given email
+// has a "access" field true or false
+
+import { getDocs, query, where } from "firebase/firestore";
+
+// TODO: call the function getUserDataByEmail with the email of the user to check whether the user has the has accessed option enabled or not
+export const verifyUser = async function getUserDataByEmail(email: string) {
+  const usersRef = collection(db, "users");
+
+  // Create a query to filter documents by email
+  const q = query(usersRef, where("email", "==", email));
+
+  // Execute the query and await the result
+  const querySnapshot = await getDocs(q);
+
+  // Iterate through the documents that match the query
+  querySnapshot.forEach((doc) => {
+    console.log(doc.data());
+  });
+};
+
+// instead of sending the route for the checking seatAvailable or not,
+// call this function only
+export const getSeats = async function getSeatsAvailable(courseName: string) {
+  const courseRef = collection(db, "courses");
+
+  // Create a query to filter documents by email
+  const q = query(courseRef, where("courseName", "==", courseName));
+
+  // Execute the query and await the result
+  const querySnapshot = await getDocs(q);
+
+  // Iterate through the documents that match the query
+  querySnapshot.forEach((doc) => {
+    console.log(doc.data());
+  });
+};
+// this is working fine
+// getUserDataByEmail("chaurasiya@gmail.com");
 // export const actionCodeSettings = {
-//   // URL to redirect the user after completing the action
+
 //   url: "https://langlore.vercel.app/",
 
 //   // Handle code within the app
