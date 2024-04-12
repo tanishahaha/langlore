@@ -3,13 +3,17 @@ import {
   sendEmailVerification,
   // sendSignInLinkToEmail,
 } from "firebase/auth";
-import React from "react";
+import React, { useState } from "react";
 import { auth } from "../../../firebase";
+import Popup from "./Popup_Alert";
 // import { Auth } from "firebase/auth";
 
 const Signup: React.FC = () => {
-  const [email, setEmail] = React.useState("");
-  const [password, setPassword] = React.useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [passwordError, setPasswordError] = useState("");
+  const [popupMessage, setPopupMessage] = useState("");
+  const [showPopup, setShowPopup] = useState(false);
 
   //   const signup = () => {
   //     Auth
@@ -23,12 +27,12 @@ const Signup: React.FC = () => {
   //       .catch(alert);
   //   };
 
-  //const handleSubmit = async (
+  // const handleSubmit = async (
   // e: React.MouseEvent<HTMLButtonElement, MouseEvent>
-  //) => {
-  //console.log("clicked");
-  //e.preventDefault();
-  //try {
+  // ) => {
+  // console.log("clicked");
+  // e.preventDefault();
+  // try {
   // const userCred = await createUserWithEmailAndPassword(
   //  auth,
   //  email,
@@ -49,30 +53,35 @@ const Signup: React.FC = () => {
   //  email.includes("@outlook.com") ||
   //  email.includes("@hotmail.com") ||
   //   email.includes("@live.com")
-  //) {
-  //window.open("https://outlook.live.com/", "_blank");
-  //}
+  // ) {
+  // window.open("https://outlook.live.com/", "_blank");
+  // }
 
   // Sign out the user
   // auth.signOut();
 
   // Alert user
   // alert("Email verification link sent. Please check your inbox.");
-  //}
-  //} catch (error) {
-  //if ((error as any).code === "auth/email-already-in-use") {
-  //alert("User already exists. Please sign in or reset your password.");
-  //} else {
-  //console.error("Error signing up:", error);
-  //}
-  //}
-  //};
+  // }
+  // } catch (error) {
+  // if ((error as any).code === "auth/email-already-in-use") {
+  // alert("User already exists. Please sign in or reset your password.");
+  // } else {
+  // console.error("Error signing up:", error);
+  // }
+  // }
+  // };
 
   const handleSubmit = async (
     e: React.MouseEvent<HTMLButtonElement, MouseEvent>
   ) => {
     // console.log("clicked");
     e.preventDefault();
+    e.preventDefault();
+    if (password.length < 6) {
+      setPasswordError("Password should be at least 6 characters long.");
+      return;
+    }
     try {
       // TODO: for frontend, while making createUser also make sure to add the user to the database while hitting the endpoint
       const userCred = await createUserWithEmailAndPassword(
@@ -90,18 +99,28 @@ const Signup: React.FC = () => {
         // Open new tab/window with email provider URL
         const emailProvider = getEmailProvider(email);
         if (emailProvider) {
+          setPopupMessage("Email verification link sent. Please check your inbox.");
+          setShowPopup(true);
           window.open(emailProvider.url, "_blank");
         }
         // Alert user
-        alert("Email verification link sent. Please check your inbox.");
+       
       }
     } catch (error) {
       if ((error as any).code === "auth/email-already-in-use") {
-        alert("User already exists. Please sign in or reset your password.");
+        setPopupMessage("User already exists. Please sign in or reset your password.");
       } else {
         console.error("Error signing up:", error);
+        setPopupMessage("An error occurred. Please try again later.");
       }
+      setShowPopup(true);
     }
+  };
+
+  const closePopup = () => {
+    setShowPopup(false);
+    setPopupMessage("");
+    setPasswordError("");
   };
 
   // Function to get email provider URL
@@ -120,6 +139,7 @@ const Signup: React.FC = () => {
   };
   return (
     <>
+      {showPopup && <Popup message={popupMessage} onClose={closePopup} />}
       <div className="h-[90vh] flex items-center justify-center  border-white p-4">
         <div className="custom-bgColor p-8 rounded-2xl shadow-2xl border-t max-w-sm w-full">
           <div className="mb-4">
@@ -151,9 +171,16 @@ const Signup: React.FC = () => {
               id="password"
               type="password"
               placeholder="********"
-              onChange={(e) => setPassword(e.target.value)}
+              onChange={(e) => {
+                setPassword(e.target.value);
+                setPasswordError(""); 
+              }}
               value={password}
             />
+            {passwordError && (
+              <p className="text-red-500 text-sm">{passwordError}</p>
+            )}
+
             {/* <Link to="/forgot-password" className="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-400">
                         Forgot password?
                     </Link> */}
