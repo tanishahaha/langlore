@@ -97,29 +97,34 @@ export const verifyUser = async function getUserDataByEmail(email: string) {
 
   // Execute the query and await the result
   const querySnapshot = await getDocs(q);
+  let userData;
 
   // Iterate through the documents that match the query
   querySnapshot.forEach((doc) => {
-    console.log(doc.data());
+    userData = doc.data();
+    return userData;
+    // console.log(doc.data());
   });
 };
 
 // instead of sending the route for the checking seatAvailable or not,
 // call this function only
 export const getSeats = async function getSeatsAvailable(courseName: string) {
+  // console.log("courseName", courseName);
   const courseRef = collection(db, "courses");
-
-  // Create a query to filter documents by email
-  const q = query(courseRef, where("courseName", "==", courseName));
-
-  // Execute the query and await the result
+  const q = query(courseRef, where("name", "==", courseName));
   const querySnapshot = await getDocs(q);
 
-  // Iterate through the documents that match the query
+  let seatsAvailable;
   querySnapshot.forEach((doc) => {
-    console.log(doc.data());
+    seatsAvailable = doc.data().seatsAvailable;
   });
+
+  return seatsAvailable;
 };
+
+// getSeats("Tulu");
+// console.log(getSeats("Tulu"));
 // this is working fine
 // getUserDataByEmail("chaurasiya@gmail.com");
 // export const actionCodeSettings = {
