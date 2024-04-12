@@ -43,8 +43,9 @@ const CourseOverview = () => {
 
   const [userEmail, setUserEmail] = useState<string | null>(null);
   const [showInput] = useState(false);
-  const [isSoldOut] = useState(false);
+  const [isSoldOut,setIsSoldOut] = useState(false);
   const [showPopup, setShowPopup] = useState(false);
+
   const navigate = useNavigate();
 
   const scrollToTop = () => {
@@ -91,6 +92,7 @@ const CourseOverview = () => {
     const seats = getSeats("Tulu").then((data) => {
       console.log(data);
       setSeatsAvailable(data);
+      
     });
   };
 
@@ -165,7 +167,7 @@ const CourseOverview = () => {
                         Join the course
                       </button>
                       <span className="text-yell text-[1.1rem] max-md:text-mdsubsubheading">
-                        120/300 Seats Taken
+                        {seatsAvailable}/300 Seats Taken
                       </span>
                     </div>
                   </div>
