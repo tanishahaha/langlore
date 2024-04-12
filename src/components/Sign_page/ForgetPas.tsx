@@ -6,6 +6,7 @@ import { sendPasswordResetEmail } from "firebase/auth";
 import { auth } from "../../../firebase";
 import Popup from './Popup_Alert'
 
+
 const ForgetPas: React.FC = () => {
   const [email, setEmail] = React.useState("");
   const [popupMessage, setPopupMessage] = useState("");

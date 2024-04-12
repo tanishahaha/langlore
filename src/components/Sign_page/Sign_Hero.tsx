@@ -9,6 +9,7 @@ const Sign_Hero: React.FC = () => {
   const [email, setEmail] = React.useState("");
   const [password, setPassword] = React.useState("");
   const history=useNavigate();
+  
 
   useEffect(() => {
     const sessionData = localStorage.getItem("user");
@@ -26,8 +27,9 @@ const Sign_Hero: React.FC = () => {
     e.preventDefault();
     await loginUser(email, password);
     if(email!=""){
-      history('/');
       history(0);
+      history(-1);
+      // history(0);
     }
   };
 

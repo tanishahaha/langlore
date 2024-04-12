@@ -63,7 +63,7 @@ export const loginUser = async (email: string, password: string) => {
     // if user is not valid
     if (isEmailVerified()) {
       localStorage.setItem("user", JSON.stringify(user));
-      alert(`Logged in successfully as ${user.email}`);
+      // alert(`Logged in successfully as ${user.email}`);
     }
 
     // console.log("User logged in:", user.email);

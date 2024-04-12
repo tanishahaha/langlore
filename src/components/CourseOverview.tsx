@@ -45,6 +45,7 @@ const CourseOverview = () => {
   const [showInput] = useState(false);
   const [isSoldOut] = useState(false);
   const [showPopup, setShowPopup] = useState(false);
+
   const navigate = useNavigate();
 
   const scrollToTop = () => {
@@ -88,10 +89,12 @@ const CourseOverview = () => {
     // } catch (error) {
     //   console.error("Error fetching seats available:", error);
     // }
-    const seats = getSeats("Tulu").then((data) => {
+    getSeats("Tulu").then((data) => {
       console.log(data);
       setSeatsAvailable(data);
+      
     });
+    // console.log(seats);
   };
 
   return (
@@ -165,7 +168,7 @@ const CourseOverview = () => {
                         Join the course
                       </button>
                       <span className="text-yell text-[1.1rem] max-md:text-mdsubsubheading">
-                        120/300 Seats Taken
+                        {seatsAvailable}/300 Seats Taken
                       </span>
                     </div>
                   </div>
