@@ -16,7 +16,7 @@ const Sign_Hero: React.FC = () => {
     if (sessionData) {
       // Redirect to home page after
       // history(0)
-      window.location.reload;
+      history('/')
       
     }
   }, []);
@@ -27,8 +27,8 @@ const Sign_Hero: React.FC = () => {
     e.preventDefault();
     await loginUser(email, password);
     if(email!=""){
-      history(-1);
       window.location.reload;
+      history(-1);
     }
   };
 
