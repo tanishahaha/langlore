@@ -9,13 +9,14 @@ const Sign_Hero: React.FC = () => {
   const [email, setEmail] = React.useState("");
   const [password, setPassword] = React.useState("");
   const history=useNavigate();
+  
 
   useEffect(() => {
     const sessionData = localStorage.getItem("user");
     if (sessionData) {
       // Redirect to home page after
       // history(0)
-      history('/')
+      window.location.reload;
       
     }
   }, []);
@@ -27,7 +28,7 @@ const Sign_Hero: React.FC = () => {
     await loginUser(email, password);
     if(email!=""){
       history(-1);
-      history(0);
+      window.location.reload;
     }
   };
 
