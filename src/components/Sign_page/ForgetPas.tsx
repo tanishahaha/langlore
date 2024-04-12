@@ -4,9 +4,11 @@ import "../component.css";
 
 import { sendPasswordResetEmail } from "firebase/auth";
 import { auth } from "../../../firebase";
+import { useNavigate } from "react-router-dom";
 
 const ForgetPas: React.FC = () => {
   const [email, setEmail] = React.useState("");
+  const navigate=useNavigate();
 
   const handlePasswordReset = async (
     e: React.MouseEvent<HTMLButtonElement, MouseEvent>
@@ -33,7 +35,8 @@ const ForgetPas: React.FC = () => {
         window.open("https://outlook.live.com/", "_blank");
       }
 
-      alert("Password reset email sent. Please check your inbox.");
+      // alert("Password reset email sent. Please check your inbox.");
+      navigate("/signin");
     } catch (error) {
       console.error(
         "Error sending password reset email Try creating new account:",
