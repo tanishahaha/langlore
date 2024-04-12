@@ -1,11 +1,11 @@
 import { FaClipboardList, FaChevronDown } from "react-icons/fa";
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef} from "react";
 import tulu from "../../public/imgs/tulu.png";
 import { BiCheck, BiFileBlank } from "react-icons/bi";
 import { GoDash } from "react-icons/go";
 import ReactPlayer from "react-player";
 import './component.css';
-import { getUserEmailFromLocalStorage } from "../../firebase";
+// import { getUserEmailFromLocalStorage } from "../../firebase";
 // import { Link } from "react-router-dom";
 
 const Courses = () => {
