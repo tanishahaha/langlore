@@ -27,6 +27,7 @@ const Sign_Hero: React.FC = () => {
     e.preventDefault();
     await loginUser(email, password);
     if(email!=""){
+      history(0);
       history(-1);
       // history(0);
     }
