@@ -36,7 +36,7 @@ const ForgetPas: React.FC = () => {
       }
 
       // alert("Password reset email sent. Please check your inbox.");
-      navigate("/signin");
+      window.location.href="/signin"
     } catch (error) {
       console.error(
         "Error sending password reset email Try creating new account:",
