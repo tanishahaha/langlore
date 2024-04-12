@@ -43,7 +43,7 @@ const CourseOverview = () => {
 
   const [userEmail, setUserEmail] = useState<string | null>(null);
   const [showInput] = useState(false);
-  const [isSoldOut,setIsSoldOut] = useState(false);
+  const [isSoldOut] = useState(false);
   const [showPopup, setShowPopup] = useState(false);
 
   const navigate = useNavigate();
@@ -89,11 +89,12 @@ const CourseOverview = () => {
     // } catch (error) {
     //   console.error("Error fetching seats available:", error);
     // }
-    const seats = getSeats("Tulu").then((data) => {
+    getSeats("Tulu").then((data) => {
       console.log(data);
       setSeatsAvailable(data);
       
     });
+    // console.log(seats);
   };
 
   return (
