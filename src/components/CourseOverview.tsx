@@ -16,6 +16,7 @@ const CourseOverview = () => {
   const [upi, setUpi] = useState("");
   const [emailError, setEmailError] = useState("");
   const [upiError, setUpiError] = useState("");
+  const [isContentAccessible,setIsContentAccessible]=useState(false);
 
   const validateEmail = (email: string): boolean => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -39,6 +40,8 @@ const CourseOverview = () => {
     // If both email and upi are valid, proceed with submission
     // Your submission logic here...
     setShowPopup(false);
+    setIsContentAccessible(true);
+
   };
 
   const [userEmail, setUserEmail] = useState<string | null>(null);
