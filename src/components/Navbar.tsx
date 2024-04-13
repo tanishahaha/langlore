@@ -28,7 +28,7 @@ const Navbar: React.FC = () => {
     // Reset userEmail state
     setIsDropdownOpen(false);
     setUserEmail(null);
-    window.location.href = "/";
+    window.location.reload;
   };
 
   const toggleDropdown = () => {

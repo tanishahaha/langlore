@@ -1,12 +1,17 @@
 // ForgetPas.tsx
-import React from "react";
+import React,{useState} from "react";
 import "../component.css";
 
 import { sendPasswordResetEmail } from "firebase/auth";
 import { auth } from "../../../firebase";
+import Popup from './Popup_Alert'
+
 
 const ForgetPas: React.FC = () => {
   const [email, setEmail] = React.useState("");
+  const [popupMessage, setPopupMessage] = useState("");
+  const [showPopup, setShowPopup] = useState(false);
+
 
   const handlePasswordReset = async (
     e: React.MouseEvent<HTMLButtonElement, MouseEvent>
@@ -33,15 +38,21 @@ const ForgetPas: React.FC = () => {
         window.open("https://outlook.live.com/", "_blank");
       }
 
-      alert("Password reset email sent. Please check your inbox.");
+      setPopupMessage("Password reset email sent. Please check your inbox.");
+      setShowPopup(true);
     } catch (error) {
-      console.error(
-        "Error sending password reset email Try creating new account:",
-        error
-      );
+      console.error("Error sending password reset email:", error);
+      setPopupMessage("Error sending password reset email. Please try again later.");
+      setShowPopup(true);
     }
   };
+  const closePopup = () => {
+    setShowPopup(false);
+    setPopupMessage("");
+  };
+
   return (
+    <>    {showPopup && <Popup message={popupMessage} onClose={closePopup} />}
     <div className="h-[70vh] flex items-center justify-center p-4">
       <form className="custom-bgColor p-8 rounded-2xl shadow-2xl border-t max-w-sm w-full">
         <div className="mb-4">
@@ -71,6 +82,8 @@ const ForgetPas: React.FC = () => {
         </div>
       </form>
     </div>
+    </>
+
   );
 };
 
