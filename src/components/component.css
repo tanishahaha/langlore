@@ -33,11 +33,14 @@ body {
   }
   .custom-border-button:hover{
     color: white;
+    background: #0779EB;
     
   }
   
   .custom-button:hover {
-    color: #000000; 
+    color: #0779EB; 
+    background: white;
+    font-weight: 500;
   }
   
   @media (max-width: 768px) {

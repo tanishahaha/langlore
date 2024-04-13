@@ -24,3 +24,9 @@ const Popup: React.FC<PopupProps> = ({ message, onClose }) => {
 };
 
 export default Popup;
+
+
+
+
+
+

@@ -23,10 +23,7 @@ const Signup: React.FC = () => {
     navigate('/signin')
 
     if (redirectUrl) {
-
      window.open(redirectUrl, "_blank");
-     
-
     }
   };
 
@@ -138,3 +135,11 @@ const Signup: React.FC = () => {
 };
 
 export default Signup;
+
+
+
+
+
+
+
+
