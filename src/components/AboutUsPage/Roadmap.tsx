@@ -1,8 +1,8 @@
 import React from "react";
-import { FaCheck, FaExpand, FaHandPaper, FaRocket, FaSpaceShuttle, FaUsers } from "react-icons/fa";
-import Card from "../Cards";
+// import { FaCheck, FaExpand, FaHandPaper, FaRocket, FaSpaceShuttle, FaUsers } from "react-icons/fa";
+// import Card from "../Cards";
 
-// import Cardsanimation from "./Cardsanimation";
+import Cardsanimation from "./Cardsanimation";
 
 const Roadmap: React.FC = () => {
   return (
