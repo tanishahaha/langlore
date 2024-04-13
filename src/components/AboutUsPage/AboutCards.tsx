@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaLinkedin, FaTwitter } from 'react-icons/fa';
+import { FaLinkedin, FaTwitter,FaInstagram } from 'react-icons/fa';
 
 interface TeamMemberProps {
     name: string;
@@ -7,10 +7,11 @@ interface TeamMemberProps {
     description: string;
     linkedin: string;
     twitter: string;
+    instagram: string;
     image: string;
 }
 
-const TeamMember: React.FC<TeamMemberProps> = ({ name, title, description, linkedin, twitter, image }) => {
+const TeamMember: React.FC<TeamMemberProps> = ({ name, title, description, linkedin, twitter, instagram, image }) => {
     return (
         <div className="flex text-gray-200 flex-col items-center p-4 flex-grow flex-shrink-0 flex-basis-auto">
             <img src={image} alt={`Profile picture of ${name}`} className="mb-4 rounded-full w-[220px] h-[220px]" />
@@ -24,6 +25,11 @@ const TeamMember: React.FC<TeamMemberProps> = ({ name, title, description, linke
                 {twitter && ( 
                     <a href={twitter} className="text-white hover:text-gray-100" target="_blank" rel="noopener noreferrer">
                         <FaTwitter size={24} />
+                    </a>
+                )}
+                 {instagram && ( 
+                    <a href={instagram} className="text-white hover:text-gray-100" target="_blank" rel="noopener noreferrer">
+                        <FaInstagram size={24} />
                     </a>
                 )}
             </div>

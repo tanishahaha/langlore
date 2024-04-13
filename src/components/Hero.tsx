@@ -1,8 +1,9 @@
 import { Link } from "react-router-dom";
 import sym from "/imgs/langlogo.png";
+import { useNavigate } from "react-router-dom";
 
 const Hero = () => {
-  
+  const navigate = useNavigate();
   return (
     <div
       className="flex flex-col flex-wrap items-center justify-center h-[78vh] w-full mt-8  max-lg:h-[50vh] max-sm:h-[55vh]"
