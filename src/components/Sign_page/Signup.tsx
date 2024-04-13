@@ -84,6 +84,7 @@ const Signup: React.FC = () => {
     }
     try {
       // TODO: for frontend, while making createUser also make sure to add the user to the database while hitting the endpoint
+      
       const userCred = await createUserWithEmailAndPassword(
         auth,
         email,
@@ -99,16 +100,19 @@ const Signup: React.FC = () => {
         // Open new tab/window with email provider URL
         const emailProvider = getEmailProvider(email);
         if (emailProvider) {
-          setPopupMessage("Email verification link sent. Please check your inbox.");
+          setPopupMessage(
+            "Email verification link sent. Please check your inbox."
+          );
           setShowPopup(true);
           window.open(emailProvider.url, "_blank");
         }
         // Alert user
-       
       }
     } catch (error) {
       if ((error as any).code === "auth/email-already-in-use") {
-        setPopupMessage("User already exists. Please sign in or reset your password.");
+        setPopupMessage(
+          "User already exists. Please sign in or reset your password."
+        );
       } else {
         console.error("Error signing up:", error);
         setPopupMessage("An error occurred. Please try again later.");
@@ -173,7 +177,7 @@ const Signup: React.FC = () => {
               placeholder="********"
               onChange={(e) => {
                 setPassword(e.target.value);
-                setPasswordError(""); 
+                setPasswordError("");
               }}
               value={password}
             />
