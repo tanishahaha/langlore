@@ -1,23 +1,110 @@
-import React, { useState } from 'react';
-import { FaClock } from "react-icons/fa";
+import React, { useEffect, useState } from 'react';
+import { FaClock, FaTimes } from "react-icons/fa";
 import { LuList } from "react-icons/lu";
 import tulu from "../../public/imgs/tulu.png";
 import "./component.css";
+import { getSeats, getUserEmailFromLocalStorage } from '../../firebase';
+import { useNavigate } from 'react-router-dom';
 
 const CourseCard: React.FC = () => {
   const [showInput, setShowInput] = useState(false);
-  const [isSoldOut] = useState(false);
+  const [seatsAvailable, setSeatsAvailable] = useState<number | undefined>(
+    undefined
+  );
+  const [email, setEmail] = useState("");
+  const [upi, setUpi] = useState("");
+  const [emailError, setEmailError] = useState("");
+  const [upiError, setUpiError] = useState("");
 
+  const validateEmail = (email: string): boolean => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  };
+
+  const validateUpi = (upi: string): boolean => {
+    const upiRegex = /^.+@.*$/;
+    return upiRegex.test(upi);
+  };
+
+  const handleSubmit = () => {
+    if (!validateEmail(email)) {
+      setEmailError("Please enter a valid email address");
+      return;
+    }
+    if (!validateUpi(upi)) {
+      setUpiError("Please enter a valid UPI address");
+      return;
+    }
+    // If both email and upi are valid, proceed with submission
+    // Your submission logic here...
+    setShowPopup(false);
+  };
+
+  const [userEmail, setUserEmail] = useState<string | null>(null);
+  const [isSoldOut] = useState(false);
+  const [showPopup, setShowPopup] = useState(false);
+
+  const navigate = useNavigate();
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth", // Smooth scrolling animation
+    });
+  };
   const handleJoinCourse = () => {
-    if (!isSoldOut) {
-      
-      setShowInput(true);
+    if (userEmail) {
+      setShowPopup(true);
     } else {
-      setShowInput(false); // Hide input if sold out
+      navigate("/signin");
+      scrollToTop();
+    }
+
+    // if (!isSoldOut) {
+    //   setShowInput(true);
+    // } else {
+    //   setShowInput(false); // Hide input if sold out
+    // }
+  };
+
+  useEffect(() => {
+    const email = getUserEmailFromLocalStorage();
+    if (email) {
+      setUserEmail(email);
+    }
+    // console.log(getSeats("Tulu"));
+    fetchSeatsAvailable();
+  }, []);
+
+  const fetchSeatsAvailable = async () => {
+    // try {
+    //   const response = await fetch(
+    //     `http://localhost:3000/courses/R8xrCvcy9LXy7XU0heSL/seatsAvailable`
+    //   );
+    //   const data = await response.json();
+    //   console.log(data);
+    //   setSeatsAvailable(data);
+    // } catch (error) {
+    //   console.error("Error fetching seats available:", error);
+    // }
+    // getSeats("Tulu").then((data) => {
+    //   console.log(data);
+    //   setSeatsAvailable(data);
+    // });
+    // console.log(seats);
+
+    try {
+      const data = await getSeats("Tulu");
+      setSeatsAvailable(data);
+    } catch (error) {
+      console.error("Error fetching seats:", error);
+      
     }
   };
 
   return (
+
+    <>
     <div className="w-full flex justify-center items-center flex-wrap">
       <div className="bg-bgcard bg-opacity-35 p-8 rounded-[2rem] shadow-lg max-w-screen-lg  text-white border border-white max-lg:bg-transparent max-lg:border-none max-md:w-full" data-aos="fade-up">
         <div className="w-full flex flex-col justify-center items-center text-center mb-10">
@@ -66,7 +153,7 @@ const CourseCard: React.FC = () => {
                   <div className="flex gap-2 items-center mb-12">
                     <FaClock className="text-iconcol" size={24} />
                     <span className="text-iconcol text-[1rem] max-md:text-mdsubsubheading ">
-                      Estimated Duration: 6 Hours
+                      Estimated Duration: 11 mins 22 secs
                     </span>
                   </div>
                 </div>
@@ -84,7 +171,7 @@ const CourseCard: React.FC = () => {
                       Join the course
                     </button>
                     <span className="text-yell text-[1.1rem] max-md:text-mdsubsubheading">
-                      120/300 Seats Taken
+                    {seatsAvailable}/300 Seats Taken
                     </span>
                   </div>
                 </div>
@@ -120,6 +207,77 @@ const CourseCard: React.FC = () => {
         </div>
       </div>
     </div>
+    {showPopup && (
+        <div className="popup-container">
+          <div className="popup bg-gray-800 w-[40%] text-white rounded-lg shadow-lg p-8 items-center border border-white">
+            <div className="flex justify-end">
+              <button
+                onClick={() => setShowPopup(false)}
+                className="focus:outline-none"
+              >
+                <FaTimes />
+              </button>
+            </div>
+            <h1 className="md:text-lg font-semibold mb-4 text-white">
+              Sign up for the Tulu Basics Course!
+            </h1>
+            <div className="text-white md:text-[18px] text-sm mt-4">
+              <div className="mb-4 flex flex-col text-left ">
+                <label htmlFor="email" className="block mb-2">
+                  Enter email id:
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  placeholder="someone@gmail.com"
+                  className={`outline-none border md:text-lg text:sm border-gray-600 focus:border-white focus:placeholder-white custom-inputColor p-3 rounded-xl text-gray-300 w-full ${
+                    emailError ? "border-red-500" : ""
+                  }`}
+                  value={email}
+                  onChange={(e) => {
+                    setEmail(e.target.value);
+                    setEmailError("");
+                  }}
+                />
+                {emailError && (
+                  <p className="text-red-500 text-xs mt-1">{emailError}</p>
+                )}
+              </div>
+              <div className="mb-4 flex flex-col text-left">
+                <label htmlFor="upi" className="block mb-2">
+                  Enter upi id:
+                </label>
+                <input
+                  type="text"
+                  id="upi"
+                  placeholder="username@okhdfcbank"
+                  className={`outline-none border border-gray-600 focus:border-white focus:placeholder-white placeholder-text-[18px] custom-inputColor p-3 rounded-xl text-gray-300 w-full ${
+                    upiError ? "border-red-500" : ""
+                  }`}
+                  value={upi}
+                  onChange={(e) => {
+                    setUpi(e.target.value);
+                    setUpiError("");
+                  }}
+                />
+                {upiError && (
+                  <p className="text-red-500 text-xs mt-1">{upiError}</p>
+                )}
+              </div>
+            </div>
+            <p className="text-sm mb-4 text-white">
+              We'll get in touch with you soon.
+            </p>
+            <button
+              onClick={handleSubmit}
+              className="bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-xl"
+            >
+              Submit
+            </button>
+          </div>
+        </div>
+      )}
+    </>
   );
 };
 

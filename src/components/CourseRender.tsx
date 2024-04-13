@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import { verifyUser } from "../../firebase.ts"; // Import your backend function
 import { getUserEmailFromLocalStorage } from "../../firebase";
-import Courses from "./Courses.tsx";
 import CourseOverview from "./CourseOverview.tsx";
+import Courses from "./Courses.tsx";
 
 const CourseRender = () => {
   const [userAccess, setUserAccess] = useState(false);
@@ -16,11 +16,11 @@ const CourseRender = () => {
       const userDataPromise = verifyUser(email);
       userDataPromise.then((data) => {
         console.log("data", data);
-        const userDataString = JSON.stringify(data); 
+        const userDataString = JSON.stringify(data); // Convert data to string if it's not already a string
         const userData = JSON.parse(userDataString);
         setUserAccess(userData.hasAccessToCourse);
         console.log("userData", userData.hasAccessToCourse);
-       
+        // Now you can access properties of userData
       }).catch(error => {
         console.error("Error getting user data:", error);
       });
@@ -33,15 +33,19 @@ const CourseRender = () => {
     }
   }, []);
 
+
   return (
     <div>
-      { userAccess ? (
+      {userAccess === null ? (
+        <p>Loading...</p>
+      ) : userAccess ? (
         <div>
           <Courses/>
         </div>
       ) : (
         <div>
           <CourseOverview/>
+
         </div>
       )}
     </div>

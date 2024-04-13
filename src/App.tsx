@@ -8,7 +8,6 @@ import NotFoundScreen from "./components/NotFoundScreen";
 import Blog_Home from "./components/Blog_Page/Blog_Home";
 import ForgetPas from "./components/Sign_page/ForgetPas";
 import Signup from "./components/Sign_page/Signup";
-import CourseOverview from "./components/CourseOverview";
 import CourseRender from "./components/CourseRender";
 
 const App = () => {

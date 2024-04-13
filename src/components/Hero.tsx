@@ -29,7 +29,7 @@ const Hero = () => {
               Preserving endangered languages
             </h1>
             <div className="flex w-full gap-8 flex-wrap items-center justify-center">
-              <button className="custom-button">
+              <button className="custom-button" onClick={()=>navigate("/courses")}>
                 Learn More
               </button>
               <Link to="/signup" className="custom-border-button">
@@ -52,7 +52,7 @@ const Hero = () => {
               Preserving endangered languages
             </h1>
             <div className="flex w-full gap-2 flex-wrap items-center justify-center">
-              <button className="custom-button">Learn More</button>
+              <button className="custom-button" onClick={()=>navigate("/courses")}>Learn More</button>
               <Link to="/signup" className="custom-border-button">
                 Sign Up
               </Link>
