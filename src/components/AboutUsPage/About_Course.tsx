@@ -1,5 +1,9 @@
+import { useNavigate } from "react-router-dom";
+
 const About_Course: React.FC = () => {
+  const navigate=useNavigate();
   return (
+    
     <div className=" h-[80vh] max-md:h-[70vh] flex flex-col text-center  justify-center items-center w-full  px-4  " data-aos="fade-up">
       <h1 className="md:text-lgheading w-full  text-mdheading text-white font-semibold md:w-2/4 tracking-widest ">
         Reviving Endangered Languages Through Education and Technology
@@ -13,7 +17,7 @@ const About_Course: React.FC = () => {
         </h1>
       </div>
       <button // Use button instead of Link
-        className="custom-button mt-6 "
+        className="custom-button mt-6 " onClick={()=>{navigate("/courses")}}
       >
         Explore All Courses
       </button>

@@ -7,7 +7,7 @@ import { getSeats, getUserEmailFromLocalStorage } from '../../firebase';
 import { useNavigate } from 'react-router-dom';
 
 const CourseCard: React.FC = () => {
-  const [showInput, setShowInput] = useState(false);
+  const [showInput] = useState(false);
   const [seatsAvailable, setSeatsAvailable] = useState<number | undefined>(
     undefined
   );
