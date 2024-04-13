@@ -28,7 +28,7 @@ const Navbar: React.FC = () => {
     // Reset userEmail state
     setIsDropdownOpen(false);
     setUserEmail(null);
-    window.location.reload;
+    window.location.href="/";
   };
 
   const toggleDropdown = () => {
@@ -159,9 +159,39 @@ const Navbar: React.FC = () => {
           >
             Blog
           </Link>
-          <Link to="/signin" className="custom-button " onClick={toggleNavbar}>
+          {userEmail ? (
+              // <p className="text-white">{userEmail}</p>
+              <div className="flex flex-col gap-4 cursor-pointer">
+                
+
+                
+                  
+                    <button
+                      className="text-center px-4 text-white  rounded-lg py-2 cursor-pointer mb-2"
+                      onClick={() => {navigate('/forget');scrollToTop();}}
+                    >
+                      Change Password
+                    </button>
+
+                    <button
+                      className="text-center px-4 text-white  rounded-lg py-1 cursor-pointer"
+                      onClick={handleLogout}
+                    >
+                      Logout
+                    </button>
+                
+              </div>
+            ) : (
+              <p
+                className="custom-button cursor-pointer"
+                onClick={() => {navigate('/signin');scrollToTop();toggleNavbar()}}
+              >
+                Sign in
+              </p>
+            )}
+          {/* <Link to="/signin" className="custom-button " onClick={toggleNavbar}>
             Signup
-          </Link>
+          </Link> */}
         </div>
       )}
     </nav>

@@ -16,7 +16,6 @@ const CourseOverview = () => {
   const [upi, setUpi] = useState("");
   const [emailError, setEmailError] = useState("");
   const [upiError, setUpiError] = useState("");
-  const [isContentAccessible, setIsContentAccessible] = useState(false);
 
   const validateEmail = (email: string): boolean => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -40,7 +39,6 @@ const CourseOverview = () => {
     // If both email and upi are valid, proceed with submission
     // Your submission logic here...
     setShowPopup(false);
-    setIsContentAccessible(true);
   };
 
   const [userEmail, setUserEmail] = useState<string | null>(null);
@@ -156,7 +154,7 @@ const CourseOverview = () => {
                     <div className="flex gap-2 items-center mb-12">
                       <FaClock className="text-iconcol" size={24} />
                       <span className="text-iconcol text-[1rem] max-md:text-mdsubsubheading ">
-                        Estimated Duration: 6 Hours
+                        Estimated Duration: 11 mins 22 secs
                       </span>
                     </div>
                   </div>

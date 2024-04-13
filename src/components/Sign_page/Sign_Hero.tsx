@@ -1,15 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import "../component.css";
 import { loginUser } from "../../../firebase";
 import { useEffect } from "react";
+import Popup from "./Popup_Alert";
 // import { Link } from 'react-router-dom';
 
 const Sign_Hero: React.FC = () => {
+  const [showPopup, setShowPopup] = useState(false);
   const [email, setEmail] = React.useState("");
   const [password, setPassword] = React.useState("");
   const history=useNavigate();
   const location = useLocation();
+  const navigate=useNavigate();
   
 
   useEffect(() => {
@@ -22,22 +25,42 @@ const Sign_Hero: React.FC = () => {
     }
   }, []);
 
+  const closePopup = () => {
+    setShowPopup(false);
+    
+    navigate('/signin');
+  };
+
+
   const handlSubmit = async (
     e: React.MouseEvent<HTMLButtonElement, MouseEvent>
   ) => {
     e.preventDefault();
-    const currentloc=location.pathname;
+    const currentloc = location.pathname;
     console.log(currentloc);
-    await loginUser(email, password);
-    if(email!=""){
-      // history(0);
-      history(-1);
-      window.location.reload;
-      // history(0);
+    const res = await loginUser(email, password);
+    if (res === "error loggin in") {
+      setShowPopup(true);
+    } else {
+      // Successful sign-in
+      // Store the current location in sessionStorage before redirecting to sign-in page
+      sessionStorage.setItem('previousLocation', currentloc);
+  
+      // Redirect the user back to the previous location
+      const previousLocation = sessionStorage.getItem('previousLocation');
+      if (previousLocation) {
+        window.location.href = previousLocation;
+      } else {
+        // If there's no previous location, go back to the home page
+        window.location.href = '/';
+      }
     }
   };
+  
 
   return (
+    <>
+    {showPopup && <Popup message="Error Signing in. Please enter valid credentials." onClose={closePopup} />}
     <div className="h-[90vh] flex items-center justify-center  border-white p-4">
       <div className="custom-bgColor p-8 rounded-2xl shadow-2xl border-t max-w-sm w-full">
         <div className="mb-4">
@@ -101,6 +124,7 @@ const Sign_Hero: React.FC = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 

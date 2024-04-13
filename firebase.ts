@@ -74,6 +74,7 @@ export const loginUser = async (email: string, password: string) => {
     // console.log("User logged in:", user.email);
   } catch (error) {
     // console.error("Error logging in:", (error as Error).message);
+    return "error loggin in"
     alert(`Error logging in: ${(error as Error).message}`);
   }
 };

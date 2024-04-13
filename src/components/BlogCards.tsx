@@ -6,9 +6,16 @@ import post1 from "../../public/imgs/post1.jpg";
 import post2 from "../../public/imgs/post2.jpg";
 import post3 from "../../public/imgs/post3.jpg";
 import post4 from "../../public/imgs/post4.jpg";
+import { useNavigate } from "react-router-dom";
 
 const BlogCards: React.FC = () => {
-  
+  const navigate=useNavigate();
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth' // Smooth scrolling animation
+    });
+  };
   return (
     <div
       className="min-h-screen w-full flex flex-col items-center justify-center flex-wrap px-6"
@@ -83,7 +90,7 @@ const BlogCards: React.FC = () => {
           />
         </div>
       </div>
-        <button className="custom-button mt-3 md:text-[18px] text-[13px]" data-aos="fade-up" onClick={()=>{window.location.href="/blog"}}>
+        <button className="custom-button mt-3 md:text-[18px] text-[13px]" data-aos="fade-up" onClick={()=>{navigate("/blog");scrollToTop();}}>
           View All
         </button>
     </div>
