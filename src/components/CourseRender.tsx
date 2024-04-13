@@ -8,28 +8,36 @@ const CourseRender = () => {
 
   useEffect(() => {
     const email = getUserEmailFromLocalStorage();
+    console.log("email", email);
+
+    try {
+      const userData = verifyUser("amintanisha17@gmail.com").then((data) => {
+        console.log("data", data);
+      });
+      console.log("userData", userData);
+    } catch (error) {
+      console.error("Error getting user email from local storage:", error);
+    }
     if (email) {
       setUserEmail(email);
     }
   }, []);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      // Call your backend function to verify user access
-      try {
-        const userData = await verifyUser(userEmail || ""); 
-        
-         console.log(userData);
-      } catch (error) {
-        console.error("Error verifying user:", error);
-        // Handle error if needed
-      }
-    };
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     // Call your backend function to verify user access
+  //     try {
+  //       const userData = await verifyUser(userEmail || "");
 
-    fetchData();
-  }, []);
+  //       console.log(userData);
+  //     } catch (error) {
+  //       console.error("Error verifying user:", error);
+  //       // Handle error if needed
+  //     }
+  //   };
 
-  
+  //   fetchData();
+  // }, []);
 
   return (
     <div>
