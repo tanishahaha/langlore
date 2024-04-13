@@ -80,7 +80,7 @@ export const loginUser = async (email: string, password: string) => {
 
 export const getUserEmailFromLocalStorage = () => {
   const userDataString = localStorage.getItem("user");
-  console.log("userDataString", userDataString);
+  // console.log("userDataString", userDataString);
   if (userDataString) {
     const userData = JSON.parse(userDataString);
     return userData.email; // Return the email property from user data
@@ -109,9 +109,10 @@ export const verifyUser = async function getUserDataByEmail(email: string) {
   querySnapshot.forEach((doc) => {
     userData = doc.data();
     // console.log("userData", userData);
-    return userData;
+    // return userData;
     // console.log(doc.data());
   });
+  return userData; // Return userData from the main function
 };
 
 // verifyUser("amintanisha17@gmail.com");
