@@ -1,45 +1,47 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { verifyUser } from "../../firebase.ts"; // Import your backend function
 import { getUserEmailFromLocalStorage } from "../../firebase";
-
+import Courses from "./Courses.tsx";
+import CourseOverview from "./CourseOverview.tsx";
 
 const CourseRender = () => {
-  const [userAccess, setUserAccess] = useState(null);
+  const [userAccess, setUserAccess] = useState(false);
   const [userEmail, setUserEmail] = useState<string | null>(null);
 
   useEffect(() => {
-    const fetchData = async () => {
-      const email = getUserEmailFromLocalStorage();
-      if (email) {
-        setUserEmail(email);
-        try {
-          const userData = await verifyUser(email); 
-          console.log("fjf")
-          console.log(userData);
-        } catch (error) {
-          console.error("Error verifying user:", error);
-        }
-      }
-    };
+    const email = getUserEmailFromLocalStorage();
+    console.log("email", userEmail);
 
-    fetchData();
+    try {
+      const userDataPromise = verifyUser(email);
+      userDataPromise.then((data) => {
+        console.log("data", data);
+        const userDataString = JSON.stringify(data); 
+        const userData = JSON.parse(userDataString);
+        setUserAccess(userData.hasAccessToCourse);
+        console.log("userData", userData.hasAccessToCourse);
+       
+      }).catch(error => {
+        console.error("Error getting user data:", error);
+      });
+    } catch (error) {
+      console.error("Error getting user email from local storage:", error);
+    }
+    
+    if (email) {
+      setUserEmail(email);
+    }
   }, []);
-
-  
 
   return (
     <div>
-      {userAccess === null ? ( // Render loading indicator while fetching data
-        <p>Loading...</p>
-      ) : userAccess ? ( // If user has access, render content for granted access
+      { userAccess ? (
         <div>
-          <h2>You have access to all the contents!</h2>
-          {/* Render additional content here */}
+          <Courses/>
         </div>
-      ) : ( // If user doesn't have access, render content for no access
+      ) : (
         <div>
-          <h2>Join the course to get access!</h2>
-          {/* Render join course button or additional content here */}
+          <CourseOverview/>
         </div>
       )}
     </div>
