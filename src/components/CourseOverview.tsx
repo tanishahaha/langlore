@@ -92,11 +92,19 @@ const CourseOverview = () => {
     // } catch (error) {
     //   console.error("Error fetching seats available:", error);
     // }
-    getSeats("Tulu").then((data) => {
-      console.log(data);
-      setSeatsAvailable(data);
-    });
+    // getSeats("Tulu").then((data) => {
+    //   console.log(data);
+    //   setSeatsAvailable(data);
+    // });
     // console.log(seats);
+
+    try {
+      const data = await getSeats("Tulu");
+      setSeatsAvailable(data);
+    } catch (error) {
+      console.error("Error fetching seats:", error);
+      // Handle error as needed, such as setting seatsAvailable to a default value or showing an error message to the user.
+    }
   };
 
   return (

@@ -4,6 +4,7 @@ import sym from "/imgs/langlogo.png";
 
 const Hero = () => {
   const navigate=useNavigate();
+
   return (
     <div className="flex flex-col flex-wrap items-center justify-center h-[78vh] w-full mt-8  max-lg:h-[50vh] max-sm:h-[55vh]" data-aos="fade-up">
       <div className="max-sm:hidden herobg-wrapper w-full h-[100vh] flex items-center justify-center p-8 relative max-xl:p-0">
@@ -28,7 +29,7 @@ const Hero = () => {
               Preserving endangered languages
             </h1>
             <div className="flex w-full gap-8 flex-wrap items-center justify-center">
-              <button className="custom-button">
+              <button className="custom-button" onClick={()=>navigate("/courses")}>
                 Learn More
               </button>
               <Link to="/signup" className="custom-border-button">
