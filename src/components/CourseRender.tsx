@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { verifyUser } from "../../firebase.ts"; // Import your backend function
 import { getUserEmailFromLocalStorage } from "../../firebase";
 
-
 const CourseRender = () => {
   const [userAccess, setUserAccess] = useState(null);
   const [userEmail, setUserEmail] = useState<string | null>(null);
@@ -14,8 +13,10 @@ const CourseRender = () => {
         setUserEmail(email);
         try {
           const userData = await verifyUser(email); 
-          console.log("fjf")
-          console.log(userData);
+          // const userDatas = JSON.parse(userData);
+          // Access hasAccessToCourse from userData and set userAccess state accordingly
+          // setUserAccess(userData);
+          console.log(userData)
         } catch (error) {
           console.error("Error verifying user:", error);
         }
@@ -25,18 +26,16 @@ const CourseRender = () => {
     fetchData();
   }, []);
 
-  
-
   return (
     <div>
-      {userAccess === null ? ( // Render loading indicator while fetching data
+      {userAccess === null ? (
         <p>Loading...</p>
-      ) : userAccess ? ( // If user has access, render content for granted access
+      ) : userAccess ? (
         <div>
           <h2>You have access to all the contents!</h2>
           {/* Render additional content here */}
         </div>
-      ) : ( // If user doesn't have access, render content for no access
+      ) : (
         <div>
           <h2>Join the course to get access!</h2>
           {/* Render join course button or additional content here */}

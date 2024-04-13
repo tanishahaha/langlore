@@ -16,7 +16,7 @@ const CourseOverview = () => {
   const [upi, setUpi] = useState("");
   const [emailError, setEmailError] = useState("");
   const [upiError, setUpiError] = useState("");
-  const [isContentAccessible,setIsContentAccessible]=useState(false);
+  const [isContentAccessible, setIsContentAccessible] = useState(false);
 
   const validateEmail = (email: string): boolean => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -41,7 +41,6 @@ const CourseOverview = () => {
     // Your submission logic here...
     setShowPopup(false);
     setIsContentAccessible(true);
-
   };
 
   const [userEmail, setUserEmail] = useState<string | null>(null);
@@ -103,7 +102,7 @@ const CourseOverview = () => {
       setSeatsAvailable(data);
     } catch (error) {
       console.error("Error fetching seats:", error);
-      // Handle error as needed, such as setting seatsAvailable to a default value or showing an error message to the user.
+      
     }
   };
 

@@ -72,8 +72,8 @@ const App = () => {
           path="/courses"
           element={
             <RootLayout>
-              <CourseOverview />
-              {/* <CourseRender/> */}
+              {/* <CourseOverview /> */}
+              <CourseRender/>
             </RootLayout>
           }
         />
