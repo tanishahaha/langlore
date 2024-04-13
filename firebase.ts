@@ -80,13 +80,14 @@ export const loginUser = async (email: string, password: string) => {
 
 export const getUserEmailFromLocalStorage = () => {
   const userDataString = localStorage.getItem("user");
+  console.log("userDataString", userDataString);
   if (userDataString) {
     const userData = JSON.parse(userDataString);
     return userData.email; // Return the email property from user data
   }
   return null; // Return null if user data is not found in localStorage
 };
-
+// getUserEmailFromLocalStorage();
 // TODO: Get user data from the firestore database and traverse the collection and see "users"
 // collection and get the user data and check whether the given email
 // has a "access" field true or false
