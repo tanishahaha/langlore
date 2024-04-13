@@ -92,7 +92,6 @@ export const getUserEmailFromLocalStorage = () => {
 // has a "access" field true or false
 
 import { getDocs, query, where } from "firebase/firestore";
-import { GiSeaTurtle } from "react-icons/gi";
 
 // TODO: call the function getUserDataByEmail with the email of the user to check whether the user has the has accessed option enabled or not
 export const verifyUser = async function getUserDataByEmail(email: string) {
@@ -153,6 +152,24 @@ export const getAllCourse = async function getAllCourses() {
   return allCourses;
 };
 
+// TODO: call the function createUser to add the user to the database as the user sign up
+export const createUser = async function createUser(
+  name: string,
+  email: string
+) {
+  const userRef = collection(db, "users");
+
+  try {
+    await addDoc(userRef, {
+      name: name,
+      email: email,
+      hasAccess: false, // Setting default value to false
+    });
+    console.log("User added successfully.");
+  } catch (error) {
+    console.error("Error adding user: ", error);
+  }
+};
 // getAllCourse();
 // getSeats("Tulu");
 // console.log(getSeats("Tulu"));
