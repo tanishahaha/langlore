@@ -8,7 +8,6 @@ const CourseRender = () => {
 
   useEffect(() => {
     const email = getUserEmailFromLocalStorage();
-    console.log(email);
     if (email) {
       setUserEmail(email);
     }
@@ -18,17 +17,19 @@ const CourseRender = () => {
     const fetchData = async () => {
       // Call your backend function to verify user access
       try {
-        const userData = await verifyUser(userEmail || "");
-
-        console.log(userData);
+        const userData = await verifyUser(userEmail || ""); 
+        
+         console.log(userData);
       } catch (error) {
         console.error("Error verifying user:", error);
         // Handle error if needed
       }
     };
 
-    fetchData(); // Call the fetchData function when the component mounts
-  }, []); // Empty dependency array ensures this effect runs only once on mount
+    fetchData();
+  }, []);
+
+  
 
   return (
     <div>
