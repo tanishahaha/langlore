@@ -107,10 +107,13 @@ export const verifyUser = async function getUserDataByEmail(email: string) {
   // Iterate through the documents that match the query
   querySnapshot.forEach((doc) => {
     userData = doc.data();
+    // console.log("userData", userData);
     return userData;
     // console.log(doc.data());
   });
 };
+
+// verifyUser("amintanisha17@gmail.com");
 
 // instead of sending the route for the checking seatAvailable or not,
 // call this function only

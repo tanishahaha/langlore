@@ -52,16 +52,19 @@ const Signup: React.FC = () => {
 
         const emailProvider = getEmailProvider(email);
         if (emailProvider) {
-          setPopupMessage("Email verification link sent. Please check your inbox.");
+          setPopupMessage(
+            "Email verification link sent. Please check your inbox."
+          );
           setShowPopup(true);
           setRedirectUrl(emailProvider.url); // Set the redirect URL here
         }
+        // Alert user
       }
     } catch (error) {
       if ((error as any).code === "auth/email-already-in-use") {
-        setPopupMessage("User already exists. Please sign in or reset your password.");
-        
-
+        setPopupMessage(
+          "User already exists. Please sign in or reset your password."
+        );
       } else {
         console.error("Error signing up:", error);
         setPopupMessage("An error occurred. Please try again later.");
