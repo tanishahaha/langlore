@@ -5,12 +5,14 @@ import "../component.css";
 import { sendPasswordResetEmail } from "firebase/auth";
 import { auth } from "../../../firebase";
 import Popup from './Popup_Alert'
+import { useNavigate } from "react-router-dom";
 
 
 const ForgetPas: React.FC = () => {
   const [email, setEmail] = React.useState("");
   const [popupMessage, setPopupMessage] = useState("");
   const [showPopup, setShowPopup] = useState(false);
+  const navigate=useNavigate();
 
 
   const handlePasswordReset = async (
@@ -40,6 +42,8 @@ const ForgetPas: React.FC = () => {
 
       setPopupMessage("Password reset email sent. Please check your inbox.");
       setShowPopup(true);
+      navigate("/signin");
+
     } catch (error) {
       console.error("Error sending password reset email:", error);
       setPopupMessage("Error sending password reset email. Please try again later.");
