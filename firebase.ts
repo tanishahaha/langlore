@@ -6,7 +6,12 @@ import {
   // onAuthStateChanged,
 } from "firebase/auth";
 // import firebase from "firebase/compat/app";
-import { addDoc, collection, getFirestore } from "firebase/firestore";
+import {
+  DocumentData,
+  addDoc,
+  collection,
+  getFirestore,
+} from "firebase/firestore";
 
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -123,6 +128,49 @@ export const getSeats = async function getSeatsAvailable(courseName: string) {
   return seatsAvailable;
 };
 
+// TODO: call the function getAllCourse to get all the courses available in the database,
+// schema is,
+// {
+//   title : "Course Title",
+//   seatsAvailable : 10,
+//   tags : ["tag1", "tag2"],
+//   modules : 4,
+//   duration : 6,
+//   desc : "Course Description",
+//   price: 1000
+// }
+export const getAllCourse = async function getAllCourses() {
+  // console.log("getAllCourses");
+  const courseRef = collection(db, "courses");
+  const querySnapshot = await getDocs(courseRef);
+  const allCourses: DocumentData[] = [];
+
+  querySnapshot.forEach((doc) => {
+    allCourses.push(doc.data());
+  });
+  // console.log(allCourses);
+  return allCourses;
+};
+
+// TODO: call the function createUser to add the user to the database as the user sign up
+export const createUser = async function createUser(
+  name: string,
+  email: string
+) {
+  const userRef = collection(db, "users");
+
+  try {
+    await addDoc(userRef, {
+      name: name,
+      email: email,
+      hasAccess: false, // Setting default value to false
+    });
+    console.log("User added successfully.");
+  } catch (error) {
+    console.error("Error adding user: ", error);
+  }
+};
+// getAllCourse();
 // getSeats("Tulu");
 // console.log(getSeats("Tulu"));
 // this is working fine

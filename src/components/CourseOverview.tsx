@@ -95,7 +95,6 @@ const CourseOverview = () => {
     getSeats("Tulu").then((data) => {
       console.log(data);
       setSeatsAvailable(data);
-      
     });
     // console.log(seats);
   };
