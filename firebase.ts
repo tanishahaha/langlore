@@ -160,16 +160,14 @@ export const getAllCourse = async function getAllCourses() {
 
 // TODO: call the function createUser to add the user to the database as the user sign up
 export const createUser = async function createUser(
-  name: string,
   email: string
 ) {
   const userRef = collection(db, "users");
 
   try {
     await addDoc(userRef, {
-      name: name,
       email: email,
-      hasAccess: false, // Setting default value to false
+      hasAccessToCourse: false, // Setting default value to false
     });
     console.log("User added successfully.");
   } catch (error) {
