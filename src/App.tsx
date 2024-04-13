@@ -9,6 +9,7 @@ import Blog_Home from "./components/Blog_Page/Blog_Home";
 import ForgetPas from "./components/Sign_page/ForgetPas";
 import Signup from "./components/Sign_page/Signup";
 import CourseOverview from "./components/CourseOverview";
+import CourseRender from "./components/CourseRender";
 
 const App = () => {
   // Scroll to the top of the page on route transitions
@@ -71,7 +72,8 @@ const App = () => {
           path="/courses"
           element={
             <RootLayout>
-              <CourseOverview />
+              {/* <CourseOverview /> */}
+              <CourseRender/>
             </RootLayout>
           }
         />

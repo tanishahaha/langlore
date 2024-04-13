@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import "../component.css";
 import { loginUser } from "../../../firebase";
 import { useEffect } from "react";
@@ -9,6 +9,7 @@ const Sign_Hero: React.FC = () => {
   const [email, setEmail] = React.useState("");
   const [password, setPassword] = React.useState("");
   const history=useNavigate();
+  const location = useLocation();
   
 
   useEffect(() => {
@@ -25,10 +26,13 @@ const Sign_Hero: React.FC = () => {
     e: React.MouseEvent<HTMLButtonElement, MouseEvent>
   ) => {
     e.preventDefault();
+    const currentloc=location.pathname;
+    console.log(currentloc);
     await loginUser(email, password);
     if(email!=""){
-      history(0);
+      // history(0);
       history(-1);
+      window.location.reload;
       // history(0);
     }
   };
