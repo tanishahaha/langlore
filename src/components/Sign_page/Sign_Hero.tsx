@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import "../component.css";
-import { loginUser } from "../../../firebase";
+import { loginUser,createUser } from "../../../firebase";
 import { useEffect } from "react";
 import Popup from "./Popup_Alert";
+
 // import { Link } from 'react-router-dom';
 
 const Sign_Hero: React.FC = () => {
@@ -42,6 +43,7 @@ const Sign_Hero: React.FC = () => {
     if (res === "error loggin in") {
       setShowPopup(true);
     } else {
+      await createUser(email);
       // Successful sign-in
       // Store the current location in sessionStorage before redirecting to sign-in page
       sessionStorage.setItem('previousLocation', currentloc);
