@@ -63,9 +63,7 @@ export const loginUser = async (email: string, password: string) => {
 
     // Get user data
     const user = userCredential.user;
-
-    // Store user data in local storage
-    // if user is not valid
+    await createUser(email)
     if (isEmailVerified()) {
       localStorage.setItem("user", JSON.stringify(user));
       // alert(`Logged in successfully as ${user.email}`);
@@ -159,15 +157,18 @@ export const getAllCourse = async function getAllCourses() {
 };
 
 // TODO: call the function createUser to add the user to the database as the user sign up
-export const createUser = async function createUser(
-  name: string,
-  email: string
-) {
+export const createUser = async function createUser(email: string) {
   const userRef = collection(db, "users");
+  const emailQuery = query(userRef, where("email", "==", email));
+  const querySnapshot = await getDocs(emailQuery);
 
+  if (!querySnapshot.empty) {
+    console.log("User with this email already exists.");
+    return; // Exit function if email already exists
+  }
   try {
     await addDoc(userRef, {
-      name: name,
+     
       email: email,
       hasAccess: false, // Setting default value to false
     });
